@@ -1,0 +1,15 @@
+.brand{
+    font-size: $font-size-medium;
+    place-self: center ;
+    color: $color-primary-1;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+.cta{
+    background: $color-primary-1;
+    color: $color-white;
+    border-radius: 1rem;
+    padding: 5px 5px;
+}

@@ -5,7 +5,7 @@ import 'bootstrap';
  * Application entrypoint
  */
 domReady(async () => {
-  // ...
+     
 });
 
 /**
