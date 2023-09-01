@@ -1,11 +1,13 @@
-<div class="d-flex justify-content-end">surgeon portal link</div>
-<header class="banner bg-white grid">
-    <div class="w-100 overflow-hidden ps-3 main-navbar container g-col-2">
-        <a class="brand text-decoration-none" href="{{ home_url('/') }}">
-            Bunion <br> Relief
+<div class="surgeon text-end px-4">
+    <a href="#" class="nav-link w-100 container p-2 surgeon__link">surgeon portal</a>
+</div>
+<header class="banner bg-white w-100 py-4 main-navbar container">
+    <div class="row gap-3" style="place-items: center">
+        <a class="brand text-decoration-none col-2 fs-1 fw-semibold lh-1" href="{{ home_url('/') }}">
+            Bunion Relief
         </a>
-    </div>
-    <div class="g-col-2">
-        @include('partials.navigation')
+        <div class="col">
+            @include('partials.navigation')
+        </div>
     </div>
 </header>

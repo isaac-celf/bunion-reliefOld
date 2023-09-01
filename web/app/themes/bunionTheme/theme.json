@@ -4,9 +4,9 @@
   "version": 2,
   "settings": {
     "color": {
-      "custom": false,
-      "customGradient": false,
-      "customDuotone": false,
+      "custom": true,
+      "customGradient": true,
+      "customDuotone": true,
       "defaultDuotone": false,
       "defaultGradients": false,
       "defaultPalette": false,

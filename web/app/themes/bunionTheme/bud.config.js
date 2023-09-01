@@ -1,3 +1,4 @@
+import PalettePlugin from 'palette-webpack-plugin';
 /**
  * Compiler configuration
  *
@@ -36,7 +37,27 @@ export default async (app) => {
     .setUrl('http://localhost:3000')
     .setProxyUrl('http://bunion-relief.test')
     .watch(['resources/views', 'app']);
-
+  /**
+   * Palette Stuff
+   * [https://github.com/roots/palette-webpack-plugin]
+   */
+  app.use([
+    {
+      name: 'palette-webpack-plugin',
+      make: () =>
+        new PalettePlugin({
+          output: 'palette.json',
+          blacklist: ['transparent', 'inherit'],
+          priority: 'sass',
+          pretty: true,
+          sass: {
+            path: 'resources/styles/variables',
+            files: ['_colors.scss'],
+            variables: ['editor-colors'],
+          },
+        }),
+    },
+  ]);
   /**
    * Generate WordPress `theme.json`
    *
@@ -46,9 +67,9 @@ export default async (app) => {
    * @see {@link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json}
    */
   app.wpjson
-    .set('settings.color.custom', false)
-    .set('settings.color.customDuotone', false)
-    .set('settings.color.customGradient', false)
+    .set('settings.color.custom', true)
+    .set('settings.color.customDuotone', true)
+    .set('settings.color.customGradient', true)
     .set('settings.color.defaultDuotone', false)
     .set('settings.color.defaultGradients', false)
     .set('settings.color.defaultPalette', false)

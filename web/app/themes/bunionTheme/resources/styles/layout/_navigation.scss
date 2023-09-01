@@ -1,21 +1,15 @@
-// .main-navbar{
-//     display: grid;
-//     grid-template-columns: 20% 80%;
-// }
+.brand{
+    color: $color-primary-1;
+}
 
-// .navigation {
-//     background-color: $color-white;
-
-//     &__list{
-//         display: grid;
-//         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-//         gap: 2rem;
-//         list-style: none;
-//         place-items: center;
-//         margin-bottom: 0;
-//     }
-//     &__link {
-//         font-size: $default-font-size;
-//         display: inline-block;
-//     }
-// }
+.surgeon{
+    background: $color-grey-light-2;
+    &__link {
+        color: $color-black;
+    }
+}
+.navigation {
+    &__link{
+        color: $color-black;
+    }
+}
