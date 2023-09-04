@@ -13,7 +13,8 @@ class Navigation extends Composer
      * @var string[]
      */
     protected static $views = [
-        'partials.navigation'
+        'partials.navigation',
+        'partials.footer',
     ];
 
     /**
@@ -25,6 +26,7 @@ class Navigation extends Composer
     {
         return [
             'navigation' => $this->getNavigation(),
+            'footer' => $this->getFooter(),
         ];
     }
 
@@ -35,5 +37,13 @@ class Navigation extends Composer
             return;
         }
         return $navigation->toArray();
+    }
+    public function getFooter() {
+        $footer = (new Navi())->build('footer');
+
+        if ($footer->isEmpty()) {
+            return;
+        } 
+        return $footer->toArray();
     }
 }
