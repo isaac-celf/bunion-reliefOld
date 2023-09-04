@@ -152,7 +152,8 @@ class HeroText extends Block
         $heroText = new FieldsBuilder('hero_text');
 
         $heroText
-        ->addTextarea('hero-text');
+        // ->addTextarea('hero-text');
+        ->addText('buttonName');
 
         return $heroText->build();
     }
