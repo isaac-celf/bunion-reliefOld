@@ -1,6 +1,6 @@
 @if ($navigation)
     <nav class="navbar navbar-expand-lg navigation">
-        <div class="container-fluid collapse navbar-collapse justify-content-end align-items-center first-navbar"
+        <div class="container-fluid collapse navbar-collapse justify-content-end align-items-center first-navbar p-0"
             id="navbarNavDropdown">
             <ul class="my-menu navigation__list navbar-nav gap-2">
                 @foreach ($navigation as $item)
@@ -32,5 +32,8 @@
                 @endforeach
             </ul>
         </div>
+        <span class="position-absolute top-50 end-0 translate-middle-y">
+            <i class="bi bi-list"></i>
+        </span>
     </nav>
 @endif

@@ -1,16 +1,16 @@
 <div class="footer container">
     <div class="row align-items-center">
-        <div class="footer__brands col-2">
+        <div class="footer__brands col-lg-2">
             <p>bunion relief</p>
             <p>phantom</p>
             <p>paragon28</p>
         </div>
 
         @if ($footer)
-            <div class="col border-start">
-                <div class="footer__info row mb-3 ms-5">
+            <div class="footer_info col border-start">
+                <div class="footer__info row mb-3 ms-lg-5 gap-3 gap-lg-0">
                     @foreach ($footer as $item)
-                        <div class="footer__list col">
+                        <div class="footer__list col-md">
                             <h4 class="text-capitalize text-white">{{ $item->label }}</h4>
 
                             @foreach ($item->children as $child)
@@ -45,11 +45,11 @@
 
                 {{-- buttons --}}
 
-                <div class="footer__buttons ms-5" style="margin-left: -10px">
+                <div class="footer__buttons ms-lg-5 d-flex flex-column flex-md-row" style="margin-left: -10px">
                     @if ($getRepeaterButtons)
                         @foreach ($getRepeaterButtons as $button)
                             <a href="{{ $button['footer_button_link'] }}"
-                                class="btn cta bg-white text-capitalize me-2">{!! $button['footer_button'] !!}</a>
+                                class="btn cta bg-white text-capitalize me-2 mb-3 mb-lg-0">{!! $button['footer_button'] !!}</a>
                         @endforeach
                     @endif
                 </div>

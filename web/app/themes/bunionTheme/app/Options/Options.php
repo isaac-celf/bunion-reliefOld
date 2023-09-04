@@ -56,6 +56,11 @@ class Options extends Field
         ->addText('footer_button', ['label' => 'Button'])
         ->addUrl('footer_button_link', ['label' => 'Link']);
 
+        $options
+        ->addTab('site_surgeon', ['label'=>'Surgeon Button'])
+        ->addText('surgeon_button', ['label' => 'Button Name'])
+        ->addUrl('surgeon_button_link', ['label' => 'Link']);
+
         // scripts **later
         return $options->build();
     }
