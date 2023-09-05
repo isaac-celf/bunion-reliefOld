@@ -7,7 +7,7 @@
         </div>
 
         @if ($footer)
-            <div class="footer_info col border-start">
+            <div class="footer__content col">
                 <div class="footer__info row mb-3 ms-lg-5 gap-3 gap-lg-0">
                     @foreach ($footer as $item)
                         <div class="footer__list col-md">
@@ -30,14 +30,15 @@
                             <p class="text-white my-0 fw-light">{!! $phoneNum !!}</p>
                         </ul>
                         <ul class="nav gap-2">
-                            <li class="nav-link p-1"><a href="#" class="icon icon-link icon-link-hover "
+                            <li class="nav-link p-1"><a href="{{ $socialFB }}"
+                                    class="icon icon-link icon-link-hover" target="_blank"
                                     style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                         class="bi bi-facebook text-white"></i></a></li>
-                            <li class="nav-link p-1"><a href="#" class="icon-link icon-link-hover"
-                                    style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
+                            <li class="nav-link p-1"><a href="{{ $socialIG }}" class="icon-link icon-link-hover"
+                                    target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                         class="bi bi-instagram text-white"></i></a></li>
-                            <li class="nav-link p-1"><a href="#" class="icon-link icon-link-hover"
-                                    style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
+                            <li class="nav-link p-1"><a href="{{ $socialX }}" class="icon-link icon-link-hover"
+                                    target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                         class="bi bi-twitter text-white"></i></a></li>
                         </ul>
                     </div>

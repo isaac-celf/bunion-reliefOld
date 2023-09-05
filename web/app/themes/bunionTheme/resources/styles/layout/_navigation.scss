@@ -13,3 +13,34 @@
         color: $color-black;
     }
 }
+.navbar{
+    font-size: 0.9rem;
+
+    &__menu{
+        i{
+            color: $primary;
+            font-size: 2rem;
+        }
+    }
+}
+
+.accordion {
+    &__single{
+        font-size: 1rem;
+        color: #212529;
+    }
+}
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+.offcanvas {
+    &__navigation {
+        color: $primary;
+    }
+
+    &__footer {
+        color: $primary;
+    }
+}

@@ -13,6 +13,7 @@ class Footer extends Composer
      */
     protected static $views = [
         'sections.footer',
+        'partials.navigation'
     ];
 
     /**

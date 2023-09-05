@@ -1,6 +1,6 @@
 @if ($navigation)
     <nav class="navbar navbar-expand-lg navigation">
-        <div class="container-fluid collapse navbar-collapse justify-content-end align-items-center first-navbar p-0"
+        <div class="container-fluid collapse navbar-collapse justify-content-end align-items-center first-navbar p-0 d-none d-lg-block"
             id="navbarNavDropdown">
             <ul class="my-menu navigation__list navbar-nav gap-2">
                 @foreach ($navigation as $item)
@@ -32,8 +32,86 @@
                 @endforeach
             </ul>
         </div>
-        <span class="position-absolute top-50 end-0 translate-middle-y">
-            <i class="bi bi-list"></i>
+        <span class="navbar__menu position-absolute top-50 end-0 translate-middle-y d-lg-none">
+            <a href="#offcanvas" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+                <i class="bi bi-list"></i>
+            </a>
         </span>
     </nav>
+
+    {{-- offcanvas --}}
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas">
+        <div class="offcanvas-header">
+            <a class="brand text-decoration-none col-1 fs-1 fw-semibold lh-1 ps-0" href="{{ home_url('/') }}">
+                Bunion Relief
+            </a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <div class="offcanvas__navigation">
+                @foreach ($navigation as $item)
+                    @if ($item->children)
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <a href="{{ $item->url }}"
+                                        class="accordion-button accordion__default collapsed px-0 text-decoration-none border-bottom"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#{{ $item->id }}"
+                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                        {{ $item->label }}
+                                    </a>
+                                </h2>
+                                @foreach ($item->children as $child)
+                                    <div id="{{ $item->id }}" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <a href="{{ $item->url }}" class="nav-link">{{ $child->label }}</a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @else
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <a href="{{ $item->url }}"
+                                        class="accordion__single text-decoration-none py-3 d-block border-bottom">{{ $item->label }}</a>
+                                </h2>
+                                <span>
+                                    {{-- <i class="bi bi-chevron-right"></i> --}}
+                                </span>
+                            </div>
+
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+
+            {{-- footer for canvas --}}
+            <div class="offcanvas__footer">
+                <ul class="d-flex flex-column mb-2 ps-0">
+                    <div class="offcanvas__contact_details d-flex gap-2 align-items-center">
+                        <i class="bi bi-telephone"></i>
+                        <p class="my-0 fw-bold">{!! $phoneNum !!}</p>
+                    </div>
+                    <div class="offcanvas__contact_details d-flex gap-2 align-items-center">
+                        <i class="bi bi-envelope"></i>
+                        <p class="my-0 fw-bold">{!! $email !!}</p>
+                    </div>
+                </ul>
+                <ul class="list-unstyled d-flex gap-2 mb-0">
+                    <li class="p-1"><a href="{{ $socialFB }}" class="icon icon-link icon-link-hover"
+                            target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
+                                class="bi bi-facebook"></i></a></li>
+                    <li class="p-1"><a href="{{ $socialIG }}" class="icon-link icon-link-hover" target="_blank"
+                            style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
+                                class="bi bi-instagram"></i></a></li>
+                    <li class="p-1"><a href="{{ $socialX }}" class="icon-link icon-link-hover" target="_blank"
+                            style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
+                                class="bi bi-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 @endif
