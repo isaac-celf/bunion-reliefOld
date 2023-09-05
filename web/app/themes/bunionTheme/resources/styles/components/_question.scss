@@ -1,0 +1,10 @@
+.question{
+    &__info{
+        font-weight: $font-weight-bold;
+        color: $primary;
+    }
+
+    &__answer{
+        font-weight: $font-weight-light;
+    }
+}

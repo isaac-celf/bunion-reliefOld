@@ -1,15 +1,27 @@
 <div class="{{ $block->classes }}">
-  @if ($items)
-    <ul>
-      @foreach ($items as $item)
-        <li>{{ $item['item'] }}</li>
-      @endforeach
-    </ul>
-  @else
-    <p>{{ $block->preview ? 'Add an item...' : 'No items found!' }}</p>
-  @endif
+    @if ($questions)
+        <div class="question container">
+            @foreach ($questions as $item)
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h3 class="accordion-button accordion__default question__info collapsed px-0 text-decoration-none border-bottom bg-white"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#{{ $item->ID }}"
+                            aria-expanded="false" aria-controls="flush-collapseOne">
+                            {{ $item->post_title }}
+                        </h3>
+                        <div id="{{ $item->ID }}" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body py-0 ps-0">
+                                <span class="question__answer">{!! $item->post_content !!}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    @endif
 
-  <div>
-    <InnerBlocks />
-  </div>
+    <div>
+        <InnerBlocks />
+    </div>
 </div>

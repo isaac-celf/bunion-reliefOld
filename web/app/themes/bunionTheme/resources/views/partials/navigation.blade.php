@@ -78,17 +78,12 @@
                                     <a href="{{ $item->url }}"
                                         class="accordion__single text-decoration-none py-3 d-block border-bottom">{{ $item->label }}</a>
                                 </h2>
-                                <span>
-                                    {{-- <i class="bi bi-chevron-right"></i> --}}
-                                </span>
                             </div>
-
                         </div>
                     @endif
                 @endforeach
             </div>
 
-            {{-- footer for canvas --}}
             <div class="offcanvas__footer">
                 <ul class="d-flex flex-column mb-2 ps-0">
                     <div class="offcanvas__contact_details d-flex gap-2 align-items-center">

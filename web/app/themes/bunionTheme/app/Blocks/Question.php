@@ -4,6 +4,7 @@ namespace App\Blocks;
 
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
+use WP_Query;
 
 class Question extends Block
 {
@@ -105,30 +106,8 @@ class Question extends Block
      *
      * @var array
      */
-    public $styles = [
-        [
-            'name' => 'light',
-            'label' => 'Light',
-            'isDefault' => true,
-        ],
-        [
-            'name' => 'dark',
-            'label' => 'Dark',
-        ]
-    ];
+    public $styles = [];
 
-    /**
-     * The block preview example data.
-     *
-     * @var array
-     */
-    public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
-    ];
 
     /**
      * Data to be passed to the block before rendering.
@@ -138,7 +117,7 @@ class Question extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
+            'questions' => $this->getQuestions(), 
         ];
     }
 
@@ -152,21 +131,15 @@ class Question extends Block
         $question = new FieldsBuilder('question');
 
         $question
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+        ->addRelationship('questions', 
+        [
+            'post_type' => ['faq'],
+            'filters' => [
+                0 => 'search',
+            ],
+        ]);
 
         return $question->build();
-    }
-
-    /**
-     * Return the items field.
-     *
-     * @return array
-     */
-    public function items()
-    {
-        return get_field('items') ?: $this->example['items'];
     }
 
     /**
@@ -177,5 +150,15 @@ class Question extends Block
     public function enqueue()
     {
         //
+    }
+    
+    /**
+     * 
+     * @return object
+     */
+    public function getQuestions() {
+        $questions = get_field('questions');
+
+        return $questions;
     }
 }
