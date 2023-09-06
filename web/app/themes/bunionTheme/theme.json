@@ -33,6 +33,10 @@
     "typography": {
       "customFontSize": false,
       "dropCap": false
+    },
+    "layout": {
+      "contentSize": "1340px",
+      "wideSize": "1450px"
     }
   }
 }

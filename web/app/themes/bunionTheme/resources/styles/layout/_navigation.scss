@@ -1,21 +1,20 @@
 .brand{
-    color: $color-primary-1;
+    color: $primary;
 }
 
 .surgeon{
     background: $secondary;
     &__link {
-        color: $color-black;
+        color: $black;
     }
 }
+
 .navigation {
     &__link{
-        color: $color-black;
+        color: $black;
     }
 }
 .navbar{
-    font-size: 0.9rem;
-
     &__menu{
         i{
             color: $primary;

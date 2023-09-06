@@ -1,17 +1,15 @@
 .cta{
     border-radius: 1rem;
     transition: all 0.2s;
-    padding: 5px 10px;
     // padding: $spacer;
 }
 .cta:hover{
-    background: $color-primary-1;
+    background: $primary;
     border-radius: 1rem;
-    padding: 5px 10px;
     // padding: $spacer;
     transform: translateY(-2px);
 }
 
 .navigation__link:hover{
-    color: $color-white;
+    color: $white;
 }

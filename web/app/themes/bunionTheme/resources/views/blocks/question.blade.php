@@ -1,10 +1,10 @@
 <div class="{{ $block->classes }}">
     @if ($questions)
-        <div class="question container">
+        <div class="question container p-0">
             @foreach ($questions as $item)
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="accordion-item">
-                        <h3 class="accordion-button accordion__default question__info collapsed px-0 text-decoration-none border-bottom bg-white"
+                        <h3 class="accordion-button question__info collapsed px-0 text-decoration-none border-bottom bg-white"
                             type="button" data-bs-toggle="collapse" data-bs-target="#{{ $item->ID }}"
                             aria-expanded="false" aria-controls="flush-collapseOne">
                             {{ $item->post_title }}

@@ -2,12 +2,12 @@
     <nav class="navbar navbar-expand-lg navigation">
         <div class="container-fluid collapse navbar-collapse justify-content-end align-items-center first-navbar p-0 d-none d-lg-block"
             id="navbarNavDropdown">
-            <ul class="my-menu navigation__list navbar-nav gap-2">
+            <ul class="my-menu navigation__list navbar-nav gap-2 me-1">
                 @foreach ($navigation as $item)
                     @if ($item->children)
                         <li class="my-menu-item nav-item dropdown navigation__item ">
                             <a href="{{ $item->url }}"
-                                class="nav-link dropdown-toggle btn navigation__link px-3 {{ $item->classes ?? '' }} {{ $item->active ? 'active' : 'cta' }}"
+                                class="nav-link dropdown-toggle btn navigation__link py-1 {{ $item->classes ?? '' }} {{ $item->active ? 'active' : 'cta' }}"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ $item->label }}
                             </a>
@@ -24,7 +24,7 @@
                         @else
                         <li class="my-menu-item nav-item navigation__item ">
                             <a href="{{ $item->url }}"
-                                class="nav-link btn navigation__link px-3 {{ $item->classes ?? '' }} {{ $item->active ? 'active' : 'cta' }}">
+                                class="nav-link btn navigation__link py-1 {{ $item->classes ?? '' }} {{ $item->active ? 'active' : 'cta' }}">
                                 {{ $item->label }}
                             </a>
                     @endif
@@ -55,7 +55,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">
                                     <a href="{{ $item->url }}"
-                                        class="accordion-button accordion__default collapsed px-0 text-decoration-none border-bottom"
+                                        class="accordion-button collapsed px-0 text-decoration-none border-bottom"
                                         type="button" data-bs-toggle="collapse" data-bs-target="#{{ $item->id }}"
                                         aria-expanded="false" aria-controls="flush-collapseOne">
                                         {{ $item->label }}

@@ -2,6 +2,10 @@
     &__info{
         font-weight: $font-weight-bold;
         color: $primary;
+
+        &:not(.collapsed) {
+            color: $primary;
+        }
     }
 
     &__answer{
