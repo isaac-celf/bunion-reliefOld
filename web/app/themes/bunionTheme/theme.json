@@ -32,7 +32,15 @@
     },
     "typography": {
       "customFontSize": false,
-      "dropCap": false
+      "dropCap": false,
+      "lineHeight": true,
+      "fontWeight": true
+    },
+    "border": {
+      "radius": true
+    },
+    "box": {
+      "shadow": true
     },
     "layout": {
       "contentSize": "1340px",

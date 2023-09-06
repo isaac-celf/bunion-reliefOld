@@ -1,6 +1,3 @@
 <div class="{{ $block->classes }}">
-    <div class="">
-        <InnerBlocks />
-    </div>
-    <x-button ctaBtn="Learn More" />
+    <x-button ctaBtn="Find out more" />
 </div>

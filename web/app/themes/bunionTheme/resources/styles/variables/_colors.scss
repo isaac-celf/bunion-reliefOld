@@ -14,6 +14,10 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black:    #000;
 
+$transparent: 0.5;
+$gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
+
+// Editor in WordPress
 $editor-colors: (
     'primary': $primary,
     'secondary': $secondary,

@@ -1,3 +1,3 @@
 <div>
-    <a href="#" class="btn cta">{{ $ctaBtn }}</a>
+    <a href="{{ get_the_ID() }}" class="btn cta">{{ $ctaBtn }}</a>
 </div>

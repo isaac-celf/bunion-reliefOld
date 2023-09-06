@@ -12,3 +12,19 @@
         font-weight: $font-weight-light;
     }
 }
+
+.accordion-button{
+    font-size: 1.2rem;
+}
+.accordion-button::after {
+    background-image: initial;
+    width: 1rem;
+    content: '\002B';
+    transition: all .5s;
+  }
+  
+  .accordion-button:not(.collapsed)::after {
+    background-image: initial;
+    content: '\2212';
+    transition: all .5s;
+  }

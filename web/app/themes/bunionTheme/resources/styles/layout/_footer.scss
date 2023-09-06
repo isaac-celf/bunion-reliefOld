@@ -2,15 +2,22 @@ footer{
     background-color: $primary;
 }
 
-.footer{
+.footer{    
+    &__content {
+        @include media-breakpoint-up(lg) {
+            border-left: 1px solid $white;
+        }
+    }
+
+    &__list{
+        line-height: 1.7;
+    }
     &__buttons{
         margin-left: 10px;
     }
 
-    &__content {
-        @include media-breakpoint-up(lg) {
-            border-left: 1px solid $white;
-          }
+    &__button{
+        color: $primary;
     }
 }
 i{

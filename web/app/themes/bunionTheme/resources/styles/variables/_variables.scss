@@ -1,6 +1,13 @@
+// For Bootstrap Variable
+
 $default-font-size: 1.6rem;
 $font-size-medium: 3.2rem;
 $font-size-large: 4.2rem;
+
+// Font Sizes
+$heading-primary: 6rem;
+$heading-secondary: 3.5rem;
+$heading-tertiary: $default-font-size;
 
 $font-weight-lighter:         100;
 $font-weight-light:           200;
@@ -9,6 +16,23 @@ $font-weight-medium:          500;
 $font-weight-semibold:        600;
 $font-weight-bold:            700;
 $font-weight-bolder:          900;
+
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
+
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%
+) !default;
 
 $grid-breakpoints: (
   xs: 0,

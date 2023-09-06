@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="alignfull m-0">
-        <div class="banner bg-white w-100 p-0 py-lg-4 main-navbar">
+        <div class="banner bg-white w-100 p-0 py-lg-2 main-navbar">
             <div class="container px-0">
                 <div class="row gap-3 p-3 p-lg-0 container m-0" style="place-items: center">
                     <a class="brand text-decoration-none col-2 fs-1 fw-semibold lh-1" href="{{ home_url('/') }}">
