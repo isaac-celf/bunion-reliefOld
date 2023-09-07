@@ -20,11 +20,11 @@
     background-image: initial;
     width: 1rem;
     content: '\002B';
-    transition: all .5s;
+    transform: none;
   }
   
   .accordion-button:not(.collapsed)::after {
     background-image: initial;
     content: '\2212';
-    transition: all .5s;
+    transform: none;
   }

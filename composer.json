@@ -55,6 +55,8 @@
     "roots/wordpress": "6.3.1",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
+    "wpackagist-plugin/wp-store-locator":"2.2.240",
+    "wpackagist-plugin/advanced-forms":"1.9.3.2",
     "roots/acorn": "^3.2",
     "advanced-custom-fields/advanced-custom-fields-pro": "^6.2.0"
   },

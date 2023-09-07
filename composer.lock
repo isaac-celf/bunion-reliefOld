@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d4f0c69b3c5532ef1d348f6f2027394",
+    "content-hash": "0f0e19cc462e638329e702ce27d7fa81",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -5411,6 +5411,42 @@
                 }
             ],
             "time": "2022-03-08T17:03:00+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/advanced-forms",
+            "version": "1.9.3.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/advanced-forms/",
+                "reference": "tags/1.9.3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-forms.1.9.3.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/advanced-forms/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-store-locator",
+            "version": "2.2.240",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-store-locator/",
+                "reference": "tags/2.2.240"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-store-locator.2.2.240.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-store-locator/"
         }
     ],
     "packages-dev": [

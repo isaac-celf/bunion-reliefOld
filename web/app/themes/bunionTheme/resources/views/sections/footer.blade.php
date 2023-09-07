@@ -1,3 +1,3 @@
-<footer class="content-info p-5 alignfull mb-0" style="padding-top: 14rem">
+<footer class="content-info p-5 alignfull mb-0 mt-6">
     @include('partials.footer')
 </footer>

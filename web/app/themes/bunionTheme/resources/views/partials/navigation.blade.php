@@ -7,15 +7,16 @@
                     @if ($item->children)
                         <li class="my-menu-item nav-item dropdown navigation__item ">
                             <a href="{{ $item->url }}"
-                                class="nav-link dropdown-toggle btn navigation__link {{ $item->classes ?? '' }} {{ $item->active ? 'active' : 'cta' }}"
+                                class="nav-link  nav-link-dot dropdown-toggle btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ $item->label }}
                             </a>
 
-                            <ul class="my-child-menu nav-item dropdown-menu">
+                            <ul class="my-child-menu nav-item dropdown-menu rounded-0 ps-4">
                                 @foreach ($item->children as $child)
                                     <li class="my-child-item ">
-                                        <a href="{{ $child->url }}" class="dropdown-item nav-link navigation__link">
+                                        <a href="{{ $child->url }}"
+                                            class="dropdown-item nav-link my-child-menu-link fw-light lh-1">
                                             {{ $child->label }}
                                         </a>
                                     </li>
@@ -24,7 +25,7 @@
                         @else
                         <li class="my-menu-item nav-item navigation__item ">
                             <a href="{{ $item->url }}"
-                                class="nav-link btn navigation__link {{ $item->classes ?? '' }} {{ $item->active ? 'active' : 'cta' }}">
+                                class="nav-link btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}">
                                 {{ $item->label }}
                             </a>
                     @endif
@@ -32,7 +33,7 @@
                 @endforeach
             </ul>
         </div>
-        <span class="navbar__menu position-absolute top-50 end-0 translate-middle-y d-lg-none">
+        <span class="navbar__menu-icon position-absolute top-50 end-0 translate-middle-y d-lg-none">
             <a href="#offcanvas" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
                 <i class="bi bi-list"></i>
             </a>
@@ -40,7 +41,7 @@
     </nav>
 
     {{-- offcanvas --}}
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" style="height: 100vh">
         <div class="offcanvas-header">
             <a class="brand text-decoration-none col-1 fs-1 fw-semibold lh-1 ps-0" href="{{ home_url('/') }}">
                 Bunion Relief

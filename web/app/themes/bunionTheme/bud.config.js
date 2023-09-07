@@ -79,12 +79,13 @@ export default async (app) => {
     .set('settings.custom.typography.line-height', {})
     
     .set('settings.spacing.padding', true)
+    .set('settings.spacing.margin', true)
     .set('settings.spacing.units', ['px', '%', 'em', 'rem', 'vw', 'vh'])
     .set('settings.typography.customFontSize', false)
     .set('settings.typography.lineHeight', true)
     .set('settings.typography.fontWeight', true)
     .set('settings.border.radius', true)
-    .set('settings.box.shadow', true)
+    .set('settings.border.shadow', true)
     
     .set('settings.layout', { contentSize: '1340px', wideSize: '1450px' })
     

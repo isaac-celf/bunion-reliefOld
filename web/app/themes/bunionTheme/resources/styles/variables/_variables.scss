@@ -1,13 +1,14 @@
 // For Bootstrap Variable
 
-$default-font-size: 1.6rem;
-$font-size-medium: 3.2rem;
-$font-size-large: 4.2rem;
-
 // Font Sizes
 $heading-primary: 6rem;
 $heading-secondary: 3.5rem;
-$heading-tertiary: $default-font-size;
+$heading-tertiary: 1.6rem;
+
+$font-size-small: 1.2rem;
+$default-font-size: 1.6rem;
+$font-size-medium: 3rem;
+$font-size-large: 6rem;
 
 $font-weight-lighter:         100;
 $font-weight-light:           200;
@@ -26,6 +27,7 @@ $spacers: (
   3: $spacer,
   4: $spacer * 1.5,
   5: $spacer * 3,
+  6: $spacer * 4
 ) !default;
 
 $position-values: (

@@ -28,7 +28,8 @@
         "rem",
         "vw",
         "vh"
-      ]
+      ],
+      "margin": true
     },
     "typography": {
       "customFontSize": false,
@@ -37,9 +38,7 @@
       "fontWeight": true
     },
     "border": {
-      "radius": true
-    },
-    "box": {
+      "radius": true,
       "shadow": true
     },
     "layout": {

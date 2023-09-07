@@ -9,13 +9,8 @@
     }
 }
 
-.navigation {
-    &__link{
-        color: $black;
-    }
-}
 .navbar{
-    &__menu{
+    &__menu-icon{
         i{
             color: $primary;
             font-size: 2rem;
@@ -26,13 +21,14 @@
 .accordion {
 
     &__single{
-        font-size: 1rem;
-        color: #212529;
+        font-size: $font-size-small;
+        color: $gray-900;
     }
-}
-.accordion-button:focus {
-    box-shadow: none;
-    border-color: rgba(0,0,0,.125);
+
+    &-button:focus {
+        box-shadow: none;
+        border-color: rgba(0,0,0,.125);
+    }
 }
 
 .offcanvas {
@@ -44,3 +40,40 @@
         color: $primary;
     }
 }
+
+.my-child-menu {
+    background-color: $primary;
+
+    &-link {
+        color: $white;
+
+        &:hover{
+            color: $secondary;
+            background-color: $primary;
+        }
+    }
+}
+
+
+
+// nav-link **Dot**
+// .nav-link{
+//     &-dot {
+//         position: relative; 
+
+//         &::after{
+//             position: absolute;
+//         }
+//     }
+// }
+
+.dropdown-menu.show {
+    top: 4rem;
+}
+.dropdown-toggle::after{
+    position: relative;
+    bottom: -1.3rem;
+    left: -50%;
+    transform: translate(-50%, 100%);
+}
+// 
