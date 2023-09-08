@@ -7,16 +7,24 @@
                     @if ($item->children)
                         <li class="my-menu-item nav-item dropdown navigation__item ">
                             <a href="{{ $item->url }}"
-                                class="nav-link  nav-link-dot dropdown-toggle btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}"
+                                class="nav-link  nav-link-dot btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ $item->label }}
                             </a>
 
-                            <ul class="my-child-menu nav-item dropdown-menu rounded-0 ps-4">
+                            {{-- TODO --}}
+                            {{-- <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bi bi-1-circle"></i>
+                            </button> --}}
+
+
+                            <ul class="my-child-menu nav-item dropdown-menu rounded-0 bg-primary p-3"
+                                aria-labelledby="dropdownMenuButton">
                                 @foreach ($item->children as $child)
-                                    <li class="my-child-item ">
+                                    <li class="my-child-item">
                                         <a href="{{ $child->url }}"
-                                            class="dropdown-item nav-link my-child-menu-link fw-light lh-1">
+                                            class="dropdown-item nav-link my-child-menu-link fw-normal lh-1 text-white">
                                             {{ $child->label }}
                                         </a>
                                     </li>
@@ -85,8 +93,8 @@
                 @endforeach
             </div>
 
-            <div class="offcanvas__footer">
-                <ul class="d-flex flex-column mb-2 ps-0">
+            <div class="offcanvas__footer text-primary">
+                <ul class="d-flex flex-column mb-1 ps-0">
                     <div class="offcanvas__contact_details d-flex gap-2 align-items-center">
                         <i class="bi bi-telephone"></i>
                         <p class="my-0 fw-bold">{!! $phoneNum !!}</p>
@@ -97,14 +105,14 @@
                     </div>
                 </ul>
                 <ul class="list-unstyled d-flex gap-2 mb-0">
-                    <li class="p-1"><a href="{{ $socialFB }}" class="icon icon-link icon-link-hover"
+                    <li class="p-1 ps-0"><a href="{{ $socialFB }}" class="icon icon-link icon-link-hover"
                             target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                 class="bi bi-facebook"></i></a></li>
-                    <li class="p-1"><a href="{{ $socialIG }}" class="icon-link icon-link-hover" target="_blank"
-                            style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
+                    <li class="p-1 ps-0"><a href="{{ $socialIG }}" class="icon-link icon-link-hover"
+                            target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                 class="bi bi-instagram"></i></a></li>
-                    <li class="p-1"><a href="{{ $socialX }}" class="icon-link icon-link-hover" target="_blank"
-                            style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
+                    <li class="p-1 ps-0"><a href="{{ $socialX }}" class="icon-link icon-link-hover"
+                            target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                 class="bi bi-twitter"></i></a></li>
                 </ul>
             </div>

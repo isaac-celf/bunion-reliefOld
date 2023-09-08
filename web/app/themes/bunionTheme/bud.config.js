@@ -78,6 +78,7 @@ export default async (app) => {
     .set('settings.custom.typography.font-size', {})
     .set('settings.custom.typography.line-height', {})
     
+    .set('settings.color.opacity', true)
     .set('settings.spacing.padding', true)
     .set('settings.spacing.margin', true)
     .set('settings.spacing.units', ['px', '%', 'em', 'rem', 'vw', 'vh'])

@@ -2,22 +2,12 @@
     color: $primary;
 }
 
-.surgeon{
-    background: $secondary;
-    &__link {
-        color: $black;
-    }
+.navbar__menu-icon i{
+    color: $primary;
+    font-size: $navbar-icon;
 }
 
-.navbar{
-    &__menu-icon{
-        i{
-            color: $primary;
-            font-size: 2rem;
-        }
-    }
-}
-
+// offcanvas
 .accordion {
 
     &__single{
@@ -27,45 +17,32 @@
 
     &-button:focus {
         box-shadow: none;
-        border-color: rgba(0,0,0,.125);
-    }
-}
-
-.offcanvas {
-    &__navigation {
-        color: $primary;
-    }
-
-    &__footer {
-        color: $primary;
     }
 }
 
 .my-child-menu {
-    background-color: $primary;
 
-    &-link {
-        color: $white;
-
-        &:hover{
-            color: $secondary;
+    &-link:hover {
+            border-bottom: 1px solid $white;
             background-color: $primary;
-        }
     }
 }
 
-
-
 // nav-link **Dot**
-// .nav-link{
-//     &-dot {
-//         position: relative; 
+.nav-link{
+    // &-dot {
+    //     position: relative; 
 
-//         &::after{
-//             position: absolute;
-//         }
-//     }
-// }
+    //     &::after{
+    //         content: '';
+    //         z-index: 100;
+    //         position: absolute;
+    //         width: 5px;
+    //         height: 5px;
+    //         color: $primary;
+    //     }
+    // }
+}
 
 .dropdown-menu.show {
     top: 4rem;

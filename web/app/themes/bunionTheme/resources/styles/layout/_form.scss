@@ -1,0 +1,45 @@
+.af-form{
+    @extend .rounded-4, .p-3;
+    margin-top: 10rem;
+    box-shadow: $box-shadow;
+
+
+    .af-field{
+        @extend .border-0;
+
+        .af-label{
+            color: $primary;
+            font-weight: $font-weight-lighter;
+        }
+        
+        input[type='text'] {
+            @extend .form-control;
+            border-color: $tertiary;
+        }
+        input[type='email'] {
+            @extend .form-control;
+            border-color: $tertiary;
+        }
+        
+        .form-control::placeholder{
+            @extend .fw-light;
+            color: $secondary;
+        }
+        
+    }
+    .af-submit{
+        padding-left: 1rem;
+
+        .acf-button {
+            @extend .btn, .btn-primary, .fw-medium;
+        }
+
+        .acf-button:hover{
+            background-color: $white;
+            color: $primary;
+        }
+    }    
+}
+
+// link, visited
+// hover, active

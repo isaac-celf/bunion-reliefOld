@@ -1,5 +1,6 @@
 $primary: #4B307A;
-$secondary: #edebf2;
+$secondary: #9583AC;
+$tertiary: #C3B9D0;
 
 // Defaults
 
@@ -33,6 +34,7 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $editor-colors: (
     'primary': $primary,
     'secondary': $secondary,
+    'tertiary' : $tertiary,
     'black': $black,
     'white': $white,
     'grey-6': $gray-600

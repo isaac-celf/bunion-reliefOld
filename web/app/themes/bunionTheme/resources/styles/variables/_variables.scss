@@ -1,12 +1,14 @@
 // For Bootstrap Variable
 
 // Font Sizes
+$navbar-icon: 2rem;
 $heading-primary: 6rem;
 $heading-secondary: 3.5rem;
 $heading-tertiary: 1.6rem;
 
+$font-size-icons: 1.81rem;
+$default-font-size: 1.06rem;
 $font-size-small: 1.2rem;
-$default-font-size: 1.6rem;
 $font-size-medium: 3rem;
 $font-size-large: 6rem;
 
@@ -44,3 +46,11 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px
 );
+
+// Visuals
+$box-shadow: 0 .187rem .375rem #00000029;
+$input-btn-padding-y: 0.9rem; 
+$input-btn-padding-x: 1rem;
+$btn-padding-x: 1.4rem;
+$btn-padding-y: .6rem;
+$border-radius: .875rem;

@@ -10,7 +10,8 @@
       "defaultDuotone": false,
       "defaultGradients": false,
       "defaultPalette": false,
-      "duotone": []
+      "duotone": [],
+      "opacity": true
     },
     "custom": {
       "spacing": {},

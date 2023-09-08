@@ -29,15 +29,15 @@
                             <p class="text-white my-0 fw-light">{!! $address !!}</p>
                             <p class="text-white my-0 fw-light">{!! $phoneNum !!}</p>
                         </ul>
-                        <ul class="nav gap-2">
-                            <li class="nav-link p-1"><a href="{{ $socialFB }}"
+                        <ul class="nav gap-3">
+                            <li class="nav-link p-0"><a href="{{ $socialFB }}"
                                     class="icon icon-link icon-link-hover" target="_blank"
                                     style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                         class="bi bi-facebook text-white"></i></a></li>
-                            <li class="nav-link p-1"><a href="{{ $socialIG }}" class="icon-link icon-link-hover"
+                            <li class="nav-link p-0"><a href="{{ $socialIG }}" class="icon-link icon-link-hover"
                                     target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                         class="bi bi-instagram text-white"></i></a></li>
-                            <li class="nav-link p-1"><a href="{{ $socialX }}" class="icon-link icon-link-hover"
+                            <li class="nav-link p-0"><a href="{{ $socialX }}" class="icon-link icon-link-hover"
                                     target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                         class="bi bi-twitter text-white"></i></a></li>
                         </ul>
