@@ -1,44 +1,243 @@
-.af-form{
-    @extend .rounded-4, .p-3;
-    margin-top: 10rem;
-    box-shadow: $box-shadow;
+.af-form {
+  @extend .rounded-4, .p-3;
+  margin-top: 15rem;
+  box-shadow: $box-shadow;
 
+  .af-fields {
+    @extend .position-relative;
 
-    .af-field{
+    .af-page-wrap {
+      @extend .progress;
+      // transform: translate(-100%, -150%);
+      background-color: $light-background;
+      height: 2rem;
+
+      .enabled {
+        @extend .bg-primary, .opacity-100;
+      }
+
+      .af-page-button {
+        @extend .border-0,
+          .d-flex,
+          .justify-content-center,
+          .align-items-center;
+        height: inherit;
+        color: $tertiary;
+
+        &:not(.current) {
+          opacity: 0;
+        }
+
+        .index {
+          @extend .d-none;
+        }
+
+        &::after {
+          display: none;
+        }
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    .af-field {
+      @extend .border-0;
+
+      .af-label {
+        @extend .border-primary, .border-bottom, .mb-3;
+      }
+      .af-label label {
+        @extend .text-primary, .fw-semibold, .mb-2;
+      }
+
+      // removed form label > editor not working.
+      .af-input {
+        .acf-fields {
+          .acf-label {
+            @extend .d-none;
+          }
+          .acf-input {
+            @extend .w-100;
+          }
+        }
+      }
+
+      label {
+        @extend .text-black, .fw-lighter;
+        font-size: $font-size-small;
+      }
+
+      input[type='text'] {
+        @extend .form-control;
+        border-color: $tertiary;
+      }
+      input[type='email'] {
+        @extend .form-control;
+        border-color: $tertiary;
+      }
+
+      input[type='radio'] {
+        appearance: none;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        border: 1px solid $secondary;
+        transition: 0.2s all ease-in;
+      }
+
+      input:checked {
+        border: 6px solid $primary;
+      }
+
+      .form-control::placeholder {
+        @extend .fw-light, .text-secondary;
+      }
+    }
+    .af-submit {
+      @extend .d-flex, .justify-content-between;
+      padding-left: 1rem;
+
+      .acf-button {
+        @extend .btn, .btn-primary, .fw-medium;
+      }
+
+      .af-previous-button {
+        @extend .btn,
+          .btn-primary,
+          .bg-white,
+          .text-primary,
+          .fw-medium,
+          .border-primary;
+
+        &:hover {
+          @extend .bg-primary, .text-white;
+        }
+      }
+      .af-next-button {
+        @extend .btn, .btn-primary, .fw-medium;
+
+        &:hover {
+          @extend .bg-white, .text-primary;
+        }
+      }
+    }
+
+    .checkbox-card {
+      .af-input {
+        .acf-checkbox-list {
+          @extend .d-grid, .gap-4;
+
+          background-color: $white;
+          grid-template-columns: 1fr 1fr 1fr;
+
+          input[type='checkbox'] {
+            // @extend .d-none;
+          }
+
+          // :last-child pseudo not working.
+          &:last-child {
+            label {
+              input[type='checkbox'] {
+                appearance: none;
+                border-radius: 50%;
+                width: 12px;
+                height: 12px;
+                border: 1px solid $secondary;
+                transition: 0.2s all ease-in;
+              }
+
+              input:checked {
+                border: 6px solid $primary;
+              }
+            }
+          }
+
+          &::before {
+            content: none;
+          }
+
+          li {
+            @extend .d-flex;
+
+            label {
+              @extend .text-primary, .fw-semibold, .ps-4, .pe-2, .pt-3, .pb-4;
+              cursor: pointer;
+              box-shadow: $box-shadow;
+              border-radius: $border-radius;
+              height: 379px;
+
+              &.selected {
+                @extend .bg-primary, .text-white;
+              }
+
+              img {
+                @extend .w-100, .mb-2;
+                margin-left: -0.5rem;
+                border-radius: $border-radius;
+                height: 284px;
+                object-fit: cover;
+              }
+            }
+
+            &:last-child {
+              @extend .align-items-end;
+            }
+
+            &:last-child label {
+              @extend .shadow-none, .d-flex, .align-items-center, .h-25;
+
+              &.selected {
+                @extend .bg-transparent, .text-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.wp-block-group {
+  .acf-form {
+    .acf-fields {
+      @extend .border-0;
+
+      .acf-label {
+      }
+
+      .acf-field-text {
         @extend .border-0;
 
-        .af-label{
-            color: $primary;
-            font-weight: $font-weight-lighter;
+        &::before {
+          @extend .d-none;
         }
-        
-        input[type='text'] {
-            @extend .form-control;
-            border-color: $tertiary;
+        input {
+          padding: 0.9rem 1rem;
         }
-        input[type='email'] {
-            @extend .form-control;
-            border-color: $tertiary;
+      }
+      .acf-field-email {
+        @extend .border-0;
+
+        &::before {
+          @extend .d-none;
         }
-        
-        .form-control::placeholder{
-            @extend .fw-light;
-            color: $secondary;
+        input {
+          padding: 0.9rem 1rem;
         }
-        
+      }
+      .acf-field-number {
+        @extend .border-0;
+
+        &::before {
+          @extend .d-none;
+        }
+        input {
+          padding: 0.9rem 1rem;
+        }
+      }
     }
-    .af-submit{
-        padding-left: 1rem;
-
-        .acf-button {
-            @extend .btn, .btn-primary, .fw-medium;
-        }
-
-        .acf-button:hover{
-            background-color: $white;
-            color: $primary;
-        }
-    }    
+  }
 }
 
 // link, visited
