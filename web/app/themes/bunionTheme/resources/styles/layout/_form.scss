@@ -1,35 +1,36 @@
 .af-form {
   @extend .rounded-4, .p-3;
-  margin-top: 15rem;
   box-shadow: $box-shadow;
 
   .af-fields {
-    @extend .position-relative;
-
     .af-page-wrap {
-      @extend .progress;
-      // transform: translate(-100%, -150%);
+      @extend .progress, .position-relative;
+      transform: translate(100%, -200%);
+      width: 50%;
       background-color: $light-background;
-      height: 2rem;
 
-      .enabled {
-        @extend .bg-primary, .opacity-100;
+      .af-page-button .current {
+        @extend .text-white;
       }
 
       .af-page-button {
         @extend .border-0,
           .d-flex,
           .justify-content-center,
-          .align-items-center;
+          .align-items-center,
+          .bg-primary;
         height: inherit;
-        color: $tertiary;
 
-        &:not(.current) {
+        &:not(.enabled) {
           opacity: 0;
         }
 
         .index {
           @extend .d-none;
+        }
+
+        .title {
+          @extend .fw-lighter;
         }
 
         &::after {
@@ -126,13 +127,14 @@
     .checkbox-card {
       .af-input {
         .acf-checkbox-list {
-          @extend .d-grid, .gap-4;
+          @extend .gy-3;
+          @include make-row();
 
           background-color: $white;
-          grid-template-columns: 1fr 1fr 1fr;
+          // grid-template-columns: 1fr 1fr 1fr;
 
-          input[type='checkbox'] {
-            // @extend .d-none;
+          input[type='checkbox']:not(:last-child) {
+            @extend .d-none;
           }
 
           // :last-child pseudo not working.
@@ -159,6 +161,15 @@
 
           li {
             @extend .d-flex;
+
+            @include make-col-ready();
+
+            @include media-breakpoint-up(sm) {
+              @include make-col(6);
+            }
+            @include media-breakpoint-up(lg) {
+              @include make-col(4);
+            }
 
             label {
               @extend .text-primary, .fw-semibold, .ps-4, .pe-2, .pt-3, .pb-4;

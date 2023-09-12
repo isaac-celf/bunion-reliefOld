@@ -1,56 +1,56 @@
-.brand{
-    color: $primary;
+.brand {
+  color: $primary;
 }
 
-.navbar__menu-icon i{
-    color: $primary;
-    font-size: $navbar-icon;
+.navbar__menu-icon i {
+  color: $primary;
+  font-size: $navbar-icon;
 }
 
 // offcanvas
 .accordion {
+  &__single {
+    font-size: $font-size-small;
+    color: $gray-900;
+  }
 
-    &__single{
-        font-size: $font-size-small;
-        color: $gray-900;
-    }
-
-    &-button:focus {
-        box-shadow: none;
-    }
+  &-button:focus {
+    box-shadow: none;
+  }
 }
 
 .my-child-menu {
-
-    &-link:hover {
-            border-bottom: 1px solid $white;
-            background-color: $primary;
-    }
+  &-link:hover {
+    border-bottom: 1px solid $white;
+    background-color: $primary;
+    transform: translateX(10px);
+    transition: all 0.4s ease-in;
+  }
 }
 
 // nav-link **Dot**
-.nav-link{
-    // &-dot {
-    //     position: relative; 
+.nav-link {
+  // &-dot {
+  //     position: relative;
 
-    //     &::after{
-    //         content: '';
-    //         z-index: 100;
-    //         position: absolute;
-    //         width: 5px;
-    //         height: 5px;
-    //         color: $primary;
-    //     }
-    // }
+  //     &::after{
+  //         content: '';
+  //         z-index: 100;
+  //         position: absolute;
+  //         width: 5px;
+  //         height: 5px;
+  //         color: $primary;
+  //     }
+  // }
 }
 
 .dropdown-menu.show {
-    top: 4rem;
+  top: 4rem;
 }
-.dropdown-toggle::after{
-    position: relative;
-    bottom: -1.3rem;
-    left: -50%;
-    transform: translate(-50%, 100%);
+.dropdown-toggle::after {
+  position: relative;
+  bottom: -1.3rem;
+  left: -50%;
+  transform: translate(-50%, 100%);
 }
-// 
+//

@@ -1,0 +1,32 @@
+// #wpsl-wrap {
+//   .wpsl-search {
+//     @extend .position-absolute, .z-2;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     #wpsl-search-wrap {
+//       .wpsl-input {
+//         label {
+//           @extend .d-none;
+//         }
+//       }
+
+//       .wpsl-select-wrap {
+//         @extend .d-none;
+//       }
+//       .wpsl-search-btn-wrap {
+//       }
+//     }
+//   }
+
+//   #wpsl-gmap {
+//     @extend .w-100;
+//     height: 50vh !important;
+//   }
+
+//   #wpsl-result-list {
+//     #wpsl-stores {
+//       @extend .d-none;
+//     }
+//   }
+// }

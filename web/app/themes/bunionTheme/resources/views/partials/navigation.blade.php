@@ -5,7 +5,6 @@
             <ul class="my-menu navigation__list navbar-nav gap-2 me-1">
                 @foreach ($navigation as $item)
                     @if ($item->children)
-                        {{-- @dump($navigation) --}}
                         <li class="my-menu-item nav-item dropdown navigation__item ">
                             <a href="{{ $item->url }}"
                                 class="nav-link  nav-link-dot btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}"
@@ -14,8 +13,8 @@
                             </a>
 
                             {{-- TODO --}}
-                            {{-- <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            {{-- <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <i class="bi bi-1-circle"></i>
                             </button> --}}
 
@@ -33,7 +32,6 @@
                             </ul>
                         @else
                         <li class="my-menu-item nav-item navigation__item ">
-                            {{-- @dump($item->id) --}}
                             @if ($item->id == 37)
                                 <a href="{{ $item->url }}"
                                     class="nav-link btn {{ $item->classes ?? 'cta' }} {{ $item->active ? 'active' : 'cta' }}">

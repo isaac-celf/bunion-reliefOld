@@ -1,4 +1,4 @@
-<header class="position-fixed top-0 start-50 translate-middle-x z-3">
+<header class="{{ $classes }}">
     <div class="surgeon alignfull my-0 bg-primary">
         <div class="surgeon__container text-end container">
             <a href="#" class="nav-link w-100 container py-2 surgeon__link text-capitalize text-dark"
