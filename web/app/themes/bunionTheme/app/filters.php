@@ -27,7 +27,7 @@ add_filter( 'wpsl_templates',  function ( $templates ) {
     $templates[] = array (
         'id'   => 'custom',
         'name' => 'Custom template',
-        'path' => get_stylesheet_directory() . '/' . 'resources/views/wpsl-templates/custom.php',
+        'path' => get_stylesheet_directory() . '/' . 'resources/views/template-locater.php',
     );
 
     return $templates;

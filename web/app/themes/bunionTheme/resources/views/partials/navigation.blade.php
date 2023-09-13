@@ -34,7 +34,7 @@
                         <li class="my-menu-item nav-item navigation__item ">
                             @if ($item->id == 37)
                                 <a href="{{ $item->url }}"
-                                    class="nav-link btn {{ $item->classes ?? 'cta' }} {{ $item->active ? 'active' : 'cta' }}">
+                                    class="nav-link btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}">
                                     {{ $item->label }}
                                 </a>
                             @else

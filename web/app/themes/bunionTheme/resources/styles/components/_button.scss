@@ -13,6 +13,17 @@
   color: $primary;
 }
 
+.mainBtn {
+  background-color: $primary;
+  outline: 1px solid $white;
+  border-radius: $border-radius;
+  color: $white;
+  transition: $common-transition;
+
+  &:hover {
+  }
+}
+
 .navigation__link:hover {
   color: $white;
 }

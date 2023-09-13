@@ -1,4 +1,4 @@
-<header class="{{ $classes }}">
+<header class="{{ $classes }} box-shadow">
     <div class="surgeon alignfull my-0 bg-primary">
         <div class="surgeon__container text-end container">
             <a href="#" class="nav-link w-100 container py-2 surgeon__link text-capitalize text-dark"

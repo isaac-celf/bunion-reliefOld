@@ -4,7 +4,7 @@
 ])
 
 @include('sections.header', [
-    'classes' => 'invisible overflow-hidden w-100 pb-lg-4',
+    'classes' => 'invisible overflow-hidden w-100',
     'showNavigation' => false,
 ])
 <main id="main" class="main">

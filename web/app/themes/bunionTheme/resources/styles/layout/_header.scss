@@ -1,0 +1,11 @@
+.surgeon {
+  background-color: $light-background !important;
+}
+
+.banner {
+  box-shadow: $box-shadow !important;
+}
+
+.page-header {
+  @extend .d-none;
+}
