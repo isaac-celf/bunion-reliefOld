@@ -1,9 +1,8 @@
 .locator {
   .locator-left {
     box-shadow: $box-shadow;
-    @media (max-width: 768px) {
-      //   height: auto !important;
-    }
+    max-width: 500px;
+
     .form-header {
       #wpsl-search-input {
         border: 2px solid $secondary;
@@ -25,41 +24,46 @@
 
       #wpsl-stores {
         ul {
-          max-width: 400px;
           li {
-            margin-bottom: $spacer * 2;
+            margin-bottom: $spacer;
             border-bottom: 1px solid $gray-500;
+
+            .store {
+              .wpsl-store-thumb {
+                height: 75px;
+                width: 75px;
+                @extend .m-0;
+              }
+
+              &-name {
+                font-size: $font-size-medium;
+              }
+              &-address {
+                font-size: $font-size-small;
+              }
+
+              &-single-content {
+                &-imgbox {
+                  .attachment-medium {
+                    border-radius: $border-radius;
+                  }
+                }
+              }
+            }
           }
         }
         .wpsl-store-location {
           p {
-            @extend .d-sm-flex, .flex-sm-column;
+            // @extend .d-sm-flex, .flex-sm-column;
           }
           p img {
             @extend .h-25, .w-25, .m-0;
           }
           p strong {
+            @extend .d-block;
             font-size: $font-size-medium;
             color: $primary;
             font-weight: $font-weight-bold;
-          }
-          // target > p
-          // small screen
-          // display flex
-          // flex-column
-
-          .wpsl-contact-details {
-            span {
-              @extend .d-block;
-            }
-            span strong {
-              font-size: $font-size-small;
-            }
-          }
-          .wpsl-more-info-listings {
-            strong {
-              color: $primary;
-            }
           }
         }
         .wpsl-direction-wrap {

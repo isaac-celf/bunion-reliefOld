@@ -1,4 +1,4 @@
-<div class="{{ $block->classes }}">
+<div class="">
     @if ($questions)
         <div class="question container p-0">
             @foreach ($questions as $item)

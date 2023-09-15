@@ -10,9 +10,12 @@ domReady(async () => {
     const listItems = document.querySelectorAll('.acf-checkbox-list li');
     const changeIndex = document.querySelectorAll('.af-page-button .title');
 
-    // listItems.forEach(item => {
-    //     item.classList.add('col');
-    // });
+    const contactModal = document.querySelector('.btnTouch');
+
+    console.log(contactModal);
+    contactModal.addEventListener('click', function() {
+        console.log('clicking');
+    })
 
 
     for(let i =0; i < changeIndex.length; i++) {

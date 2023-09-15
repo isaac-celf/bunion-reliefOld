@@ -31,6 +31,42 @@ add_filter( 'wpsl_templates',  function ( $templates ) {
     );
 
     return $templates;
-}
+});
 
-);
+add_filter( 'wpsl_skip_cpt_template', '__return_true' );
+
+
+add_filter( 'wpsl_listing_template', function () {
+
+    global $wpsl, $wpsl_settings; 
+
+    return 
+    "<li>
+        <div class='store d-flex gap-4 p-3'>
+            <%= thumb %>
+            <div>
+                <div>
+                    <h3 class='store-name text-primary fw-semibold fs-5'> <%= store %> </h3>
+                        <p class='store-address mb-0'> <%= city %>, <%= state %> </p>
+                        <span class='store-address'> <%= address %> </span>
+
+                        <% if ( address2 ) { %> 
+                        <span class='store-address'><%= address2 %></span>
+                        <% } %>
+                </div>
+                <div>
+                    <p>
+                        <i class='bi bi-geo-alt'></i> 
+                        <%= distance %> $wpsl_settings[distance_unit]
+                    </p>
+                </div>
+
+                <div class='locator-buttons d-flex gap-3 mt-2'>
+                    <p><a href='#' class='btn btn-primary text-capitalize'>get in touch</a></p>
+                    <p><a href='<%= permalink %>' class='btn btn-light border-dark-subtle text-capitalize'>more info</a></p>
+                </div>
+            </div>
+        </div>
+    </li>";
+    
+});

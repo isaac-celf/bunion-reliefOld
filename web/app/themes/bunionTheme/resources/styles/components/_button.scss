@@ -1,5 +1,5 @@
 .cta {
-  border-radius: 1rem;
+  border-radius: $border-radius;
   transition: all 0.2s;
   background-color: $primary;
   padding: 0.4rem 0.9rem;
@@ -7,7 +7,7 @@
 }
 .cta:hover {
   background: $primary;
-  border-radius: 1rem;
+  border-radius: $border-radius;
   // padding: $spacer;
   transform: translateY(-2px);
   color: $primary;
