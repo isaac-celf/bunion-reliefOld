@@ -12,9 +12,9 @@ domReady(async () => {
   const surgeonTitle = document.querySelector('.store-single-title')?.innerHTML;
   const surgeonTitleBox = document.querySelector('#acf-field_65044e3b06428');
   const searchBox = document.querySelector('#wpsl-search-input');
+  const searchSurgeonBtn = document.getElementById('wpsl-search-btn');
 
-  console.log(searchBox);
-
+  // Single Surgeon Auto Populate Name > Form
   if (btnSingle) {
     btnSingle.addEventListener('click', function () {
       surgeonTitleBox.setAttribute('value', surgeonTitle);
@@ -22,15 +22,14 @@ domReady(async () => {
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    // Multiple Surgeon page, populate Name > Form
     const storeList = document.querySelector('#wpsl-stores ul');
     const config = {attributes: true, childList: true, subtree: true};
 
     const observer = new MutationObserver(function () {
       const storeListItems = storeList.querySelectorAll('li');
-      console.log(storeListItems);
 
       storeListItems.forEach(function (listItem) {
-        console.log(listItem);
         const surgeonTitle = listItem.querySelector(
           '.store-single-title',
         )?.innerHTML;
@@ -38,8 +37,6 @@ domReady(async () => {
           '#acf-field_65044e3b06428',
         );
         const getTouchBtn = listItem.querySelector('.btnTouch');
-
-        console.log(getTouchBtn);
 
         if (getTouchBtn) {
           getTouchBtn?.addEventListener('click', function () {
@@ -52,23 +49,30 @@ domReady(async () => {
     if (storeList) {
       observer.observe(storeList, config);
     }
-
-    for (let i = 0; i < changeIndex.length; i++) {
-      let qPercent = Math.round(((i + 1) / changeIndex.length) * 100) + '%';
-
-      changeIndex[i].innerHTML = qPercent;
-
-      console.log(qPercent);
-    }
   });
 
-  const queryString = window.location.search;
-  console.log(queryString);
+  for (let i = 0; i < changeIndex.length; i++) {
+    let qPercent = Math.round(((i + 1) / changeIndex.length) * 100) + '%';
 
-  const urlParams = new URLSearchParams(queryString);
+    changeIndex[i].innerHTML = qPercent;
+
+    console.log(qPercent);
+  }
+
+  const queryZipCode = window.location.search;
+  const urlParams = new URLSearchParams(queryZipCode);
   const zipCode = urlParams.get('zip_code');
 
-  console.log(zipCode);
+  const authorizeClick = function () {
+    searchSurgeonBtn.click();
+  };
+
+  if (zipCode) {
+    searchBox.setAttribute('value', zipCode);
+    window.onload = function () {
+      authorizeClick();
+    };
+  }
 });
 
 /**

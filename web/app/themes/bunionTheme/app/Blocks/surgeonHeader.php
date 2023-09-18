@@ -4,6 +4,7 @@ namespace App\Blocks;
 
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
+use WP_Query;
 
 class surgeonHeader extends Block
 {
@@ -47,7 +48,7 @@ class surgeonHeader extends Block
      *
      * @var array
      */
-    public $post_types = [];
+    public $post_types = ['wpsl_stores'];
 
     /**
      * The parent block type allow list.
@@ -118,19 +119,6 @@ class surgeonHeader extends Block
     ];
 
     /**
-     * The block preview example data.
-     *
-     * @var array
-     */
-    public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
-    ];
-
-    /**
      * Data to be passed to the block before rendering.
      *
      * @return array
@@ -138,8 +126,10 @@ class surgeonHeader extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
-        ];
+            'surgeon' => $this->getSurgeon(),
+            'surgeonPhone' => $this->getPhone(),
+            'surgeonURL' => $this->getURL(),
+        ]; 
     }
 
     /**
@@ -152,21 +142,9 @@ class surgeonHeader extends Block
         $surgeonHeader = new FieldsBuilder('surgeon_header');
 
         $surgeonHeader
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+        ->addPostObject('Surgeon', ['post_type' => ['wpsl_stores']]);
 
         return $surgeonHeader->build();
-    }
-
-    /**
-     * Return the items field.
-     *
-     * @return array
-     */
-    public function items()
-    {
-        return get_field('items') ?: $this->example['items'];
     }
 
     /**
@@ -177,5 +155,17 @@ class surgeonHeader extends Block
     public function enqueue()
     {
         //
+    }
+
+    public function getSurgeon() {
+        return new WP_Query(['post_type' => 'wpsl_stores']);
+    }
+
+    public function getPhone() {
+        return get_post_meta(get_the_ID(), 'wpsl_phone', true);
+    }
+
+    public function getURL() {
+        return get_post_meta(get_the_ID(), 'wpsl_url', true);
     }
 }
