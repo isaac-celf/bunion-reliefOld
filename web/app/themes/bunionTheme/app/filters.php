@@ -88,3 +88,8 @@ add_action('af/form/submission/key=form_65080d43a229d', function ($form, $fields
     header("Location: " . $location);
     exit;
 }, 10, 3);
+
+add_filter('upload_mimes', function ($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+});

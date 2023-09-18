@@ -1,0 +1,51 @@
+#form_65080d43a229d {
+  @extend .mx-auto, .my-0, .w-75, .bg-white, .position-relative, .z-1;
+  transform: translateY(-50%);
+
+  .af-fields {
+    // @extend .position-relative;
+
+    .af-field {
+      .af-label {
+        @extend .border-0;
+      }
+
+      .af-input {
+        .acf-input-wrap {
+          width: 70%;
+          input[type='text'] {
+            border-radius: $border-radius !important;
+            height: 41px;
+          }
+        }
+
+        .acf-input-prepend {
+          @extend .border-0,
+            .position-absolute,
+            .d-flex,
+            .justify-content-end,
+            .top-0,
+            .end-0;
+          transform: translate(0, -50%);
+          background: none;
+
+          img {
+            @extend .position-relative, .end-0;
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    .af-submit {
+      @extend .p-0, .position-relative;
+
+      .acf-button {
+        @extend .fw-light, .position-absolute, .z-1;
+        height: 41px;
+        right: 15%;
+        transform: translate(-100%, -139%);
+      }
+    }
+  }
+}
