@@ -70,3 +70,21 @@ add_filter( 'wpsl_listing_template', function () {
     </li>";
     
 });
+
+add_action('af/form/submission/key=form_65080d43a229d', function ($form, $fields, $args) {
+
+    $zip = af_get_field('find_a_doctor_in_your_area');
+
+    $urlQuery = http_build_query(
+        [
+            'zip_code' => $zip
+        ]
+    );
+
+    // $location = $args['redirect'] . '?' . $urlQuery;
+
+    $location = 'http://bunion-relief.test/find-a-doctor/' . '?' . $urlQuery;
+
+    header("Location: " . $location);
+    exit;
+}, 10, 3);

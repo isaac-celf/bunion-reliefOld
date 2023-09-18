@@ -1,4 +1,4 @@
-import { clippingParents } from '@popperjs/core';
+import {clippingParents} from '@popperjs/core';
 import domReady from '@roots/sage/client/dom-ready';
 import 'bootstrap';
 
@@ -6,40 +6,69 @@ import 'bootstrap';
  * Application entrypoint
  */
 domReady(async () => {
+  const listItems = document.querySelectorAll('.acf-checkbox-list li');
+  const changeIndex = document.querySelectorAll('.af-page-button .title');
+  const btnSingle = document.querySelector('.btnStoreSingle');
+  const surgeonTitle = document.querySelector('.store-single-title')?.innerHTML;
+  const surgeonTitleBox = document.querySelector('#acf-field_65044e3b06428');
+  const searchBox = document.querySelector('#wpsl-search-input');
 
-    const listItems = document.querySelectorAll('.acf-checkbox-list li');
-    const changeIndex = document.querySelectorAll('.af-page-button .title');
+  console.log(searchBox);
 
-    const contactModal = document.querySelector('.btnTouch');
+  if (btnSingle) {
+    btnSingle.addEventListener('click', function () {
+      surgeonTitleBox.setAttribute('value', surgeonTitle);
+    });
+  }
 
-    console.log(contactModal);
-    contactModal.addEventListener('click', function() {
-        console.log('clicking');
-    })
+  document.addEventListener('DOMContentLoaded', function () {
+    const storeList = document.querySelector('#wpsl-stores ul');
+    const config = {attributes: true, childList: true, subtree: true};
 
+    const observer = new MutationObserver(function () {
+      const storeListItems = storeList.querySelectorAll('li');
+      console.log(storeListItems);
 
-    for(let i =0; i < changeIndex.length; i++) {
-        let qPercent = Math.round(((i + 1)/ changeIndex.length) * 100) + "%";
-        
-        changeIndex[i].innerHTML = qPercent;
+      storeListItems.forEach(function (listItem) {
+        console.log(listItem);
+        const surgeonTitle = listItem.querySelector(
+          '.store-single-title',
+        )?.innerHTML;
+        const surgeonTitleBox = listItem.querySelector(
+          '#acf-field_65044e3b06428',
+        );
+        const getTouchBtn = listItem.querySelector('.btnTouch');
 
-        console.log(qPercent);
+        console.log(getTouchBtn);
+
+        if (getTouchBtn) {
+          getTouchBtn?.addEventListener('click', function () {
+            surgeonTitleBox.setAttribute('value', surgeonTitle);
+          });
+        }
+      });
+    });
+
+    if (storeList) {
+      observer.observe(storeList, config);
     }
 
+    for (let i = 0; i < changeIndex.length; i++) {
+      let qPercent = Math.round(((i + 1) / changeIndex.length) * 100) + '%';
 
-    document.addEventListener('DOMContentLoaded', function() { 
-        if (acf) {
-            acf.addAction( 'af/form/page_changed', function( newPage, previousPage, form ) {
+      changeIndex[i].innerHTML = qPercent;
 
-                console.log(form);
-                console.log("Changed page from %d to %d", previousPage, newPage)
+      console.log(qPercent);
+    }
+  });
 
-            });
-        }
-    })
+  const queryString = window.location.search;
+  console.log(queryString);
 
+  const urlParams = new URLSearchParams(queryString);
+  const zipCode = urlParams.get('zip_code');
 
-
+  console.log(zipCode);
 });
 
 /**
