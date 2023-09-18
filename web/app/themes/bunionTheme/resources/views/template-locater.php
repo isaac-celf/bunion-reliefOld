@@ -8,7 +8,7 @@ $autoload_class = ( !$wpsl_settings['autoload'] ) ? 'class="wpsl-not-loaded"' : 
 
 
 
-<div class="locator alignfull row mt-0 vh-100">
+<div class="locator alignfull row mt-0 vh-100 mb-0">
   <div class="locator-left col-md-5 h-100 p-0">
     <div class="form-header px-3">
       <form autocomplete="off" class="row gap-2 mb-2">
@@ -30,8 +30,7 @@ $autoload_class = ( !$wpsl_settings['autoload'] ) ? 'class="wpsl-not-loaded"' : 
 
     <div class="form-content" style="height:80%">
       <div class="h-100" id="wpsl-result-lists">
-        <!-- TODO > autoload_class -->
-        <div id="wpsl-stores" class="h-100">
+        <div id="wpsl-stores" class="">
           <ul class="p-0 list-unstyled">
           </ul>
         </div>

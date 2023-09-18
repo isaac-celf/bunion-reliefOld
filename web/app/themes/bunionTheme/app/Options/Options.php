@@ -61,6 +61,12 @@ class Options extends Field
         ->addText('surgeon_button', ['label' => 'Button Name'])
         ->addUrl('surgeon_button_link', ['label' => 'Link']);
 
+
+        // Forms
+        $options
+        ->addTab('site_form', ['label' => 'Surgeon Form'])
+        ->addPostObject('site_form', ['label' => 'Forms', 'post_type'=>['af_form']]);
+        
         // scripts **later
         return $options->build();
     }

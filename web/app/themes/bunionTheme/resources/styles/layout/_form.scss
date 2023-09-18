@@ -1,5 +1,5 @@
 .af-form {
-  @extend .rounded-4, .p-3;
+  @extend .rounded-4, .p-3, .mb-2;
   box-shadow: $box-shadow;
 
   .af-fields {
@@ -45,6 +45,14 @@
     .af-field {
       @extend .border-0;
 
+      textarea {
+        @extend .form-control;
+        border-color: $tertiary;
+
+        &::placeholder {
+        }
+      }
+
       .af-label {
         @extend .border-primary, .border-bottom, .mb-3;
       }
@@ -71,10 +79,13 @@
 
       input[type='text'] {
         @extend .form-control;
+        height: 41px;
         border-color: $tertiary;
       }
+
       input[type='email'] {
         @extend .form-control;
+        height: 41px;
         border-color: $tertiary;
       }
 
@@ -253,3 +264,12 @@
 
 // link, visited
 // hover, active
+.modal-content {
+  border-radius: $border-radius;
+
+  .modal-body {
+    .af-form {
+      @extend .shadow-none, .p-0;
+    }
+  }
+}
