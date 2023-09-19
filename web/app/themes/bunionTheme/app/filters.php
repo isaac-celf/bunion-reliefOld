@@ -46,7 +46,7 @@ add_filter( 'wpsl_listing_template', function () {
             <%= thumb %>
             <div>
                 <div>
-                    <h3 class='store-name text-primary fw-semibold fs-5'> <%= store %> </h3>
+                    <h3 class='store-single-title text-primary fw-semibold fs-5'> <%= store %> </h3>
                         <p class='store-address mb-0'> <%= city %>, <%= state %> </p>
                         <span class='store-address'> <%= address %> </span>
 
@@ -67,6 +67,28 @@ add_filter( 'wpsl_listing_template', function () {
                 </div>
             </div>
         </div>
+
+        <div class='modal fade ' id='iTouchModal' tabindex='-1' aria-labelledby='iTouchModalLabel' aria-hidden='true'>
+            <div class='modal-dialog modal-dialog-centered modal-lg'>
+                <div class='modal-content'>
+                    <div class='modal-header border-0 px-4 pb-0'>
+                        <h1 class='modal-title text-primary fw-semibold fs-2 px-1' id='iTouchModalLabel'>Contact Us</h1>
+                        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                    </div>
+                    <div class='d-flex px-3 align-items-center'>
+                        <p class='modal-description px-3 pt-0'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Recusandae,facilis.
+                        </p>
+                        <img src='http://bunion-relief.test/app/uploads/2023/09/icon.svg' alt='photo1' style='height: 118px; width: 180px;'>
+                    </div>
+        
+                    <div class='modal-body'>
+                        " .do_shortcode("[advanced_form form='613']"). "
+                    </div>
+                </div>
+            </div>
+        </div>
+    
     </li>";
     
 });
