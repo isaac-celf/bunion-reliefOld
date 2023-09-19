@@ -30,18 +30,19 @@ domReady(async () => {
       const storeListItems = storeList.querySelectorAll('li');
 
       storeListItems.forEach(function (listItem) {
+        const dataKey = listItem.getAttribute('data-key');
+
+        console.log(listItem);
         const surgeonTitle = listItem.querySelector(
           '.store-single-title',
         )?.innerHTML;
-        const surgeonTitleBox = listItem.querySelector(
-          '#acf-field_65044e3b06428',
+        const surgeonTitleBox = document.querySelector(
+          '#iTouchModal-' + dataKey + ' #acf-field_65044e3b06428',
         );
+
         const getTouchBtn = listItem.querySelector('.btnTouch');
 
-        console.log(getTouchBtn);
-        console.log(surgeonTitle);
-        console.log(surgeonTitleBox);
-        if (getTouchBtn) {
+        if (getTouchBtn && surgeonTitleBox) {
           getTouchBtn?.addEventListener('click', function () {
             surgeonTitleBox.setAttribute('value', surgeonTitle);
           });

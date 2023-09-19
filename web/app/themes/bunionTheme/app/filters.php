@@ -41,8 +41,9 @@ add_filter( 'wpsl_listing_template', function () {
     global $wpsl, $wpsl_settings; 
 
     return 
-    "<li>
-        <div class='store d-flex gap-4 p-3'>
+    "
+    <li data-key='<%= id %>'>
+        <div class='store d-flex gap-4 p-3 flex-md-column'>
             <%= thumb %>
             <div>
                 <div>
@@ -61,14 +62,15 @@ add_filter( 'wpsl_listing_template', function () {
                     </p>
                 </div>
 
-                <div class='locator-buttons d-flex gap-3 mt-2'>
-                    <button type='button' class='btn btn-primary text-capitalize btnTouch' data-bs-toggle='modal' data-bs-target='#iTouchModal'> Get In Touch</button>
+                <div class ='locator-buttons d-flex gap-3 mt-2'>
+                    <button type='button' class='btn btn-primary text-capitalize btnTouch' data-bs-toggle='modal' data-bs-target='#iTouchModal-<%= id %>'>Get In Touch</button>
                     <p><a href='<%= permalink %>' class='btn btn-light border-dark-subtle text-capitalize'>more info</a></p>
                 </div>
             </div>
         </div>
+    </li>
 
-        <div class='modal fade ' id='iTouchModal' tabindex='-1' aria-labelledby='iTouchModalLabel' aria-hidden='true'>
+        <div class='modal fade ' id='iTouchModal-<%= id %>' tabindex='-1' aria-labelledby='iTouchModalLabel' aria-hidden='true'>
             <div class='modal-dialog modal-dialog-centered modal-lg'>
                 <div class='modal-content'>
                     <div class='modal-header border-0 px-4 pb-0'>
@@ -88,8 +90,7 @@ add_filter( 'wpsl_listing_template', function () {
                 </div>
             </div>
         </div>
-    
-    </li>";
+        ";
     
 });
 

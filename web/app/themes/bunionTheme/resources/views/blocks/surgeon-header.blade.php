@@ -14,12 +14,12 @@
         </div>
 
         <div class="store-single-buttons d-flex gap-2">
-            <button type="button" class="btn btn-primary store-single-buttons btnStoreSingle"
+            <button type="button" class="btn btn-primary store-single-button btnStoreSingle"
                 data-title="{{ get_the_title() }}" data-bs-toggle="modal" data-bs-target="#iTouchModal">Get In
                 Touch</button>
             <a href="tel:{{ $surgeonPhone }}"
-                class="btn btn-light border-dark-subtle store-single-buttons">{{ $surgeonPhone }}</a>
-            <a href="{{ $surgeonURL }}" class="btn btn-light border-dark-subtle store-single-buttons">View Website</a>
+                class="btn btn-light border-dark-subtle store-single-button">{{ $surgeonPhone }}</a>
+            <a href="{{ $surgeonURL }}" class="btn btn-light border-dark-subtle store-single-button">View Website</a>
         </div>
     </div>
 </div>
