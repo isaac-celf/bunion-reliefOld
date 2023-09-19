@@ -38,6 +38,7 @@ domReady(async () => {
         );
         const getTouchBtn = listItem.querySelector('.btnTouch');
 
+        console.log(getTouchBtn);
         if (getTouchBtn) {
           getTouchBtn?.addEventListener('click', function () {
             surgeonTitleBox.setAttribute('value', surgeonTitle);

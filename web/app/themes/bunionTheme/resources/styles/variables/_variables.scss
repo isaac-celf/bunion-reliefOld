@@ -78,3 +78,19 @@ $btn-padding-y: 0.4rem;
 $border-radius: 0.875rem;
 
 $progress-height: 2rem;
+
+/*
+  between md - lg 
+  img - translateX(10%)
+  af-submit - right(10%)
+
+  below md <
+  af-form - w-100
+
+
+  below sm <
+  img - remove
+  acf-input-wrap - w-100
+  af-submit - right(-28%)
+
+*/
