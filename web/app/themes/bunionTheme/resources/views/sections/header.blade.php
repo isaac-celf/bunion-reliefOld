@@ -9,8 +9,9 @@
         <div class="banner bg-white w-100 p-0 py-lg-2">
             <div class="container px-0">
                 <div class="row gap-3 p-3 p-lg-0 container m-0" style="place-items: center">
-                    <a class="brand text-decoration-none col-2 fs-1 fw-semibold lh-1" href="{{ home_url('/') }}">
-                        Bunion Relief
+                    <a class="brand col-2 p-0" href="{{ home_url('/') }}">
+                        <img src="http://bunion-relief.test/app/uploads/2023/09/Purple@300x.png" alt="logo1"
+                            class="w-100">
                     </a>
                     <div class="col p-0">
                         @include('partials.navigation')

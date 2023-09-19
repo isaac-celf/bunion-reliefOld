@@ -12,7 +12,7 @@
                         <div id="{{ $item->ID }}" class="accordion-collapse collapse"
                             aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body py-0 ps-0">
-                                <span class="question__answer fw-light">{!! $item->post_content !!}</span>
+                                <span class="question__answer fw-light ">{!! $item->post_content !!}</span>
                             </div>
                         </div>
                     </div>
@@ -22,6 +22,6 @@
     @endif
 
     <div>
-        <InnerBlocks />
+        {{-- <InnerBlocks /> --}}
     </div>
 </div>

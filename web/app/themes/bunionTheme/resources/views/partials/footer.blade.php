@@ -1,13 +1,11 @@
 <div class="footer container">
     <div class="row align-items-center">
         <div class="footer__brands col-lg-2">
-            <p>bunion relief</p>
-            <p>phantom</p>
-            <p>paragon28</p>
+            <img src="http://bunion-relief.test/app/uploads/2023/09/White@300x.png" alt="logo2" class="w-100">
         </div>
 
         @if ($footer)
-            <div class="footer__content col">
+            <div class="footer__content col p-0">
                 <div class="footer__info row mb-3 ms-lg-5 gap-3 gap-lg-0">
                     @foreach ($footer as $item)
                         <div class="footer__list col-md">

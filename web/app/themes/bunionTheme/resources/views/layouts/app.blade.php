@@ -1,5 +1,5 @@
 @include('sections.header', [
-    'classes' => 'position-fixed w-100 top-0 start-0 z-2',
+    'classes' => 'position-fixed w-100 top-0 start-0 z-3',
     'showNavigation' => true,
 ])
 

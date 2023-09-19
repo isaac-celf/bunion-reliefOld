@@ -58,12 +58,13 @@
     {{-- offcanvas --}}
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" style="height: 100vh">
         <div class="offcanvas-header">
-            <a class="brand text-decoration-none col-1 fs-1 fw-semibold lh-1 ps-0" href="{{ home_url('/') }}">
-                Bunion Relief
+            <a class="brand col-1" href="{{ home_url('/') }}">
+                <img src="http://bunion-relief.test/app/uploads/2023/09/Purple@300x.png" alt="logo1"
+                    class="mobile-offcanvas">
             </a>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <div class="offcanvas-body d-flex flex-column justify-content-between pt-0">
             <div class="offcanvas__navigation">
                 @foreach ($navigation as $item)
                     @if ($item->children)
