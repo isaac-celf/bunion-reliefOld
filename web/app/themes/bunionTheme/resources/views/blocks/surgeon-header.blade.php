@@ -28,17 +28,19 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header border-0 px-4 pb-0">
-                <h1 class="modal-title text-primary fw-semibold fs-2 px-1" id="iTouchModalLabel">Contact Us</h1>
+                <h1 class="modal-title text-primary fw-semibold fs-2 px-1 fw-semibold" id="iTouchModalLabel">Contact Us
+                </h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="d-flex px-3 align-items-center">
-                <p class="modal-description px-3 pt-0 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            <div class="d-flex px-3 align-items-center pe-6">
+                <p class="modal-description ps-3 pt-0 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Recusandae,facilis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 </p>
-                <img src="asd" alt="photo1" style="height: 118px; width: 180px;">
+                <img src="http://bunion-relief.test/app/uploads/2023/09/icon.svg" alt="photo1"
+                    style="height: 118px; width: 180px;">
             </div>
 
-            <div class="modal-body">
+            <div class="modal-body pt-0">
                 @php
                     if (!$block->preview):
                         advanced_form('613');

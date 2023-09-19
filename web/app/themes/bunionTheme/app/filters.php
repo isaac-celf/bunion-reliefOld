@@ -62,7 +62,7 @@ add_filter( 'wpsl_listing_template', function () {
                 </div>
 
                 <div class='locator-buttons d-flex gap-3 mt-2'>
-                    <p><a href='#' class='btn btn-primary text-capitalize btnTouch'>get in touch</a></p>
+                    <button type='button' class='btn btn-primary text-capitalize btnTouch' data-bs-toggle='modal' data-bs-target='#iTouchModal'> Get In Touch</button>
                     <p><a href='<%= permalink %>' class='btn btn-light border-dark-subtle text-capitalize'>more info</a></p>
                 </div>
             </div>

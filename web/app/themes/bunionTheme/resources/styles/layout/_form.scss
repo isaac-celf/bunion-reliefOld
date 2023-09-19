@@ -71,10 +71,19 @@
 
       input[type='text'] {
         @extend .form-control;
+        height: 41px;
         border-color: $tertiary;
       }
+
+      textarea {
+        @extend .form-control;
+        border-radius: $border-radius;
+        border-color: $tertiary;
+      }
+
       input[type='email'] {
         @extend .form-control;
+        height: 41px;
         border-color: $tertiary;
       }
 
@@ -253,3 +262,6 @@
 
 // link, visited
 // hover, active
+#form_650327846206b {
+  @extend .p-0, .shadow-none;
+}
