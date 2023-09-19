@@ -6,10 +6,8 @@ $output         = $this->get_custom_css();
 $autoload_class = ( !$wpsl_settings['autoload'] ) ? 'class="wpsl-not-loaded"' : '';
 ?>
 
-
-
-<div class="locator alignfull row mt-0 vh-100 mb-0">
-  <div class="locator-left col-md-5 h-100 p-0 overflow-scroll">
+<div class="locator row vh-100 alignfull mt-0 mb-0">
+  <div class="locator-left col-md-5 h-100 p-0 overflow-scroll col-12">
     <div class="form-header px-3">
       <form autocomplete="off" class="row gap-2 mb-2">
         <label for="wpsl-search-input">
@@ -30,7 +28,7 @@ $autoload_class = ( !$wpsl_settings['autoload'] ) ? 'class="wpsl-not-loaded"' : 
 
     <div class="form-content h-100">
       <div class="h-100" id="wpsl-result-lists">
-        <!-- TODO > autoload_class -->
+
         <div id="wpsl-stores" class="h-100">
           <ul class="p-0 list-unstyled">
           </ul>
@@ -40,10 +38,9 @@ $autoload_class = ( !$wpsl_settings['autoload'] ) ? 'class="wpsl-not-loaded"' : 
         </div>
       </div>
     </div>
-
   </div>
 
-  <div class="locator-right col-md-7 p-0">
+  <div class="locator-right col-md d-none d-md-block p-0">
   <div id="wpsl-gmap" class="wpsl-gmap-canvas w-100 h-100"></div>
   </div>
 </div>
