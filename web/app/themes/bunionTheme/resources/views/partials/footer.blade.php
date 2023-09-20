@@ -1,7 +1,9 @@
 <div class="footer container">
     <div class="row align-items-center">
-        <div class="footer__brands col-lg-2">
-            <img src="http://bunion-relief.test/app/uploads/2023/09/White@300x.png" alt="logo2" class="w-100">
+        <div class="footer__brands col-lg-2 p-0 mb-2 mb-lg-0">
+            <img src="http://bunion-relief.test/app/uploads/2023/09/White@300x.png" alt="logo2" class="brand-img w-100">
+            <img src="http://bunion-relief.test/app/uploads/2023/09/Phantom_White-wPad.png" alt="logo3"
+                class="brand-img w-100">
         </div>
 
         @if ($footer)
@@ -48,7 +50,7 @@
                     @if ($getRepeaterButtons)
                         @foreach ($getRepeaterButtons as $button)
                             <a href="{{ $button['footer_button_link'] }}"
-                                class="btn footer__button cta bg-white text-capitalize me-2 mb-3 mb-lg-0">{!! $button['footer_button'] !!}</a>
+                                class="btn footer__button cta bg-white text-capitalize me-0 me-md-2 mb-3 mb-lg-0 ms-2 ms-md-0">{!! $button['footer_button'] !!}</a>
                         @endforeach
                     @endif
                 </div>

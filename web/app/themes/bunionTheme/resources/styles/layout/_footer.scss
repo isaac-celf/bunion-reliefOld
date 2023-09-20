@@ -1,25 +1,33 @@
-footer{
-    background-color: $primary;
-}
+footer {
+  background-color: $primary;
 
-.footer{    
-    &__content {
-        @include media-breakpoint-up(lg) {
-            border-left: 1px solid $white;
+  .footer {
+    &__brands {
+      .brand-img {
+        @media (max-width: 991.98px) {
+          height: 5rem;
+          object-fit: contain;
         }
+      }
+    }
+    &__content {
+      @include media-breakpoint-up(lg) {
+        border-left: 1px solid $white;
+      }
     }
 
-    &__list{
-        line-height: 1.7;
+    &__list {
+      line-height: 1.7;
     }
-    &__buttons{
-        margin-left: 10px;
+    &__buttons {
+      margin-left: 10px;
     }
 
-    &__button{
-        color: $primary;
+    &__button {
+      color: $primary;
     }
-}
-i{
+  }
+  i {
     font-size: 1.5rem;
+  }
 }

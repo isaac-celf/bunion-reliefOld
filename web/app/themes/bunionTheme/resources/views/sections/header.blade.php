@@ -6,11 +6,11 @@
         </div>
     </div>
     <div class="alignfull m-0">
-        <div class="banner bg-white w-100 p-0 py-lg-2">
-            <div class="container px-0">
-                <div class="row gap-3 p-3 p-lg-0 container m-0" style="place-items: center">
+        <div class="banner bg-white w-100 p-0 py-lg-3">
+            <div class="container pe-lg-0">
+                <div class="row gap-3  px-0 p-3 p-lg-0 container m-0 align-items-center">
                     <a class="brand col-2 p-0" href="{{ home_url('/') }}">
-                        <img src="http://bunion-relief.test/app/uploads/2023/09/Purple@300x.png" alt="logo1"
+                        <img src="http://bunion-relief.test/app/uploads/2023/09/Purple@300x-noPad.png" alt="logo1"
                             class="w-100">
                     </a>
                     <div class="col p-0">

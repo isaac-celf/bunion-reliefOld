@@ -1,24 +1,16 @@
 @if ($navigation)
-    <nav class="navbar navbar-expand-lg navigation">
+    <nav class="navbar navbar-expand-lg navigation p-0">
         <div class="container-fluid collapse navbar-collapse justify-content-end align-items-center first-navbar p-0 d-none d-lg-block"
             id="navbarNavDropdown">
             <ul class="my-menu navigation__list navbar-nav gap-2 me-1">
                 @foreach ($navigation as $item)
                     @if ($item->children)
-                        <li class="my-menu-item nav-item dropdown navigation__item ">
+                        <li class="my-menu-item nav-item navigation__item dropdown">
                             <a href="{{ $item->url }}"
-                                class="nav-link  nav-link-dot btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                class="nav-link btn  {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                                 {{ $item->label }}
                             </a>
-
-                            {{-- TODO --}}
-                            {{-- <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="bi bi-1-circle"></i>
-                            </button> --}}
-
-
                             <ul class="my-child-menu nav-item dropdown-menu rounded-0 bg-primary p-3"
                                 aria-labelledby="dropdownMenuButton">
                                 @foreach ($item->children as $child)
@@ -34,7 +26,7 @@
                         <li class="my-menu-item nav-item navigation__item ">
                             @if ($item->id == 37)
                                 <a href="{{ $item->url }}"
-                                    class="nav-link btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}">
+                                    class="nav-link {{ $item->classes ?? '' }} {{ $item->active ? 'keyBtn-Active' : 'keyBtn' }}">
                                     {{ $item->label }}
                                 </a>
                             @else

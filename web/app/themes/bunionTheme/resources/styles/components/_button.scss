@@ -1,29 +1,35 @@
-.cta {
+.keyBtn {
+  @extend .bg-primary, .text-white;
   border-radius: $border-radius;
   transition: all 0.2s;
-  background-color: $primary;
-  padding: 0.4rem 0.9rem;
-  // padding: $spacer;
-}
-.cta:hover {
-  background: $primary;
-  border-radius: $border-radius;
-  // padding: $spacer;
-  transform: translateY(-2px);
-  color: $primary;
-}
-
-.mainBtn {
-  background-color: $primary;
-  outline: 1px solid $white;
-  border-radius: $border-radius;
-  color: $white;
-  transition: $common-transition;
+  padding: ($spacer * 0.4) ($spacer * 0.9);
 
   &:hover {
+    @extend .bg-primary, .text-white;
+    transform: translateY(-2px);
+  }
+
+  &-Active {
+    @extend .bg-primary, .text-white;
+    outline: 2px solid $primary;
+    outline-offset: 1px;
+    padding: ($spacer * 0.4) ($spacer * 0.9);
+    border-radius: $border-radius;
   }
 }
 
-.navigation__link:hover {
-  color: $white;
+.active {
+  @extend .position-relative;
+
+  &::after {
+    @extend .position-absolute, .bg-secondary;
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
 }
