@@ -1,12 +1,13 @@
 .keyBtn {
   @extend .bg-primary, .text-white;
   border-radius: $border-radius;
-  transition: all 0.2s;
+  transition: $btn-transition;
   padding: ($spacer * 0.4) ($spacer * 0.9);
 
   &:hover {
     @extend .bg-primary, .text-white;
-    transform: translateY(-2px);
+    transform: $btn-animate;
+    box-shadow: $box-shadow;
   }
 
   &-Active {

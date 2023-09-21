@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navigation p-0">
         <div class="container-fluid collapse navbar-collapse justify-content-end align-items-center first-navbar p-0 d-none d-lg-block"
             id="navbarNavDropdown">
-            <ul class="my-menu navigation__list navbar-nav gap-2 me-1">
+            <ul class="my-menu navigation__list navbar-nav gap-2 me-1 fs-8">
                 @foreach ($navigation as $item)
                     @if ($item->children)
                         <li class="my-menu-item nav-item navigation__item dropdown">

@@ -8,6 +8,9 @@ footer {
           height: 5rem;
           object-fit: contain;
         }
+
+        &:hover {
+        }
       }
     }
     &__content {
@@ -19,12 +22,15 @@ footer {
     &__list {
       line-height: 1.7;
     }
-    &__buttons {
-      margin-left: 10px;
-    }
 
     &__button {
-      color: $primary;
+      @extend .text-primary;
+      transition: $btn-transition;
+
+      &:hover {
+        transform: $btn-animate;
+        box-shadow: $box-shadow;
+      }
     }
   }
   i {

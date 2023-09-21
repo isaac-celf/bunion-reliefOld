@@ -8,10 +8,10 @@
 
         @if ($footer)
             <div class="footer__content col p-0">
-                <div class="footer__info row mb-3 ms-lg-5 gap-3 gap-lg-0">
+                <div class="footer__info row mb-3 ms-lg-6 gap-3 gap-lg-0">
                     @foreach ($footer as $item)
                         <div class="footer__list col-md">
-                            <h4 class="text-capitalize text-white">{{ $item->label }}</h4>
+                            <h4 class="text-capitalize text-white fs-5">{{ $item->label }}</h4>
 
                             @foreach ($item->children as $child)
                                 <ul class="nav flex-column">
@@ -23,8 +23,9 @@
                         </div>
                     @endforeach
 
+                    {{-- contact us --}}
                     <div class="footer__list col siteOptions">
-                        <h4 class="text-capitalize text-white">contact us</h4>
+                        <h4 class="text-capitalize text-white fs-5">contact us</h4>
                         <ul class="nav flex-column">
                             <p class="text-white my-0 fw-light">{!! $address !!}</p>
                             <p class="text-white my-0 fw-light">{!! $phoneNum !!}</p>
@@ -45,12 +46,11 @@
                 </div>
 
                 {{-- buttons --}}
-
-                <div class="footer__buttons ms-lg-5 d-flex flex-column flex-md-row" style="margin-left: -10px">
+                <div class="footer__buttons ms-lg-5 d-flex flex-column flex-md-row align-items-lg-center">
                     @if ($getRepeaterButtons)
                         @foreach ($getRepeaterButtons as $button)
                             <a href="{{ $button['footer_button_link'] }}"
-                                class="btn footer__button cta bg-white text-capitalize me-0 me-md-2 mb-3 mb-lg-0 ms-2 ms-md-0">{!! $button['footer_button'] !!}</a>
+                                class="btn footer__button bg-white text-capitalize me-0 me-md-2 mb-3 mb-lg-0 ms-md-0 fs-8">{!! $button['footer_button'] !!}</a>
                         @endforeach
                     @endif
                 </div>
