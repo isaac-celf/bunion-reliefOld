@@ -1,0 +1,72 @@
+.wp-block-cover {
+  @extend .my-0;
+
+  height: 35rem;
+
+  .wp-block-group {
+  }
+}
+
+.homeCover {
+  @extend .h-100, .mb-5, .py-5;
+
+  @media (max-width: 767.98px) {
+    background-color: $primary;
+
+    img {
+      display: none;
+    }
+  }
+
+  .title {
+    padding-left: $spacer * 1.5;
+  }
+}
+
+.aboutCover {
+  @media (max-width: 767.98px) {
+    img {
+      opacity: 0.5;
+    }
+  }
+  .wp-block-group {
+    margin-top: $spacer * 10;
+
+    p {
+      font-size: $h3-font-size;
+    }
+  }
+}
+
+.causesCover {
+  .wp-block-group {
+    p {
+      font-size: $h4-font-size;
+
+      &:last-child {
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+
+  .wp-block-columns {
+    .wp-block-column {
+      .wp-block-image.is-style-rounded {
+        img {
+          border-radius: $border-radius;
+        }
+      }
+
+      .wp-block-group {
+        padding-left: $spacer * 1.5;
+
+        .wp-block-heading {
+          font-size: $h5-font-size;
+        }
+        p {
+          font-size: $h6-font-size;
+        }
+      }
+    }
+  }
+}

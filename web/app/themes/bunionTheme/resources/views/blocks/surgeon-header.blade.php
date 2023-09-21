@@ -1,4 +1,4 @@
-<div class="store-single-content d-md-flex align-items-center gap-3 mb-4">
+<div class="store-single-content d-md-flex align-items-center gap-3 mb-4 {{ $block->classes }}">
     <div class="store-single-content-imgbox d-flex flex-column gap-2">
         <?php echo get_the_post_thumbnail(null, 'medium');
         ?>

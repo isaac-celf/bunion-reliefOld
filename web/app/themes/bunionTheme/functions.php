@@ -54,7 +54,7 @@ if (! function_exists('\Roots\bootloader')) {
 |
 */
 
-collect(['setup', 'filters'])
+collect(['setup', 'filters', 'image'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
@@ -65,4 +65,12 @@ collect(['setup', 'filters'])
     });
 
 
-
+    $size_names = apply_filters(
+        'image_size_names_choose',
+        array(
+            'thumbnail' => __( 'Thumbnail' ),
+            'medium'    => __( 'Medium' ),
+            'large'     => __( 'Large' ),
+            'full'      => __( 'Full Size' ),
+        )
+    );

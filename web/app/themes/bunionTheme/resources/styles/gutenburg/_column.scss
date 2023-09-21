@@ -1,0 +1,14 @@
+.sectionEachBunion.wp-block-columns {
+  gap: 1rem;
+
+  .wp-block-column {
+    .wp-block-group {
+      padding: $spacer * 1.5;
+      border-radius: $border-radius;
+
+      p {
+        line-height: 1.7;
+      }
+    }
+  }
+}
