@@ -2,9 +2,12 @@
   @extend .mx-auto, .my-0, .w-75, .bg-white, .position-relative, .z-1;
   transform: translateY(-50%);
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     width: 100% !important;
   }
+  // @media (max-width: 767.98px) {
+  //   width: 100% !important;
+  // }
 
   @media (max-width: 575.98px) {
     height: 12rem;
@@ -15,6 +18,16 @@
     .af-field {
       .af-label {
         @extend .border-0;
+
+        label {
+          font-size: $h5-font-size;
+        }
+
+        p {
+          display: inline-block;
+          width: 70%;
+          font-weight: $font-weight-light;
+        }
       }
 
       .af-input {
@@ -37,22 +50,22 @@
             .justify-content-end,
             .top-0,
             .end-0;
-          transform: translate(0, -50%);
+          transform: translate(3%, -65%);
           background: none;
 
           @include media-breakpoint-between(md, lg) {
-            transform: translate(10%, -50%);
+            transform: translate(7%, -65%);
           }
 
           @media (max-width: 767.98px) {
-            transform: translate(10%, -50%);
+            transform: translate(10%, -65%);
           }
 
           img {
             @extend .position-relative, .end-0;
-            width: 50%;
+            width: 60%;
 
-            @media (max-width: 575.98px) {
+            @media (max-width: 767.98px) {
               display: none;
             }
           }
@@ -70,11 +83,11 @@
         transform: translate(-100%, -139%);
 
         @include media-breakpoint-between(md, lg) {
-          right: 10%;
+          // right: 10%;
         }
 
         @media (max-width: 767.98px) {
-          right: 10%;
+          // right: 10%;
         }
 
         @media (max-width: 575.98px) {

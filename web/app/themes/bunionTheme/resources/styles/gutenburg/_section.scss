@@ -1,0 +1,107 @@
+.sectionSymptoms {
+  .title {
+    margin-bottom: $spacer * 2;
+
+    p:nth-child(2) {
+      font-size: $h4-font-size;
+      display: inline-block;
+      width: 60%;
+
+      @media (max-width: 767.98px) {
+      }
+    }
+    p:nth-child(3) {
+      display: inline-block;
+      width: 70%;
+
+      @media (max-width: 767.98px) {
+      }
+    }
+
+    &-content {
+      margin-bottom: $spacer * 2;
+      p {
+        font-size: $h4-font-size;
+      }
+    }
+  }
+
+  .bunionCondition {
+    @extend .px-4;
+
+    .wp-block-columns {
+      margin-bottom: $spacer * 3;
+
+      .wp-block-column {
+        padding: $spacer $spacer * 0.9;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+
+        .wp-block-group {
+          padding-bottom: 1.5rem;
+          .wp-block-heading {
+            font-size: $h4-font-size;
+            font-weight: $font-weight-bold;
+            letter-spacing: 0.7px;
+          }
+          p {
+            font-weight: $font-weight-light;
+          }
+        }
+
+        &:nth-child(1) .wp-block-group {
+          border-bottom: 1px solid $primary;
+        }
+        &:nth-child(2) .wp-block-group {
+          border-bottom: 1px solid $green;
+        }
+        &:nth-child(3) .wp-block-group {
+          border-bottom: 1px solid $orange;
+        }
+      }
+    }
+  }
+
+  .bunionDiagnosed {
+  }
+
+  .bunionNothing {
+    .wp-block-columns {
+      .wp-block-column {
+        .wp-block-image {
+          img {
+            width: 75%;
+          }
+        }
+        .wp-block-group {
+          p strong {
+            font-weight: $font-weight-semibold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sectionTreatments {
+  .wp-block-group:nth-child(1) {
+    p {
+      font-size: $h4-font-size;
+      font-weight: $font-weight-light;
+    }
+  }
+  .wp-block-columns {
+    .wp-block-column {
+      @extend .d-flex, .flex-column, .justify-content-between;
+      padding: $spacer * 2;
+      border-radius: $border-radius;
+
+      .wp-block-heading {
+        letter-spacing: 0.5px;
+      }
+      p {
+        padding-bottom: $spacer * 2;
+      }
+    }
+  }
+}

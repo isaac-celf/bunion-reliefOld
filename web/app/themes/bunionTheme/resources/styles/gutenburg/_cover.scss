@@ -20,6 +20,29 @@
 
   .title {
     padding-left: $spacer * 1.5;
+
+    p {
+      font-size: $h4-font-size;
+    }
+  }
+
+  .wp-block-columns {
+    gap: 1rem;
+
+    .wp-block-column {
+      .wp-block-group {
+        padding: $spacer * 1.5;
+        border-radius: $border-radius;
+
+        .wp-block-heading {
+          font-size: $h4-font-size;
+        }
+
+        p {
+          line-height: 1.7;
+        }
+      }
+    }
   }
 }
 
