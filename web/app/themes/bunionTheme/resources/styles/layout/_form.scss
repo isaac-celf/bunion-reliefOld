@@ -1,5 +1,6 @@
 .af-form {
   @extend .rounded-4, .p-3;
+  margin-top: 4rem;
   box-shadow: $box-shadow;
 
   .af-fields {
@@ -133,21 +134,20 @@
 
       .af-previous-button {
         @extend .btn,
-          .btn-primary,
-          .bg-white,
+          .btn-light,
           .text-primary,
           .fw-medium,
+          .border,
           .border-primary;
 
         &:hover {
-          @extend .bg-primary, .text-white;
+          // @extend .bg-primary, .text-white;
         }
       }
       .af-next-button {
         @extend .btn, .btn-primary, .fw-medium;
 
         &:hover {
-          @extend .bg-white, .text-primary;
         }
       }
     }
