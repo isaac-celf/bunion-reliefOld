@@ -46,5 +46,23 @@
       "contentSize": "1340px",
       "wideSize": "1450px"
     }
+  },
+  "setting": {
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+          "slug": "helvetica-arial",
+          "name": "Helvetica or Arial"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "big",
+          "size": 32,
+          "name": "Big"
+        }
+      ]
+    }
   }
 }

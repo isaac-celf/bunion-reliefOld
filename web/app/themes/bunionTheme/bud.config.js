@@ -77,18 +77,32 @@ export default async (app) => {
     .set('settings.custom.spacing', {})
     .set('settings.custom.typography.font-size', {})
     .set('settings.custom.typography.line-height', {})
-    
+
     .set('settings.color.opacity', true)
     .set('settings.spacing.padding', true)
     .set('settings.spacing.margin', true)
     .set('settings.spacing.units', ['px', '%', 'em', 'rem', 'vw', 'vh'])
     .set('settings.typography.customFontSize', false)
+    .set('setting.typography.fontFamilies', [
+      {
+        fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+        slug: 'helvetica-arial',
+        name: 'Helvetica or Arial',
+      },
+    ])
+    .set('setting.typography.fontSizes', [
+      {
+        slug: 'big',
+        size: 32,
+        name: 'Big',
+      },
+    ])
     .set('settings.typography.lineHeight', true)
     .set('settings.typography.fontWeight', true)
     .set('settings.border.radius', true)
     .set('settings.border.shadow', true)
-    
-    .set('settings.layout', { contentSize: '1340px', wideSize: '1450px' })
-    
+
+    .set('settings.layout', {contentSize: '1340px', wideSize: '1450px'})
+
     .enable();
 };

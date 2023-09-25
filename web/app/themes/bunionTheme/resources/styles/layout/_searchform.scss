@@ -1,7 +1,7 @@
 #form_65080d43a229d {
   @extend .mx-auto, .my-0, .w-75, .bg-white, .position-relative, .z-1;
   // transform: translateY(-50%);
-  transform: translateY(-30%);
+  // transform: translateY(-30%);
 
   @media (max-width: 991.98px) {
     width: 100% !important;
@@ -96,5 +96,10 @@
         }
       }
     }
+  }
+}
+.homeForm {
+  #form_65080d43a229d {
+    transform: translateY(-30%);
   }
 }

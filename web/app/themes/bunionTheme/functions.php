@@ -74,3 +74,33 @@ collect(['setup', 'filters', 'image'])
             'full'      => __( 'Full Size' ),
         )
     );
+
+    add_theme_support(
+        'editor-font-sizes', 
+        array(
+            array(
+                'name'      => __( 'Extra Small' ),
+                'shortName' => __( 'XS' ),
+                'size'      => 15,
+                'slug'      => 'xsmall'
+            ),
+            array(
+                'name'      => __( 'Small' ),
+                'shortName' => __( 'S' ),
+                'size'      => 18,
+                'slug'      => 'small'
+            ),
+            array(
+                'name'      => __( 'Medium' ),
+                'shortName' => __( 'M' ),
+                'size'      => 23,
+                'slug'      => 'medium'
+            ),
+            array(
+                'name'      => __( 'Large' ),
+                'shortName' => __( 'L' ),
+                'size'      => 39,
+                'slug'      => 'large'
+            )
+        )
+    );
