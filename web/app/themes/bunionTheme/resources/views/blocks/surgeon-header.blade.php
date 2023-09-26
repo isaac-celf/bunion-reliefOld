@@ -1,15 +1,15 @@
-<div class="store-single-content d-md-flex align-items-center gap-3 mb-4 {{ $block->classes }}">
-    <div class="store-single-content-imgbox d-flex flex-column gap-2">
+<div class="store-single-content d-md-flex align-items-center {{ $block->classes }}">
+    <div class="store-single-content-img-box d-flex flex-column gap-2">
         <?php echo get_the_post_thumbnail(null, 'medium');
         ?>
-
+        {{-- <img src="https://placehold.co/400x400" alt="image"> --}}
     </div>
     <?php ?>
 
     <div>
         <h2 class="store-single-title text-primary mb-4 fw-semibold"><?php single_post_title();
         ?></h2>
-        <div class="store-single-content mb-4">
+        <div class="store-single-description mb-4">
             <InnerBlocks />
         </div>
 
@@ -17,9 +17,14 @@
             <button type="button" class="btn btn-primary store-single-button btnStoreSingle"
                 data-title="{{ get_the_title() }}" data-bs-toggle="modal" data-bs-target="#iTouchModal">Get In
                 Touch</button>
-            <a href="tel:{{ $surgeonPhone }}"
-                class="btn btn-light border-dark-subtle store-single-button">{{ $surgeonPhone }}</a>
-            <a href="{{ $surgeonURL }}" class="btn btn-light border-dark-subtle store-single-button">View Website</a>
+            @if ($surgeonPhone)
+                <a href="tel:{{ $surgeonPhone }}"
+                    class="btn btn-light border-dark-subtle store-single-button">{{ $surgeonPhone }}</a>
+            @endif
+            @if ($surgeonURL)
+                <a href="{{ $surgeonURL }}" class="btn btn-light border-dark-subtle store-single-button">View
+                    Website</a>
+            @endif
         </div>
     </div>
 </div>
@@ -32,7 +37,7 @@
                 </h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="d-flex px-3 align-items-center pe-6">
+            <div class="modal-img-box d-flex px-3 align-items-center pe-6">
                 <p class="modal-description ps-3 pt-0 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Recusandae,facilis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 </p>

@@ -1,5 +1,6 @@
 .sectionSymptoms {
   .title {
+    margin-top: $spacer * 2;
     margin-bottom: $spacer * 2;
 
     p:nth-child(2) {
@@ -101,6 +102,25 @@
       }
       p {
         padding-bottom: $spacer * 2;
+      }
+    }
+  }
+}
+
+.sectionChecker {
+  .wp-block-columns {
+    .wp-block-column {
+      .wp-block-group {
+        .wp-block-heading {
+          margin-bottom: $spacer * 2;
+        }
+        .wp-block-group {
+          .wp-block-heading {
+            em {
+              font-weight: $font-weight-medium !important;
+            }
+          }
+        }
       }
     }
   }

@@ -58,7 +58,7 @@ domReady(async () => {
   for (let i = 0; i < changeIndex.length; i++) {
     let qPercent = Math.round(((i + 1) / changeIndex.length) * 100) + '%';
 
-    // changeIndex[i].innerHTML = qPercent;
+    changeIndex[i].innerHTML = qPercent;
 
     console.log(qPercent);
   }

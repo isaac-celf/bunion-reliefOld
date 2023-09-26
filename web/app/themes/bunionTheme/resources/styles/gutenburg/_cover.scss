@@ -93,3 +93,31 @@
     }
   }
 }
+
+.brochureCover {
+  .wp-block-group {
+    .wp-block-heading {
+      margin-top: $spacer * 2;
+      margin-bottom: $spacer * 2;
+    }
+
+    .wp-block-columns {
+      .wp-block-column {
+        .wp-block-image {
+          padding: $spacer * 0.5;
+          background-color: $white;
+          border-radius: $border-radius;
+        }
+      }
+      .wp-block-column {
+        .wp-block-group {
+          .wp-block-group {
+            p:first-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

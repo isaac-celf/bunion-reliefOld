@@ -6,9 +6,11 @@
     margin-top: $spacer * 1.25;
     margin-bottom: $spacer * 3;
 
-    .wp-block-video {
-      video {
-        border-radius: $border-radius;
+    .wp-block-embed {
+      .wp-block-embed__wrapper {
+        iframe {
+          border-radius: $border-radius;
+        }
       }
     }
 

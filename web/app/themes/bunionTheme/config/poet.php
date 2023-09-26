@@ -24,6 +24,9 @@ return [
                 'plural' => 'Questions',
             ],
         ],
+        'blog' => [
+            
+        ],
     ],
 
     /*

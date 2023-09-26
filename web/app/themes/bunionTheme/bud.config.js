@@ -83,20 +83,16 @@ export default async (app) => {
     .set('settings.spacing.margin', true)
     .set('settings.spacing.units', ['px', '%', 'em', 'rem', 'vw', 'vh'])
     .set('settings.typography.customFontSize', false)
-    .set('setting.typography.fontFamilies', [
-      {
-        fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-        slug: 'helvetica-arial',
-        name: 'Helvetica or Arial',
-      },
-    ])
-    .set('setting.typography.fontSizes', [
-      {
-        slug: 'big',
-        size: 32,
-        name: 'Big',
-      },
-    ])
+    .set('setting.typography.fontFamilies', {
+      fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+      slug: 'helvetica-arial',
+      name: 'Helvetica or Arial',
+    })
+    .set('setting.typography.fontSizes', {
+      slug: 'big',
+      size: 32,
+      name: 'Big',
+    })
     .set('settings.typography.lineHeight', true)
     .set('settings.typography.fontWeight', true)
     .set('settings.border.radius', true)

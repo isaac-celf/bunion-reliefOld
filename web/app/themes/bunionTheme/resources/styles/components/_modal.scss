@@ -1,3 +1,27 @@
 .modal-content {
   border-radius: $border-radius;
+
+  .modal-img-box {
+    img {
+      @media (max-width: 575.98px) {
+        display: none;
+      }
+    }
+  }
+
+  .modal-body {
+    .af-form {
+      .af-fields {
+        .af-field {
+          .af-input {
+            ul {
+              li {
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

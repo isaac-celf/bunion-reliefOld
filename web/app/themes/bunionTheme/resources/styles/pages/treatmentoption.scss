@@ -45,6 +45,9 @@
 }
 
 .treatmentOption-solution {
+  .wp-block-group {
+    line-height: 1.7;
+  }
   .wp-block-columns {
     .wp-block-column {
       @extend .row, .align-items-center, .ps-2;
@@ -61,16 +64,21 @@
 }
 
 .treatmentOption-related {
-  @extend .py-5;
+  @extend .pt-5;
 
   .wp-block-group {
     .wp-block-group {
-      @extend .row, .align-items-center, .flex-column, .flex-md-row;
+      @extend .row,
+        .align-items-center,
+        .flex-column,
+        .flex-md-row,
+        .pt-4,
+        .pb-5;
 
       ul {
         @extend .col-md-4, .ms-0;
         font-size: $h4-font-size;
-        line-height: 2;
+        line-height: 1.8;
 
         li::marker {
           @extend .text-primary;
@@ -80,7 +88,7 @@
       p {
         @extend .col-md-8;
         line-height: 1.7;
-        font-size: $h6-font-size;
+        font-size: $h4-font-size;
       }
     }
   }

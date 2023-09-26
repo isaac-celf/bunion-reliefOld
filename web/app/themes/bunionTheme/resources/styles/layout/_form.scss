@@ -1,9 +1,24 @@
+.contact_form {
+  .af-form {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translateY(-20%);
+    background-color: $white;
+    z-index: 1;
+  }
+}
+
 .af-form {
   @extend .rounded-4, .p-3;
-  margin-top: 4rem;
   box-shadow: $box-shadow;
 
   .af-fields {
+    @media (max-width: 575.98px) {
+      display: flex;
+      flex-direction: column;
+    }
+
     .af-page-wrap {
       @extend .progress, .position-relative;
       transform: translate(100%, -200%);
@@ -45,6 +60,10 @@
 
     .af-field {
       @extend .border-0;
+
+      @media (max-width: 575.98px) {
+        width: 100% !important;
+      }
 
       .af-label {
         @extend .border-primary, .border-bottom, .mb-3;
@@ -188,7 +207,7 @@
           }
 
           li {
-            @extend .d-flex;
+            @extend .d-flex, .mb-2;
 
             @include make-col-ready();
 

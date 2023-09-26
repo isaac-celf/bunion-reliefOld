@@ -31,7 +31,7 @@ $autoload_class = ( !$wpsl_settings['autoload'] ) ? 'class="wpsl-not-loaded"' : 
       <div class="h-100" id="wpsl-result-lists">
 
         <div id="wpsl-stores" class="h-100">
-          <ul class="p-0 list-unstyled">
+          <ul class="store-list p-0 list-unstyled">
           </ul>
         </div>
         <div id="wpsl-direction-details">

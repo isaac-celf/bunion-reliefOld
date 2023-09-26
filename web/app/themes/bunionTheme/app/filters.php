@@ -77,14 +77,13 @@ add_filter( 'wpsl_listing_template', function () {
                         <h1 class='modal-title text-primary fw-semibold fs-2 px-1' id='iTouchModalLabel'>Contact Us</h1>
                         <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                     </div>
-                    <div class='d-flex px-3 align-items-center'>
-                        <p class='modal-description px-3 pt-0'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                            Recusandae,facilis.
+                    <div class='modal-img-box d-flex px-3 align-items-center pe-6'>
+                        <p class='modal-description ps-3 pt-0'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae,facilis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                         </p>
                         <img src='http://bunion-relief.test/app/uploads/2023/09/icon.svg' alt='photo1' style='height: 118px; width: 180px;'>
                     </div>
         
-                    <div class='modal-body'>
+                    <div class='modal-body pt-0'>
                         " .do_shortcode("[advanced_form form='613']"). "
                     </div>
                 </div>
