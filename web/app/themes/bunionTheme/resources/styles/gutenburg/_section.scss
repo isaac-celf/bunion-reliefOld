@@ -125,3 +125,36 @@
     }
   }
 }
+
+.sectionBlog {
+  .wp-block-heading {
+    margin-bottom: $spacer * 2;
+  }
+
+  .blog-box {
+    @extend .d-flex, .flex-column, .align-items-center, .gap-3;
+    margin-bottom: $spacer * 4;
+
+    .blogs {
+      .blog {
+        img {
+          border-radius: $border-radius;
+        }
+
+        h4 {
+          font-weight: $font-weight-semibold;
+        }
+
+        a {
+          text-decoration: none;
+          font-weight: $font-weight-semibold;
+        }
+
+        p {
+          font-weight: $font-weight-light;
+          font-size: $h6-font-size;
+        }
+      }
+    }
+  }
+}

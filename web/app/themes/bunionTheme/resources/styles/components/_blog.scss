@@ -1,0 +1,32 @@
+.blog-content {
+  .blog-heading {
+    display: none;
+  }
+
+  .blog-img {
+    margin-top: 0;
+
+    img {
+      border-radius: inherit;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
+    }
+  }
+
+  .blog-box {
+    box-shadow: $box-shadow;
+    padding: $spacer * 3;
+    margin-bottom: -$spacer * 5;
+    // margin-bottom: $spacer * 3;
+    transform: translateY(-10%);
+    background-color: $white;
+
+    @media (max-width: 575.98px) {
+      padding: $spacer * 1.5;
+    }
+
+    .blog-title {
+      margin-bottom: $spacer * 2;
+    }
+  }
+}
