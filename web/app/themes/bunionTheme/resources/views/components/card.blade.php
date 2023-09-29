@@ -1,6 +1,8 @@
-<div class="card">
-    <h3 class="card__title">heading WP</h3>
-    <p class="card__description">para WP</p>
-    <a href="#" class="btn cta">redirect</a>
-</div>
+<div class="card blog flex-column col-md-4 border-0">
+    {!! $image !!}
+    <div class="card-body">
+        <h4 class="card-title text-primary">{!! $title !!}</h4>
+        <p class="card-text">{!! $description !!}</p>
+        <a href="{!! $link !!}" class="stretched-link">Read more</a>
+    </div>
 </div>

@@ -1,0 +1,16 @@
+.misSectionBetter {
+  @extend .my-6;
+
+  .wp-block-heading {
+    @extend .mb-3;
+  }
+}
+
+.misSectionStory {
+}
+
+.misSectionProcedure {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  // transform: translateY(-50%);
+}

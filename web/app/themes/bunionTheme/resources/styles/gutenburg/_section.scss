@@ -132,10 +132,12 @@
   }
 
   .blog-box {
-    @extend .d-flex, .flex-column, .align-items-center, .gap-3;
+    @extend .d-flex, .flex-column, .align-items-center, .gap-5;
     margin-bottom: $spacer * 4;
 
     .blogs {
+      row-gap: $spacer * 2;
+
       .blog {
         img {
           border-radius: $border-radius;

@@ -1,14 +1,11 @@
 <div class="store-single-content d-md-flex align-items-center {{ $block->classes }}">
     <div class="store-single-content-img-box d-flex flex-column gap-2">
-        <?php echo get_the_post_thumbnail(null, 'medium');
-        ?>
-        {{-- <img src="https://placehold.co/400x400" alt="image"> --}}
+        {!! get_the_post_thumbnail(null, 'medium') !!}
     </div>
     <?php ?>
 
     <div>
-        <h2 class="store-single-title text-primary mb-4 fw-semibold"><?php single_post_title();
-        ?></h2>
+        <h2 class="store-single-title text-primary mb-4 fw-semibold">{!! single_post_title() !!}</h2>
         <div class="store-single-description mb-4">
             <InnerBlocks />
         </div>
@@ -41,16 +38,14 @@
                 <p class="modal-description ps-3 pt-0 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Recusandae,facilis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 </p>
-                <img src="http://bunion-relief.test/app/uploads/2023/09/icon.svg" alt="photo1"
+                <img src="{{ bloginfo('url') . '/app/uploads/2023/09/icon.svg' }}" alt="photo1"
                     style="height: 118px; width: 180px;">
             </div>
 
             <div class="modal-body pt-0">
-                @php
-                    if (!$block->preview):
-                        advanced_form('613');
-                    endif;
-                @endphp
+                @if (!$block->preview)
+                    @php(advanced_form('613'))
+                @endif
             </div>
         </div>
     </div>

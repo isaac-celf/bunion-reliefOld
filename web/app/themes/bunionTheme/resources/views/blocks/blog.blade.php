@@ -1,21 +1,21 @@
+<?php
+global $wp_query;
+?>
+
 <div class="blog-box">
-    <div class="blogs row">
+    <div class="blogs row" data-page="<?= get_query_var('paged') ? get_query_var('paged') : 1 ?>"
+        data-max="<?= $wp_query->max_num_pages ?>">
         @if ($blogs->have_posts())
             @while ($blogs->have_posts())
                 @php $blogs->the_post() @endphp
-                <div class="blog flex-column col-md-4">
-                    <a href="{{ get_the_permalink() }}">
-                        {!! get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'img-fluid']) !!}
-                        <h4 class="mt-3">{!! get_the_title() !!}</h4>
-                    </a>
-                    <p>{!! get_the_excerpt() !!}</p>
-                </div>
+                <x-card title="{!! get_the_title() !!}" description="{!! get_the_excerpt() !!}"
+                    image="{!! get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'img-fluid']) !!}" link="{!! get_permalink() !!}" />
             @endwhile
             @php wp_reset_query() @endphp
         @endif
     </div>
 
-    <button data-total="" class="btn btn-primary loading" id="load-more">
+    <button data-total="" class="btn btn-primary loading load-more" id="load-more">
         <label>Load More Posts</label>
         <span class="loader"></span>
     </button>

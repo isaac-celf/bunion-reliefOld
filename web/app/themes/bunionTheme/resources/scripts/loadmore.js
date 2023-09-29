@@ -1,31 +1,39 @@
-// import axios from 'axios';
+import axios from 'axios';
 
-// export const news = () => {
-//   const loadNews = $('#load-more');
+const loadMore = () => {
+  const button = document.querySelector('.load-more');
 
-//   if (loadNews.length > 0) {
-//     $('#load-more').on('click', function () {
-//       const offset = $('article:not(.preview)').length;
+  if (typeof button !== 'undefined' && button !== null) {
+    button.addEventListener('click', (e) => {
+      console.log(ajaxurl);
 
-//       $(this).addClass('active');
+      let current_page = document.querySelector('.blogs').dataset.page;
+      let max_pages = document.querySelector('.blogs').dataset.max;
 
-//       axios
-//         .get(`/wp-json/v1/news/offset/${offset}`)
-//         .then((response) => {
-//           const news = response.data.data.news;
-//           const count = response.data.data.count;
-//           $('#append-newspp').append(news);
+      let params = new URLSearchParams();
+      params.append('action', 'load_more_posts');
+      params.append('current_page', current_page);
+      params.append('max_pages', max_pages);
 
-//           $(this).removeClass('active');
+      axios
+        .post(ajaxurl, params)
 
-//           if (count == $(this).data('total')) {
-//             $(this).addClass('d-none');
-//           }
-//         })
-//         .catch((error) => {
-//           setToastMessage('Error loading news, please try again.');
-//           $(this).removeClass('active');
-//         });
-//     });
-//   }
-// };
+        .then((res) => {
+          console.log({res});
+          let blogs = document.querySelector('.blogs');
+
+          blogs.innerHTML += res.data.data;
+
+          if (
+            (document.querySelector('.blogs').dataset.page =
+              document.querySelector('.blogs').dataset.max)
+          ) {
+            button.parentNode.removeChild(button);
+          }
+          document.querySelector('.blogs').dataset.page++;
+        });
+    });
+  }
+};
+
+export default loadMore;

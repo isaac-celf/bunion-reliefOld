@@ -115,28 +115,31 @@
       }
 
       input[type='radio'] {
-        appearance: none;
-        border-radius: 50%;
-        width: 12px;
-        height: 12px;
-        border: 1px solid $secondary;
-        transition: 0.2s all ease-in;
+        accent-color: $primary;
+        // appearance: none;
+        // border-radius: 50%;
+        // width: 12px;
+        // height: 12px;
+        // border: 1px solid $secondary;
+        // transition: 0.2s all ease-in;
 
-        &:checked {
-          border: 6px solid $primary;
-        }
+        // &:checked {
+        //   border: 6px solid $primary;
+        // }
       }
 
       input[type='checkbox'] {
-        appearance: none;
-        width: 12px;
-        height: 12px;
-        border: 1px solid $secondary;
-        transition: 0.2s all ease-in;
+        accent-color: $primary;
 
-        &:checked {
-          border: 6px solid $primary;
-        }
+        // appearance: none;
+        // width: 12px;
+        // height: 12px;
+        // border: 1px solid $secondary;
+        // transition: 0.2s all ease-in;
+
+        // &:checked {
+        //   border: 6px solid $primary;
+        // }
       }
 
       .form-control::placeholder {

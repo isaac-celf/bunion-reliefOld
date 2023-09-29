@@ -1,8 +1,9 @@
 <div class="footer container">
     <div class="row align-items-center">
         <div class="footer__brands col-lg-2 p-0 mb-2 mb-lg-0">
-            <img src="http://bunion-relief.test/app/uploads/2023/09/White@300x.png" alt="logo2" class="brand-img w-100">
-            <img src="http://bunion-relief.test/app/uploads/2023/09/Phantom_White-wPad.png" alt="logo3"
+            <img src="{{ bloginfo('url') . '/app/uploads/2023/09/White@300x.png' }}" alt="logo2"
+                class="brand-img w-100">
+            <img src="{{ bloginfo('url') . '/app/uploads/2023/09/Phantom_White-wPad.png' }}" alt="logo3"
                 class="brand-img w-100">
         </div>
 

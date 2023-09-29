@@ -103,4 +103,4 @@ collect(['setup', 'filters', 'image'])
                 'slug'      => 'large'
             )
         )
-    );
+    ); 

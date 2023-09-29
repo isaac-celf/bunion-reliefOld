@@ -197,10 +197,11 @@ class Blog extends Block
     }
 
     public function getTitle() {
-        // return get_field('blogs');
     }
 
     public function getContent() {
 
     }
+
+
 }

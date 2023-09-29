@@ -8,7 +8,7 @@
 }
 
 .homeCover {
-  @extend .h-100, .mb-5, .py-5;
+  @extend .h-100;
 
   @media (max-width: 767.98px) {
     background-color: $primary;
@@ -120,6 +120,28 @@
           }
         }
       }
+    }
+  }
+}
+
+.findCover {
+  height: 100vh;
+
+  .wp-block-cover__inner-container {
+    .af-form {
+      max-width: fit-content;
+    }
+  }
+}
+
+.misCover {
+  .wp-block-cover__inner-container {
+    .wp-block-image {
+      margin-bottom: $spacer * 2;
+    }
+
+    .wp-block-group {
+      margin-bottom: $spacer * 3;
     }
   }
 }

@@ -1,6 +1,7 @@
 import {clippingParents} from '@popperjs/core';
 import domReady from '@roots/sage/client/dom-ready';
 import 'bootstrap';
+import loadMore from './loadMore';
 
 /**
  * Application entrypoint
@@ -55,6 +56,9 @@ domReady(async () => {
     }
   });
 
+  /**
+  Symptom checker progress bar
+  */
   for (let i = 0; i < changeIndex.length; i++) {
     let qPercent = Math.round(((i + 1) / changeIndex.length) * 100) + '%';
 
@@ -63,6 +67,9 @@ domReady(async () => {
     console.log(qPercent);
   }
 
+  /**
+  result - inject Zip Code > URL > redirect searchx
+  */
   const queryZipCode = window.location.search;
   const urlParams = new URLSearchParams(queryZipCode);
   const zipCode = urlParams.get('zip_code');
@@ -78,6 +85,12 @@ domReady(async () => {
     };
   }
 });
+
+loadMore();
+
+/**
+Find doctor 
+*/
 
 /**
  * @see {@link https://webpack.js.org/api/hot-module-replacement/}

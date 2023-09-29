@@ -27,7 +27,7 @@ return [
         'blog' => [
             'enter_title_here' => 'Enter blog title',
             'menu_icon' => 'dashicons-welcome-write-blog',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'has_archive' => false,
             'labels' => [

@@ -24,17 +24,10 @@
                             </ul>
                         @else
                         <li class="my-menu-item nav-item navigation__item ">
-                            @if ($item->id == 37)
-                                <a href="{{ $item->url }}"
-                                    class="nav-link {{ $item->classes ?? '' }} {{ $item->active ? 'keyBtn-Active' : 'keyBtn' }}">
-                                    {{ $item->label }}
-                                </a>
-                            @else
-                                <a href="{{ $item->url }}"
-                                    class="nav-link btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}">
-                                    {{ $item->label }}
-                                </a>
-                            @endif
+                            <a href="{{ $item->url }}"
+                                class="nav-link btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}">
+                                {{ $item->label }}
+                            </a>
                     @endif
                     </li>
                 @endforeach
@@ -51,7 +44,7 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" style="height: 100vh">
         <div class="offcanvas-header">
             <a class="brand col-1" href="{{ home_url('/') }}">
-                <img src="http://bunion-relief.test/app/uploads/2023/09/Purple@300x.png" alt="logo1"
+                <img src="{{ bloginfo('url') . '/app/uploads/2023/09/Purple@300x.png' }}" alt="logo1"
                     class="mobile-offcanvas">
             </a>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -93,7 +86,7 @@
                 @endforeach
             </div>
 
-            <div class="offcanvas__footer text-primary">
+            <div class="offcanvas text-primary">
                 <ul class="d-flex flex-column mb-1 ps-0">
                     <div class="offcanvas__contact_details d-flex gap-2 align-items-center">
                         <i class="bi bi-telephone"></i>
