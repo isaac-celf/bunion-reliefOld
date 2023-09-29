@@ -35,16 +35,14 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-img-box d-flex px-3 align-items-center pe-6">
-                <p class="modal-description ps-3 pt-0 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Recusandae,facilis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                <p class="modal-description ps-3 pt-0 mb-0">{{ $formDescription }}
                 </p>
-                <img src="{{ bloginfo('url') . '/app/uploads/2023/09/icon.svg' }}" alt="photo1"
-                    style="height: 118px; width: 180px;">
+                @svg('images.human-form')
             </div>
 
             <div class="modal-body pt-0">
                 @if (!$block->preview)
-                    @php(advanced_form('613'))
+                    @php(advanced_form('form_get_in_touch'))
                 @endif
             </div>
         </div>

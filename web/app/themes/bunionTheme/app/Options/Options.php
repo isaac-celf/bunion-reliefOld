@@ -61,6 +61,10 @@ class Options extends Field
         ->addText('surgeon_button', ['label' => 'Button Name'])
         ->addUrl('surgeon_button_link', ['label' => 'Link']);
 
+        $options
+        ->addTab('site_form', ['label'=>'Contact Form Description'])
+        ->addText('form_description', ['label'=>'Form Description']);
+
         // scripts **later
         return $options->build();
     }

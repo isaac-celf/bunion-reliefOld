@@ -11,8 +11,7 @@
             <div class="container pe-lg-0">
                 <div class="row gap-3  px-0 p-3 p-lg-0 container m-0 align-items-center">
                     <a class="brand col-2 p-0" href="{{ home_url('/') }}">
-                        <img src="{{ bloginfo('url') . '/app/uploads/2023/09/Purple@300x-noPad.png' }}"
-                            alt="bunion relief logo" class="w-100">
+                        <img src="@asset('images/br-logo-purple.png')" alt="bunion relief logo" class="w-100">
                     </a>
                     <div class="col p-0">
                         @include('partials.navigation')

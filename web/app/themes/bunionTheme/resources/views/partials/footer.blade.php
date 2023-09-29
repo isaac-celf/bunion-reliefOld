@@ -1,10 +1,8 @@
 <div class="footer container">
-    <div class="row align-items-center">
-        <div class="footer__brands col-lg-2 p-0 mb-2 mb-lg-0">
-            <img src="{{ bloginfo('url') . '/app/uploads/2023/09/White@300x.png' }}" alt="logo2"
-                class="brand-img w-100">
-            <img src="{{ bloginfo('url') . '/app/uploads/2023/09/Phantom_White-wPad.png' }}" alt="logo3"
-                class="brand-img w-100">
+    <div class="row align-items-center gap-5">
+        <div class="footer__brands col-lg-2 mb-2 mb-lg-0 px-0 px-md-3 pt-4 pt-md-0">
+            <img src="@asset('images/br-logo-white.png')" alt="bunion relief white logo" class="brand-img w-100 mb-2">
+            <img src="@asset('images/br-mis-white.png')" alt="bunion relief mis logo" class="brand-img w-100">
         </div>
 
         @if ($footer)

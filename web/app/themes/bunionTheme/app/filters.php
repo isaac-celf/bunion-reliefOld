@@ -6,6 +6,8 @@
 
 namespace App;
 use WP_Query;
+use Log1x\SageSvg\SageSvg;
+use function Roots\app;
 
 
 /**
@@ -55,8 +57,10 @@ add_filter( 'wpsl_skip_cpt_template', '__return_true' );
  */
 add_filter( 'wpsl_listing_template', function () {
 
-    global $wpsl, $wpsl_settings; 
-    $siteurl = get_bloginfo('url');
+    global $wpsl, $wpsl_settings;
+    // render svg tag
+    $formIcon = \App(SageSvg::class)->render('images.human-form', 'w-100');
+    $formDescription = get_field('form_description', 'option');
 
     return 
     "
@@ -95,14 +99,15 @@ add_filter( 'wpsl_listing_template', function () {
                         <h1 class='modal-title text-primary fw-semibold fs-2 px-1' id='iTouchModalLabel'>Contact Us</h1>
                         <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                     </div>
-                    <div class='modal-img-box d-flex px-3 align-items-center pe-6'>
-                        <p class='modal-description ps-3 pt-0'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae,facilis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <img src='$siteurl/app/uploads/2023/09/icon.svg' alt='photo1' style='height: 118px; width: 180px;'>
+                    <div class='modal-img-box row px-3 align-items-center pe-6'>
+                        <p class='modal-description ps-3 pt-0 col-8'> $formDescription</p>
+                        <div class='col-4'>
+                            $formIcon
+                        </div>
                     </div>
         
                     <div class='modal-body pt-0'>
-                        " .do_shortcode("[advanced_form form='613']"). "
+                        " .do_shortcode("[advanced_form form='form_get_in_touch']"). "
                     </div>
                 </div>
             </div>
@@ -114,7 +119,7 @@ add_filter( 'wpsl_listing_template', function () {
 /**
  * Home search form redirect > URL
  */
-add_action('af/form/submission/key=form_65080d43a229d', function ($form, $fields, $args) {
+add_action('af/form/submission/key=form_search_location', function ($form, $fields, $args) {
 
     $zip = af_get_field('find_a_doctor_in_your_area');
 

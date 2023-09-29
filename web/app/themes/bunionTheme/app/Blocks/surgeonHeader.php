@@ -129,6 +129,7 @@ class surgeonHeader extends Block
             'surgeon' => $this->getSurgeon(),
             'surgeonPhone' => $this->getPhone(),
             'surgeonURL' => $this->getURL(),
+            'formDescription' => $this->getFormDescription(),
         ]; 
     }
 
@@ -167,5 +168,9 @@ class surgeonHeader extends Block
 
     public function getURL() {
         return get_post_meta(get_the_ID(), 'wpsl_url', true);
+    }
+
+    public function getFormDescription() {
+        return get_field('form_description', 'option');
     }
 }

@@ -2,7 +2,7 @@
   border-radius: $border-radius;
 
   .modal-img-box {
-    img {
+    svg {
       @media (max-width: 575.98px) {
         display: none;
       }
@@ -16,7 +16,7 @@
           .af-input {
             ul {
               li {
-                border: none;
+                border: none !important;
               }
             }
           }
