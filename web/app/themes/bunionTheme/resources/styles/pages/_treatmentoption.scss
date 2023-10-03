@@ -6,44 +6,6 @@
   }
 }
 
-.treatmentOption-MIS {
-  @extend .mb-5, .pb-6;
-
-  .wp-block-group {
-    .wp-block-columns {
-      .wp-block-column {
-        text-align: center;
-        .wp-block-heading {
-          @extend .d-inline-block, .position-relative;
-
-          @media (max-width: 991.98px) {
-            font-size: 32px !important;
-          }
-          @media (max-width: 575.98px) {
-            font-size: $h3-font-size !important;
-          }
-
-          &::after {
-            @extend .position-absolute, .w-100;
-            content: '';
-            height: 3px;
-            background-color: $black;
-            top: -50%;
-            left: 0;
-          }
-          &::before {
-            @extend .position-absolute, .w-100, .bg-black;
-            content: '';
-            height: 3px;
-            bottom: -50%;
-            left: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
 .treatmentOption-solution {
   .wp-block-group {
     line-height: 1.7;

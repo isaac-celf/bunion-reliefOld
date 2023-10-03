@@ -35,6 +35,17 @@ return [
                 'plural' => 'Blogs',
             ],
         ],
+        'quote' => [
+            'enter_title_here' => 'Enter quote title',
+            'menu_icon' => 'dashicons-format-quote',
+            'support' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'custom-fields'],
+            'show_in_rest' => true,
+            'has_archive' => false,
+            'labels' => [
+                'singular' => 'Quote',
+                'plural' => 'Quotes',
+            ],
+        ],
     ],
 
     /*

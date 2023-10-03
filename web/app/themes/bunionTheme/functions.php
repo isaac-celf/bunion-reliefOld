@@ -99,8 +99,14 @@ collect(['setup', 'filters', 'image'])
             array(
                 'name'      => __( 'Large' ),
                 'shortName' => __( 'L' ),
-                'size'      => 39,
+                'size'      => 26,
                 'slug'      => 'large'
+            ),
+            array(
+                'name'      => __( 'Extra Large' ),
+                'shortName' => __( 'XL' ),
+                'size'      => 41,
+                'slug'      => 'xlarge'
             )
         )
     ); 

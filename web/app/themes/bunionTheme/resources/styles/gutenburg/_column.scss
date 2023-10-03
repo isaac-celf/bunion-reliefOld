@@ -1,0 +1,58 @@
+.columnCard {
+  .wp-block-column {
+    .wp-block-image.is-style-rounded {
+      img {
+        border-radius: $border-radius;
+      }
+    }
+
+    .wp-block-group {
+      padding-left: $spacer * 1.25;
+
+      .wp-block-heading {
+        font-size: $h5-font-size;
+      }
+      p {
+        font-size: $h6-font-size;
+      }
+    }
+  }
+}
+
+.columnQoute {
+  padding: $spacer * 5 $spacer * 1.2;
+
+  .wp-block-column:first-child {
+    .wp-block-heading {
+      margin-bottom: $spacer * 3;
+    }
+  }
+
+  .wp-block-column:last-child {
+    padding: $spacer * 0.875;
+    background-color: $white;
+    border-radius: $border-radius;
+
+    .wp-block-embed {
+      margin: $spacer * 0;
+
+      .wp-block-embed__wrapper {
+        iframe {
+          border-radius: $border-radius;
+        }
+      }
+    }
+  }
+}
+
+.columnApproach {
+  // gap: $spacer * 10;
+
+  .wp-block-column {
+    .wp-block-image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

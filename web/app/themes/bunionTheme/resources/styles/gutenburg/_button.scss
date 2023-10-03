@@ -6,7 +6,8 @@
     transition: $btn-transition;
 
     &:hover {
-      transform: $btn-animate;
+      // transform: $btn-animate;
+      background-color: $gray-300 !important;
     }
   }
 }
@@ -20,7 +21,8 @@
     border: none;
 
     &:hover {
-      transform: $btn-animate;
+      // transform: $btn-animate;
+      background-color: #3f2a68 !important;
     }
   }
 }

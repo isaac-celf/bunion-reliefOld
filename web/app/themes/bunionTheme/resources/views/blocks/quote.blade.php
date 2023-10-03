@@ -1,0 +1,20 @@
+@if ($quotes)
+    <div class="carousel slide {{ $block->classes }}" id="carouselIndicator">
+        <div class="carousel-indicators">
+            @foreach ($quotes as $quote => $value)
+                <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="{{ $quote }}"
+                    class="{{ $quote == 0 ? 'active' : '' }} carouselBtn"
+                    aria-current="{{ $quote == 0 ? 'true' : 'false' }}"></button>
+            @endforeach
+        </div>
+
+        <div class="quotes carousel-inner">
+            @foreach ($quotes as $quote => $value)
+                <div class="carousel-item {{ $quote == 0 ? 'active' : '' }}">
+                    <x-quote-slide :id="$value->ID" />
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+@endif

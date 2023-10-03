@@ -4,12 +4,6 @@
   transition: $btn-transition;
   padding: ($spacer * 0.4) ($spacer * 0.9);
 
-  &:hover {
-    @extend .bg-primary, .text-white;
-    transform: $btn-animate;
-    box-shadow: $box-shadow;
-  }
-
   &-Active {
     @extend .bg-primary, .text-white;
     outline: 2px solid $primary;

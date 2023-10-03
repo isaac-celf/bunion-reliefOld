@@ -34,10 +34,11 @@
                 </h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-img-box d-flex px-3 align-items-center pe-6">
-                <p class="modal-description ps-3 pt-0 mb-0">{{ $formDescription }}
-                </p>
-                @svg('images.human-form')
+            <div class="modal-img-box row px-3 align-items-center pe-6">
+                <p class="modal-description ps-3 pt-0 mb-0 col-8">{{ $formDescription }}</p>
+                <div class="col-4">
+                    @svg('images.human-form')
+                </div>
             </div>
 
             <div class="modal-body pt-0">
