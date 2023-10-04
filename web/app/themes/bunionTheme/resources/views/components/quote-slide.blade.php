@@ -3,8 +3,9 @@
         <img src="{{ $image }}" alt="quoter 1" class="quote-img w-100">
     </div>
     <div class="quote-content col-9">
-        <span class="quote-icon-start">"</span>
-        <p class="mb-5">{{ $quote }}</p><span class="quote-icon-end">"</span>
-        <h3 class="heading">{{ $name }} <span>{{ $location }}</span></h3>
+        <p class="mb-5">{{ $quote }}</p>
+        <h3 class="heading">{{ $name }}
+            <span>{{ $location }}</span>
+        </h3>
     </div>
 </div>

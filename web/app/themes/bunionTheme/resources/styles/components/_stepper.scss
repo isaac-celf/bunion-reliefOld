@@ -1,0 +1,44 @@
+.stepper {
+  &-img-box {
+    img {
+      height: 400px;
+    }
+  }
+
+  &-indicators {
+    // gap: 5rem;
+    // position: relative;
+    // z-index: 2;
+
+    // &::after {
+    //   content: '';
+    //   width: 1px;
+    //   height: 100%;
+    //   background-color: $secondary;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   z-index: -1;
+    //   pointer-events: none;
+    // }
+  }
+
+  &-indicator {
+    height: 13px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid $primary;
+    //   background-color: $white;
+  }
+
+  &-single {
+    cursor: pointer;
+  }
+}
+
+.activeStep {
+  background-color: $primary;
+  outline: 1px solid $primary !important;
+  outline-offset: 2px;
+}

@@ -1,22 +1,36 @@
-.wp-block-group {
-  .patientCard {
-    padding: $spacer * 0.5 $spacer * 0.5 $spacer * 1.2 $spacer * 0.5;
-    box-shadow: $box-shadow;
-    border-radius: $border-radius;
-    margin-top: $spacer * 1.25;
-    margin-bottom: $spacer * 3;
+.patientCard {
+  padding: $spacer * 0.5 $spacer * 0.5 $spacer * 1.2 $spacer * 0.5;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  margin-top: $spacer * 1.25;
+  margin-bottom: $spacer * 3;
 
-    .wp-block-embed {
-      .wp-block-embed__wrapper {
-        iframe {
-          border-radius: $border-radius;
-        }
+  .wp-block-embed {
+    .wp-block-embed__wrapper {
+      iframe {
+        border-radius: $border-radius;
       }
     }
-
-    .wp-block-group {
-      padding-left: $spacer * 1.5;
-      padding-right: $spacer * 1.5;
-    }
   }
+
+  .wp-block-group {
+    padding-left: $spacer * 1.5;
+    padding-right: $spacer * 1.5;
+  }
+}
+
+.backgroundFullWidth {
+  // position: relative;
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   // transform: translateX(-50%);
+  //   height: 100%;
+  //   width: 100vw;
+  //   padding: 2rem 0;
+  //   background-color: $primary;
+  // }
 }

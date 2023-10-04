@@ -57,6 +57,7 @@
 
         &-content {
           @extend .col, .text-center;
+          position: relative;
 
           @media (max-width: 575.98px) {
             width: 100%;
@@ -68,27 +69,30 @@
           }
 
           p {
-            @extend .px-4;
+            padding: $spacer * 3;
             font-size: $h3-font-size;
-          }
+            font-weight: $font-weight-light;
 
-          .quote-icon-start {
-            // position: absolute;
-            // top: 0;
-            // left: 0;
-            // transform: translate(65%, -13%);
-            // font-size: 141px;
-            // color: $secondary;
-            // z-index: 200;
-          }
-          .quote-icon-end {
-            // position: absolute;
-            // bottom: 0;
-            // right: 25%;
-            // transform: translate(70%, -3%) rotate(180deg);
-            // font-size: 141px;
-            // color: $secondary;
-            // z-index: 200;
+            &::after {
+              content: '';
+              background-image: url('~@images/quotationEnd.png');
+              background-repeat: no-repeat;
+              background-size: contain;
+              position: absolute;
+              width: 55px;
+              height: 50px;
+              transform: translate(10%, 14%);
+            }
+
+            &::before {
+              content: '';
+              background-image: url('~@images/quotationStart.png');
+              background-repeat: no-repeat;
+              position: absolute;
+              width: 55px;
+              height: 50px;
+              transform: translate(-110%, -30%);
+            }
           }
         }
       }
