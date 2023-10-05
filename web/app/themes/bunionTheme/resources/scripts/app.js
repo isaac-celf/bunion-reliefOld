@@ -91,7 +91,6 @@ loadMore();
 /**
 Stepper
 */
-
 const stepper = document.querySelectorAll('.stepper');
 
 stepper.forEach(function (step) {
@@ -116,13 +115,13 @@ stepper.forEach(function (step) {
     }
 
     el.addEventListener('click', function () {
-      console.log(el.dataset.image);
       // Indicator
       stepperIndicator.forEach(function (indicator) {
         indicator.classList.remove('activeStep');
       });
       el.firstElementChild.classList.add('activeStep');
 
+      // Image
       stepperImage.src = el.dataset.image;
 
       // Step
@@ -131,6 +130,27 @@ stepper.forEach(function (step) {
       });
       stepperContent[index].classList.remove('opacity-50');
     });
+  });
+});
+
+/**
+Tabs
+*/
+const tabTitles = document.querySelectorAll('.btnTab');
+
+tabTitles.forEach(function (el, index) {
+  console.log(el, index);
+  if (index == 0) {
+    el.classList.add('activeTab');
+  }
+
+  el.addEventListener('click', function () {
+    console.log(`clicked btn ${index}`);
+
+    tabTitles.forEach(function (btn) {
+      btn.classList.remove('activeTab');
+    });
+    el.classList.add('activeTab');
   });
 });
 

@@ -5,21 +5,21 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class Tabs extends Block
+class Tab extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Tabs';
+    public $name = 'Tab';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Tabs block.';
+    public $description = 'A simple Tab block.';
 
     /**
      * The block category.
@@ -54,7 +54,7 @@ class Tabs extends Block
      *
      * @var array
      */
-    public $parent = [];
+    public $parent = ['acf/tabs'];
 
     /**
      * The default block mode.
@@ -118,19 +118,6 @@ class Tabs extends Block
     ];
 
     /**
-     * The block preview example data.
-     *
-     * @var array
-     */
-    public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
-    ];
-
-    /**
      * Data to be passed to the block before rendering.
      *
      * @return array
@@ -138,9 +125,9 @@ class Tabs extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
-            'allowedBlocks' => json_encode(['acf/tab']),
-            'template' => json_encode([['acf/tab'], ['acf/tab'], ['acf/tab'], ['acf/tab']]),
+            'tabTitle' => $this->getTitle(),
+            'tabContent' => $this->getContent(),
+            'tabImage' => $this->getImage(),
         ];
     }
 
@@ -151,24 +138,22 @@ class Tabs extends Block
      */
     public function fields()
     {
-        $tabs = new FieldsBuilder('tabs');
+        $tab = new FieldsBuilder('tab');
 
-        $tabs
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+        $tab
+            ->addText('tab_title', [
+                'label' => 'Tab Title'
+            ])
 
-        return $tabs->build();
-    }
+            ->addTextarea('tab_content', [
+                'label' => 'Tab Content'
+            ])
 
-    /**
-     * Return the items field.
-     *
-     * @return array
-     */
-    public function items()
-    {
-        return get_field('items') ?: $this->example['items'];
+            ->addImage('tab_image', [
+                'label' => 'Tab Image'
+            ]);
+
+        return $tab->build();
     }
 
     /**
@@ -179,5 +164,17 @@ class Tabs extends Block
     public function enqueue()
     {
         //
+    }
+
+    public function getTitle() {
+        return get_field('tab_title');
+    }
+
+    public function getContent() {
+        return get_field('tab_content');
+    }
+
+    public function getImage() {
+        return get_field('tab_image');
     }
 }

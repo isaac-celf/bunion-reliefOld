@@ -101,23 +101,6 @@ class Stepper extends Block
     ];
 
     /**
-     * The block styles.
-     *
-     * @var array
-     */
-    public $styles = [
-        [
-            'name' => 'light',
-            'label' => 'Light',
-            'isDefault' => true,
-        ],
-        [
-            'name' => 'dark',
-            'label' => 'Dark',
-        ]
-    ];
-
-    /**
      * Data to be passed to the block before rendering.
      *
      * @return array
@@ -127,8 +110,6 @@ class Stepper extends Block
         return [
             'allowedBlocks' => json_encode(['acf/step']),
             'template' => json_encode([['acf/step'], ['acf/step'], ['acf/step'], ['acf/step']]),
-
-            'lengthArr' => $this->getLength(),
         ];
     }
 
@@ -157,9 +138,5 @@ class Stepper extends Block
     public function enqueue()
     {
         //
-    }
-
-    public function getLength() {
-        // return 
     }
 }
