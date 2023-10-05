@@ -1,4 +1,10 @@
 .stepper {
+  &-img-box {
+    img {
+      border-radius: $border-radius;
+    }
+  }
+
   &-indicator {
     height: 13px;
     width: 10px;

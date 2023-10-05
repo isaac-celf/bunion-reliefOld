@@ -142,15 +142,19 @@ class Tab extends Block
 
         $tab
             ->addText('tab_title', [
-                'label' => 'Tab Title'
+                'label' => 'Tab Title',
+                'required' => 1,
             ])
 
             ->addTextarea('tab_content', [
-                'label' => 'Tab Content'
+                'label' => 'Tab Content',
+                'required' => 1,
             ])
 
             ->addImage('tab_image', [
-                'label' => 'Tab Image'
+                'label' => 'Tab Image',
+                'required' => 1,
+                'preview_size' => 'blog'
             ]);
 
         return $tab->build();
@@ -175,6 +179,12 @@ class Tab extends Block
     }
 
     public function getImage() {
-        return get_field('tab_image');
+        $image = get_field('tab_image');
+
+        if ($image && isset($image['sizes']['blog-image'])) {
+            return $image['sizes']['blog-image'];
+        } else {
+           return null;
+        }
     }
 }

@@ -118,19 +118,6 @@ class Tabs extends Block
     ];
 
     /**
-     * The block preview example data.
-     *
-     * @var array
-     */
-    public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
-    ];
-
-    /**
      * Data to be passed to the block before rendering.
      *
      * @return array
@@ -138,7 +125,6 @@ class Tabs extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
             'allowedBlocks' => json_encode(['acf/tab']),
             'template' => json_encode([['acf/tab'], ['acf/tab'], ['acf/tab'], ['acf/tab']]),
         ];
@@ -154,21 +140,9 @@ class Tabs extends Block
         $tabs = new FieldsBuilder('tabs');
 
         $tabs
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+        ;
 
         return $tabs->build();
-    }
-
-    /**
-     * Return the items field.
-     *
-     * @return array
-     */
-    public function items()
-    {
-        return get_field('items') ?: $this->example['items'];
     }
 
     /**

@@ -136,21 +136,55 @@ stepper.forEach(function (step) {
 /**
 Tabs
 */
-const tabTitles = document.querySelectorAll('.btnTab');
+const tabBlock = document.querySelectorAll('.tabs');
 
-tabTitles.forEach(function (el, index) {
-  console.log(el, index);
-  if (index == 0) {
-    el.classList.add('activeTab');
-  }
+tabBlock.forEach(function (tab) {
+  const singleTab = tab.querySelectorAll('.tab');
+  const tabTitles = tab.querySelectorAll('.btnTab');
+  const tabBody = tab.querySelectorAll('.tab-body');
 
-  el.addEventListener('click', function () {
-    console.log(`clicked btn ${index}`);
+  /**
+  default Tab state
+  */
+  tabBody.forEach(function (body) {
+    body.classList.add('invisible');
+  });
+  tabBody[0].classList.remove('invisible');
 
-    tabTitles.forEach(function (btn) {
-      btn.classList.remove('activeTab');
+  /**
+  Tab Buttons
+  */
+  tabTitles.forEach(function (el, index) {
+    if (index == 0) {
+      el.classList.add('activeTab');
+    }
+
+    /**
+    Each Button
+    */
+    el.addEventListener('click', function () {
+      tabTitles.forEach(function (btn) {
+        btn.classList.remove('activeTab');
+      });
+      el.classList.add('activeTab');
+
+      /**
+      Full Tab
+      */
+      singleTab.forEach(function (tab) {
+        tab.classList.add('pe-auto');
+      });
+      singleTab[index].classList.replace('pe-auto', 'pe-none');
+
+      /**
+      Tab Content
+      */
+      tabBody.forEach(function (body) {
+        body.classList.add('invisible');
+      });
+
+      tabBody[index].classList.remove('invisible');
     });
-    el.classList.add('activeTab');
   });
 });
 

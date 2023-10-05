@@ -1,4 +1,4 @@
-<div class="stepper row justify-content-center align-items-center flex-column flex-md-row gap-5 gap-md-0">
+<div class="stepper row justify-content-center align-items-center flex-column flex-md-row gap-5 gap-md-0 mb-5">
     <div class="stepper-img-box col-md-4 col-6">
         <img src="" alt="stepper image" class="stepper-img w-100">
     </div>

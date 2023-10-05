@@ -144,9 +144,11 @@ class Step extends Block
         $step
             ->addText('step_title', [
                 'label' => 'Step Title',
+                'required' => 1,
             ])
             ->addTextarea('step_content', [
                 'label' => 'Step Content',
+                'required' => 1,
             ])
             ->addImage('step_image', [
                 'label' => 'Step Image',
