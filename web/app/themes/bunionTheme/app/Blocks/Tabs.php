@@ -5,21 +5,21 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class Stepper extends Block
+class Tabs extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Stepper';
+    public $name = 'Tabs';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Stepper block.';
+    public $description = 'A simple Tabs block.';
 
     /**
      * The block category.
@@ -118,6 +118,19 @@ class Stepper extends Block
     ];
 
     /**
+     * The block preview example data.
+     *
+     * @var array
+     */
+    public $example = [
+        'items' => [
+            ['item' => 'Item one'],
+            ['item' => 'Item two'],
+            ['item' => 'Item three'],
+        ],
+    ];
+
+    /**
      * Data to be passed to the block before rendering.
      *
      * @return array
@@ -125,10 +138,7 @@ class Stepper extends Block
     public function with()
     {
         return [
-            'allowedBlocks' => json_encode(['acf/step']),
-            'template' => json_encode([['acf/step'], ['acf/step'], ['acf/step'], ['acf/step']]),
-
-            'lengthArr' => $this->getLength(),
+            'items' => $this->items(),
         ];
     }
 
@@ -139,14 +149,24 @@ class Stepper extends Block
      */
     public function fields()
     {
-        $stepper = new FieldsBuilder('stepper');
+        $tabs = new FieldsBuilder('tabs');
 
-        $stepper
+        $tabs
             ->addRepeater('items')
                 ->addText('item')
             ->endRepeater();
 
-        return $stepper->build();
+        return $tabs->build();
+    }
+
+    /**
+     * Return the items field.
+     *
+     * @return array
+     */
+    public function items()
+    {
+        return get_field('items') ?: $this->example['items'];
     }
 
     /**
@@ -157,9 +177,5 @@ class Stepper extends Block
     public function enqueue()
     {
         //
-    }
-
-    public function getLength() {
-        // return 
     }
 }

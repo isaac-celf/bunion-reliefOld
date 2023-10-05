@@ -68,7 +68,7 @@ domReady(async () => {
   }
 
   /**
-  result - inject Zip Code > URL > redirect searchx
+  result - inject Zip Code > URL > redirect search
   */
   const queryZipCode = window.location.search;
   const urlParams = new URLSearchParams(queryZipCode);
@@ -91,42 +91,46 @@ loadMore();
 /**
 Stepper
 */
-const stepperSingle = document.querySelectorAll('.stepper-single');
-const stepperImage = document.querySelectorAll('.stepper-img');
-const stepperIndicator = document.querySelectorAll('.stepper-indicator');
-const stepperContent = document.querySelectorAll('.stepper-content');
 
-/**
-default state
-*/
-stepperContent.forEach((el) => {
-  el.classList.add('opacity-50');
-});
+const stepper = document.querySelectorAll('.stepper');
 
-stepperSingle[0].firstElementChild.classList.add('activeStep');
-stepperImage[0].classList.remove('d-none');
-stepperContent[0].classList.remove('opacity-50');
+stepper.forEach(function (step) {
+  const stepperSingle = step.querySelectorAll('.stepper-single');
+  const stepperImage = step.querySelector('.stepper-img');
+  const stepperIndicator = step.querySelectorAll('.stepper-indicator');
+  const stepperContent = step.querySelectorAll('.stepper-content');
 
-stepperSingle.forEach(function (el, index) {
-  el.addEventListener('click', function () {
-    console.log(el.dataset.image);
-    // Indicator
-    stepperIndicator.forEach(function (indicator) {
-      indicator.classList.remove('activeStep');
+  /**
+  default state
+  */
+  stepperContent.forEach((el) => {
+    el.classList.add('opacity-50');
+  });
+
+  stepperSingle[0].firstElementChild.classList.add('activeStep');
+  stepperContent[0].classList.remove('opacity-50');
+
+  stepperSingle.forEach(function (el, index) {
+    if (index == 0) {
+      stepperImage.src = el.dataset.image;
+    }
+
+    el.addEventListener('click', function () {
+      console.log(el.dataset.image);
+      // Indicator
+      stepperIndicator.forEach(function (indicator) {
+        indicator.classList.remove('activeStep');
+      });
+      el.firstElementChild.classList.add('activeStep');
+
+      stepperImage.src = el.dataset.image;
+
+      // Step
+      stepperContent.forEach(function (step) {
+        step.classList.add('opacity-50');
+      });
+      stepperContent[index].classList.remove('opacity-50');
     });
-    el.firstElementChild.classList.add('activeStep');
-
-    // Image
-    stepperImage.forEach(function (img) {
-      img.classList.add('d-none');
-    });
-    stepperImage[index].classList.remove('d-none');
-
-    // Step
-    stepperContent.forEach(function (step) {
-      step.classList.add('opacity-50');
-    });
-    stepperContent[index].classList.remove('opacity-50');
   });
 });
 

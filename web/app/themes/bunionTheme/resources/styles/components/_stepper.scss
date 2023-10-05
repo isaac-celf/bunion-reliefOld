@@ -1,44 +1,63 @@
 .stepper {
-  &-img-box {
-    img {
-      height: 400px;
-    }
-  }
-
-  &-indicators {
-    // gap: 5rem;
-    // position: relative;
-    // z-index: 2;
-
-    // &::after {
-    //   content: '';
-    //   width: 1px;
-    //   height: 100%;
-    //   background-color: $secondary;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 50%;
-    //   transform: translateX(-50%);
-    //   z-index: -1;
-    //   pointer-events: none;
-    // }
-  }
-
   &-indicator {
     height: 13px;
     width: 10px;
     border-radius: 50%;
-    border: 1px solid $primary;
+    border: 1px solid $secondary;
     //   background-color: $white;
   }
 
   &-single {
     cursor: pointer;
+    position: relative;
+  }
+
+  &-step {
+    .wp-block-step {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: $secondary;
+        top: 50%;
+        left: 1%;
+        transform: translate(-100%, -50%);
+        z-index: -1;
+      }
+
+      &:first-child::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 50%;
+        background-color: $secondary;
+        top: 50%;
+        left: 1%;
+        transform: translateX(-100%);
+        z-index: -1;
+      }
+
+      &:last-child::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 50%;
+        background-color: $secondary;
+        top: 0;
+        left: 1%;
+        transform: translateX(-100%);
+        z-index: -1;
+      }
+    }
   }
 }
 
 .activeStep {
   background-color: $primary;
+  border-color: $primary;
   outline: 1px solid $primary !important;
   outline-offset: 2px;
 }
