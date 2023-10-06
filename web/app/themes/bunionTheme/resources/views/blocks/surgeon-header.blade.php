@@ -37,7 +37,7 @@
             <div class="modal-img-box row px-3 align-items-center pe-6">
                 <p class="modal-description ps-3 pt-0 mb-0 col-8">{{ $formDescription }}</p>
                 <div class="col-4">
-                    @svg('images.human-form')
+                    {{ $formIcon }}
                 </div>
             </div>
 

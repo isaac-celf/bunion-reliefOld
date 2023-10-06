@@ -126,9 +126,9 @@ class Step extends Block
     public function with()
     {
         return [
-            'stepTitle' => $this->getTitle(),
-            'stepContent' => $this->getContent(),
-            'stepImage' => $this->getImage(),
+            'stepTitle' => $this->getStepTitle(),
+            'stepContent' => $this->getStepContent(),
+            'stepImage' => $this->getStepImage(),
         ];
     }
 
@@ -180,18 +180,27 @@ class Step extends Block
     /**
      * get Custom Field step_title
      */
-    public function getTitle() {
-        return get_field('step_title');
+    public function getStepTitle() {
+
+        $stepTitle = get_field('step_title');
+
+        return isset($stepTitle) ? $stepTitle : null;
     }
 
     /**
      * get Custom Field step_content
      */
-    public function getContent() {
-        return get_field('step_content');
+    public function getStepContent() {
+
+        $stepContent = get_field('step_content');
+
+        return isset($stepContent) ? $stepContent : null;
     }
 
-    public function getImage() {
-        return get_field('step_image');
+    public function getStepImage() {
+
+        $stepImage = get_field('step_image');
+
+        return isset($stepImage) ? $stepImage : null;
     }
 }

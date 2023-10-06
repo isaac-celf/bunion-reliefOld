@@ -50,7 +50,7 @@ add_filter( 'wpsl_templates',  function ( $templates ) {
 /**
  * prevent default template to load
  */
-add_filter( 'wpsl_skip_cpt_template', '__return_true' );
+add_filter( 'wpsl_skip_cpt_template', '__return_true');
 
 /**
  * load store-locator

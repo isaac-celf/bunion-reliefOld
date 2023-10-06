@@ -109,7 +109,7 @@ class Stepper extends Block
     {
         return [
             'allowedBlocks' => json_encode(['acf/step']),
-            'template' => json_encode([['acf/step'], ['acf/step'], ['acf/step'], ['acf/step']]),
+            'template' => json_encode([['acf/step'], ['acf/step'], ['acf/step']]),
         ];
     }
 
@@ -123,10 +123,7 @@ class Stepper extends Block
         $stepper = new FieldsBuilder('stepper');
 
         $stepper
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
-
+        ;
         return $stepper->build();
     }
 

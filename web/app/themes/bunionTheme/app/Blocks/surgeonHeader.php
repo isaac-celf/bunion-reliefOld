@@ -4,6 +4,8 @@ namespace App\Blocks;
 
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
+use Log1x\SageSvg\SageSvg;
+
 use WP_Query;
 
 class surgeonHeader extends Block
@@ -127,9 +129,10 @@ class surgeonHeader extends Block
     {
         return [
             'surgeon' => $this->getSurgeon(),
-            'surgeonPhone' => $this->getPhone(),
-            'surgeonURL' => $this->getURL(),
+            'surgeonPhone' => $this->getSurgeonPhone(),
+            'surgeonURL' => $this->getSurgeonURL(),
             'formDescription' => $this->getFormDescription(),
+            'formIcon' => $this->getFormSVG(),
         ]; 
     }
 
@@ -159,18 +162,36 @@ class surgeonHeader extends Block
     }
 
     public function getSurgeon() {
-        return new WP_Query(['post_type' => 'wpsl_stores']);
+
+        $storePost = new WP_Query(['post_type' => 'wpsl_stores']);
+
+        return isset($storePost) ? $storePost : null;
     }
 
-    public function getPhone() {
-        return get_post_meta(get_the_ID(), 'wpsl_phone', true);
+    public function getSurgeonPhone() {
+
+        $surgeonPhone = get_post_meta(get_the_ID(), 'wpsl_phone', true);
+
+        return isset($surgeonPhone) ? $surgeonPhone : null;
     }
 
-    public function getURL() {
-        return get_post_meta(get_the_ID(), 'wpsl_url', true);
+    public function getSurgeonURL() {
+
+        $surgeonURL = get_post_meta(get_the_ID(), 'wpsl_url', true);
+
+        return isset($surgeonURL) ? $surgeonURL : null;
     }
 
     public function getFormDescription() {
-        return get_field('form_description', 'option');
+
+        $formDescription = get_field('form_description', 'option');
+
+        return isset($formDescription) ? $formDescription : null;
+    }
+
+    public function getFormSVG() {
+        $formIcon = \App(SageSvg::class)->render('images.human-form', 'w-100');
+
+        return $formIcon;
     }
 }

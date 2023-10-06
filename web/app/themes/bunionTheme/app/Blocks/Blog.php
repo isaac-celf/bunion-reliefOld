@@ -34,7 +34,7 @@ class Blog extends Block
      *
      * @var string|array
      */
-    public $icon = 'editor-ul';
+    public $icon = 'welcome-write-blog';
 
     /**
      * The block keywords.
@@ -119,19 +119,6 @@ class Blog extends Block
     ];
 
     /**
-     * The block preview example data.
-     *
-     * @var array
-     */
-    public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
-    ];
-
-    /**
      * Data to be passed to the block before rendering.
      *
      * @return array
@@ -139,10 +126,7 @@ class Blog extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
             'blogs' => $this->getBlogs(),
-            'blogTitle' => $this->getTitle(),
-            'blogContent' => $this->getContent(),
         ];
     }
 
@@ -156,21 +140,9 @@ class Blog extends Block
         $blog = new FieldsBuilder('blog');
 
         $blog
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+        ;
 
         return $blog->build();
-    }
-
-    /**
-     * Return the items field.
-     *
-     * @return array
-     */
-    public function items()
-    {
-        return get_field('items') ?: $this->example['items'];
     }
 
     /**
@@ -185,23 +157,20 @@ class Blog extends Block
 
     /**
      * get Blogs
+     * 
+     * 
      */
     public function getBlogs() {
-        return new WP_Query([
+
+        $blogPost = new WP_Query([
             'post_type' => 'blog',
             'posts_per_page' => 6,
             'orderby' => 'date',
             'order' => 'DESC',
-            'paged' => 1,
+            'paged' => 1,         
         ]);
+
+        return $blogPost;
     }
-
-    public function getTitle() {
-    }
-
-    public function getContent() {
-
-    }
-
 
 }

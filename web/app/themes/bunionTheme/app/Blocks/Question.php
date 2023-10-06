@@ -34,7 +34,7 @@ class Question extends Block
      *
      * @var string|array
      */
-    public $icon = 'editor-ul';
+    public $icon = 'info';
 
     /**
      * The block keywords.
@@ -137,6 +137,7 @@ class Question extends Block
             'filters' => [
                 0 => 'search',
             ],
+            'instructions' => 'Pick and rearrange any question', 
         ]);
 
         return $question->build();
@@ -154,11 +155,10 @@ class Question extends Block
     
     /**
      * 
-     * @return object
      */
     public function getQuestions() {
         $questions = get_field('questions');
 
-        return $questions;
+        return isset($questions) ? $questions : null;
     }
 }

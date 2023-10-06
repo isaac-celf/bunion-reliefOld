@@ -125,9 +125,9 @@ class Tab extends Block
     public function with()
     {
         return [
-            'tabTitle' => $this->getTitle(),
-            'tabContent' => $this->getContent(),
-            'tabImage' => $this->getImage(),
+            'tabTitle' => $this->getTabTitle(),
+            'tabContent' => $this->getTabContent(),
+            'tabImage' => $this->getTabImage(),
         ];
     }
 
@@ -170,15 +170,21 @@ class Tab extends Block
         //
     }
 
-    public function getTitle() {
-        return get_field('tab_title');
+    public function getTabTitle() {
+
+        $tabTitle = get_field('tab_title');
+
+        return isset($tabTitle) ? $tabTitle : null;
     }
 
-    public function getContent() {
-        return get_field('tab_content');
+    public function getTabContent() {
+
+        $tabContent = get_field('tab_content');
+
+        return isset($tabContent) ? $tabContent : null;
     }
 
-    public function getImage() {
+    public function getTabImage() {
         $image = get_field('tab_image');
 
         if ($image && isset($image['sizes']['blog-image'])) {

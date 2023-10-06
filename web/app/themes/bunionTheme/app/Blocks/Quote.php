@@ -128,7 +128,6 @@ class Quote extends Block
             'quotes' => $this->getQuotes(),
             'location' => $this->getLocation(),
             'quoterQuote' => $this->getQuote(),
-            // 'image' => $this->getImage(),
         ];
     }
 
@@ -168,15 +167,19 @@ class Quote extends Block
     public function getQuotes() {
         $quotes = get_field("quotes");
 
-        return $quotes;
+        return isset($quotes) ? $quotes : null;
     }
 
     public function getLocation() {
-        return get_field("quoter_location");
+        $location = get_field("quoter_location");
+
+        return isset($location) ? $location : null;
     }
 
     public function getQuote() {
-        return get_field('quoter_quote');
+        $quote = get_field('quoter_quote');
+
+        return isset($quote) ? $quote : null;
     }
 
 }
