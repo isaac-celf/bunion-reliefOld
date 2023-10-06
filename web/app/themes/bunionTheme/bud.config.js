@@ -83,20 +83,35 @@ export default async (app) => {
     .set('settings.spacing.margin', true)
     .set('settings.spacing.units', ['px', '%', 'em', 'rem', 'vw', 'vh'])
     .set('settings.typography.customFontSize', false)
-    .set('setting.typography.fontFamilies', {
-      fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-      slug: 'helvetica-arial',
-      name: 'Helvetica or Arial',
-    })
-    .set('setting.typography.fontSizes', {
-      slug: 'big',
-      size: 32,
-      name: 'Big',
-    })
+    .set('settings.typography.fluid', true)
+    .set('settings.typography.fontSizes', [
+      {
+        slug: 'small',
+        size: '1.6rem',
+        name: 'Small',
+      },
+      {
+        slug: 'medium',
+        size: '1.8rem',
+        name: 'Medium',
+      },
+      {
+        slug: 'large',
+        size: '3.8rem',
+        name: 'Large',
+      },
+      {
+        slug: 'xlarge',
+        size: '4.9rem',
+        name: 'Extra Large',
+        fluid: {
+          min: '2.4rem',
+          max: '4.9rem',
+        },
+      },
+    ])
     .set('settings.typography.lineHeight', true)
     .set('settings.typography.fontWeight', true)
-    .set('settings.border.radius', true)
-    .set('settings.border.shadow', true)
 
     .set('settings.layout', {contentSize: '1340px', wideSize: '1450px'})
 

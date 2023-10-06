@@ -35,30 +35,39 @@
     "typography": {
       "customFontSize": false,
       "dropCap": false,
+      "fluid": true,
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "1.6rem",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "size": "1.8rem",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "3.8rem",
+          "name": "Large"
+        },
+        {
+          "slug": "xlarge",
+          "size": "4.9rem",
+          "name": "Extra Large",
+          "fluid": {
+            "min": "2.4rem",
+            "max": "4.9rem"
+          }
+        }
+      ],
       "lineHeight": true,
       "fontWeight": true
-    },
-    "border": {
-      "radius": true,
-      "shadow": true
     },
     "layout": {
       "contentSize": "1340px",
       "wideSize": "1450px"
-    }
-  },
-  "setting": {
-    "typography": {
-      "fontFamilies": {
-        "fontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
-        "slug": "helvetica-arial",
-        "name": "Helvetica or Arial"
-      },
-      "fontSizes": {
-        "slug": "big",
-        "size": 32,
-        "name": "Big"
-      }
     }
   }
 }

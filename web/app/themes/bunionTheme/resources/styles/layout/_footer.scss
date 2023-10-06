@@ -27,6 +27,7 @@ footer {
     &__button {
       @extend .text-primary;
       transition: $btn-transition;
+      font-size: $font-size-sm;
 
       &:hover {
         transform: $btn-animate;
@@ -35,6 +36,6 @@ footer {
     }
   }
   i {
-    font-size: 1.5rem;
+    font-size: $h5-font-size;
   }
 }

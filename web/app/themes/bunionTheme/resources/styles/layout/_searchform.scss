@@ -21,6 +21,8 @@
         }
 
         p {
+          @extend .fs-6;
+
           display: inline-block;
           width: 70%;
           font-weight: $font-weight-light;
@@ -36,7 +38,8 @@
           width: 70%;
           input[type='text'] {
             border-radius: $border-radius !important;
-            height: 41px;
+            font-size: $h6-font-size;
+            // height: 41px;
           }
 
           @media (max-width: 767.98px) {
@@ -79,9 +82,9 @@
 
       .acf-button {
         @extend .fw-light, .position-absolute, .z-1;
-        height: 41px;
+        font-size: $h6-font-size;
         right: 15%;
-        transform: translate(-100%, -139%);
+        transform: translate(-100%, -146%);
 
         @include media-breakpoint-between(md, lg) {
           // right: 10%;
@@ -91,7 +94,7 @@
           right: -17%;
         }
         @media (max-width: 575.98px) {
-          transform: translate(0%, -140%);
+          transform: translate(0%, -147%);
           right: 0%;
         }
       }

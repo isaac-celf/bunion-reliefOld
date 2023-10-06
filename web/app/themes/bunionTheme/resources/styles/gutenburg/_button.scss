@@ -4,6 +4,7 @@
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     transition: $btn-transition;
+    font-size: $h6-font-size;
 
     &:hover {
       // transform: $btn-animate;
@@ -19,6 +20,7 @@
     box-shadow: $box-shadow;
     transition: $btn-transition;
     border: none;
+    font-size: $h6-font-size;
 
     &:hover {
       // transform: $btn-animate;

@@ -1,7 +1,7 @@
 .question {
   &__info {
     color: $primary;
-    font-size: $default-font-size;
+    font-size: $h5-font-size;
 
     &:not(.collapsed) {
       color: $primary;
@@ -9,6 +9,7 @@
   }
 
   &__answer {
+    font-size: $h6-font-size;
     line-height: 1.7;
   }
   &__answer:last-child p {

@@ -7,15 +7,15 @@
 
         @if ($footer)
             <div class="footer__content col p-0">
-                <div class="footer__info row mb-3 ms-lg-6 gap-3 gap-lg-0">
+                <div class="footer__info row mb-3 ms-lg-6 gap-5 gap-lg-0">
                     @foreach ($footer as $item)
                         <div class="footer__list col-md">
-                            <h4 class="text-capitalize text-white fs-5">{{ $item->label }}</h4>
+                            <h3 class="text-capitalize text-white fs-5">{{ $item->label }}</h3>
 
                             @foreach ($item->children as $child)
                                 <ul class="nav flex-column">
                                     <li class="nav-item"><a href="{{ $child->url }}"
-                                            class="nav-link text-capitalize text-white fw-light ps-0 py-0">{{ $child->label }}</a>
+                                            class="nav-link text-capitalize text-white fw-light ps-0 py-0 fs-6">{{ $child->label }}</a>
                                     </li>
                                 </ul>
                             @endforeach
@@ -24,10 +24,10 @@
 
                     {{-- contact us --}}
                     <div class="footer__list col siteOptions">
-                        <h4 class="text-capitalize text-white fs-5">contact us</h4>
+                        <h3 class="text-capitalize text-white fs-5">contact us</h3>
                         <ul class="nav flex-column">
-                            <p class="text-white my-0 fw-light">{!! $address !!}</p>
-                            <p class="text-white my-0 fw-light">{!! $phoneNum !!}</p>
+                            <p class="text-white my-0 fw-light fs-6">{!! $address !!}</p>
+                            <p class="text-white my-0 fw-light fs-6">{!! $phoneNum !!}</p>
                         </ul>
                         <ul class="nav gap-3">
                             <li class="nav-link p-0"><a href="{{ $socialFB }}"
