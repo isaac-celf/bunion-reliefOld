@@ -50,6 +50,7 @@ class Options extends Field
         ->addText('contact_office_number', ['label' => 'Number'])
         ->addText('contact_office_email', ['label' => 'Email']);
         
+        // buttons
         $options
         ->addTab('site_button', ['label'=>'Footer Buttons'])
         ->addRepeater('footer_buttons', ['label' => 'Buttons', 'layout' => 'block'])

@@ -47,7 +47,7 @@
     </nav>
 
     {{-- offcanvas --}}
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" style="height: 100vh">
+    <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="offcanvas" style="height: 100vh">
         <div class="offcanvas-header">
             <a class="brand col-1" href="{{ home_url('/') }}">
                 <img src="{{ bloginfo('url') . '/app/uploads/2023/09/Purple@300x.png' }}" alt="logo1"
@@ -55,7 +55,7 @@
             </a>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body d-flex flex-column justify-content-between pt-0">
+        <div class="offcanvas-body d-flex flex-column justify-content-between p-0">
             <div class="offcanvas__navigation">
                 @foreach ($navigation as $item)
                     @if ($item->children)
@@ -63,7 +63,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">
                                     <a href="{{ $item->url }}"
-                                        class="accordion-button collapsed px-0 text-decoration-none border-bottom"
+                                        class="accordion-button collapsed text-decoration-none border-bottom"
                                         type="button" data-bs-toggle="collapse" data-bs-target="#{{ $item->id }}"
                                         aria-expanded="false" aria-controls="flush-collapseOne">
                                         {{ $item->label }}
@@ -84,7 +84,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">
                                     <a href="{{ $item->url }}"
-                                        class="accordion__single text-decoration-none py-3 d-block border-bottom">{{ $item->label }}</a>
+                                        class="accordion__single text-decoration-none py-3 px-4 d-block border-bottom">{{ $item->label }}</a>
                                 </h2>
                             </div>
                         </div>
@@ -92,18 +92,18 @@
                 @endforeach
             </div>
 
-            <div class="offcanvas text-primary">
+            <div class="offcanvas__footer text-primary px-4">
                 <ul class="d-flex flex-column mb-1 ps-0">
-                    <div class="offcanvas__contact_details d-flex gap-2 align-items-center">
+                    <div class="offcanvas__contact-details d-flex gap-2 align-items-center">
                         <i class="bi bi-telephone"></i>
                         <p class="my-0 fw-bold">{!! $phoneNum !!}</p>
                     </div>
-                    <div class="offcanvas__contact_details d-flex gap-2 align-items-center">
+                    <div class="offcanvas__contact-details d-flex gap-2 align-items-center">
                         <i class="bi bi-envelope"></i>
                         <p class="my-0 fw-bold">{!! $email !!}</p>
                     </div>
                 </ul>
-                <ul class="list-unstyled d-flex gap-2 mb-0">
+                <ul class="offcanvas__social-icons list-unstyled d-flex gap-3 mb-0">
                     <li class="p-1 ps-0"><a href="{{ $socialFB }}" class="icon icon-link icon-link-hover"
                             target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                 class="bi bi-facebook"></i></a></li>
