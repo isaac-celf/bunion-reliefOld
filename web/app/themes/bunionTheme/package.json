@@ -31,7 +31,8 @@
     "@popperjs/core": "^2.11.8",
     "axios": "^1.5.1",
     "bootstrap": "5.3.1",
-    "palette-webpack-plugin": "^1.0.5"
+    "palette-webpack-plugin": "^1.0.5",
+    "swiper": "^10.3.1"
   },
   "volta": {
     "node": "18.15.0",

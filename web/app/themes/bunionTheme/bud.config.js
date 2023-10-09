@@ -87,26 +87,26 @@ export default async (app) => {
     .set('settings.typography.fontSizes', [
       {
         slug: 'small',
-        size: '1.6rem',
+        size: '1.125rem',
         name: 'Small',
       },
       {
         slug: 'medium',
-        size: '1.8rem',
+        size: '1.5rem',
         name: 'Medium',
       },
       {
         slug: 'large',
-        size: '3.8rem',
+        size: '1.625rem',
         name: 'Large',
       },
       {
         slug: 'xlarge',
-        size: '4.9rem',
+        size: '2.5625rem',
         name: 'Extra Large',
         fluid: {
-          min: '2.4rem',
-          max: '4.9rem',
+          min: '1.5rem',
+          max: '2.5625rem',
         },
       },
     ])

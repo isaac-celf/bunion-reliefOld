@@ -11,6 +11,10 @@
 
 // offcanvas
 .offcanvas {
+  .btn-close {
+    font-size: $h5-font-size;
+  }
+
   .accordion {
     &-button {
       font-size: $h4-font-size;
@@ -18,6 +22,8 @@
 
       &::after {
         color: $primary;
+        font-size: 3rem;
+        transform: translateY(-1rem);
       }
     }
 
