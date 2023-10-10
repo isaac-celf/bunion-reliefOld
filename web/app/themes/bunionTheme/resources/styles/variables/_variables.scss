@@ -22,7 +22,7 @@ $font-weight-bolder: 900;
 
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
 // $font-size-sm: $font-size-base * 1.2;
-$font-size-sm: $font-size-base * 0.875;
+$font-size-sm: $font-size-base * 0.6875;
 $font-size-lg: $font-size-base * 1.25;
 
 $h1-font-size: $font-size-base * 3.0625;
@@ -100,6 +100,7 @@ $border-radius: 0.6875rem;
 $progress-height: 2rem;
 $btn-transition: all 0.2s;
 $btn-animate: translateY(2px);
+$--swiper-theme-color: #4a317a;
 
 // Text Clamps
 // h1 {

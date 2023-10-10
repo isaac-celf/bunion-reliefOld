@@ -1,3 +1,23 @@
+.wp-block-stepper {
+  .step {
+    .stepper-step {
+      .stepper-single {
+        .stepper-content {
+          .stepper-title {
+            font-size: $h5-font-size;
+            color: $primary;
+            font-weight: $font-weight-bold;
+          }
+
+          .stepper-description {
+            font-size: $font-size-base;
+            font-weight: $font-weight-light;
+          }
+        }
+      }
+    }
+  }
+}
 .stepper {
   &-img-box {
     img {
@@ -66,4 +86,10 @@
   border-color: $primary;
   outline: 1px solid $primary !important;
   outline-offset: 2px;
+}
+
+.stepper-title {
+}
+
+.stepper-description {
 }

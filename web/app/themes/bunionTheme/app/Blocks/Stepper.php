@@ -110,6 +110,7 @@ class Stepper extends Block
         return [
             'allowedBlocks' => json_encode(['acf/step']),
             'template' => json_encode([['acf/step'], ['acf/step'], ['acf/step']]),
+            'step' => $this->getStepContent(),
         ];
     }
 
@@ -123,7 +124,19 @@ class Stepper extends Block
         $stepper = new FieldsBuilder('stepper');
 
         $stepper
-        ;
+        ->addRepeater('step_content', [
+            'label' => 'Step Content'
+        ])
+            ->addText('step_title', [
+                'label' => 'Title'
+            ])
+            ->addTextarea('step_description', [
+                'label' => 'Description'
+            ])
+            ->addImage('step_image', [
+                'label' => 'Image'
+            ])
+        ->endRepeater();
         return $stepper->build();
     }
 
@@ -135,5 +148,9 @@ class Stepper extends Block
     public function enqueue()
     {
         //
+    }
+
+    public function getStepContent() { 
+        return get_field('step_content');
     }
 }

@@ -2,11 +2,61 @@ import {clippingParents} from '@popperjs/core';
 import domReady from '@roots/sage/client/dom-ready';
 import 'bootstrap';
 import loadMore from './loadMore';
+import Swiper from 'swiper';
+import {
+  Autoplay,
+  FreeMode,
+  Navigation,
+  Pagination,
+  Thumbs,
+  HashNavigation,
+} from 'swiper/modules';
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
+  const blockStepper = document.querySelector('.wp-block-stepper');
+
+  if (blockStepper) {
+    const swiperStepper = new Swiper('.stepperSlider', {
+      on: {
+        init: function () {
+          activateStep(this.activeIndex);
+        },
+      },
+      modules: [Pagination, HashNavigation, Navigation],
+      direction: 'vertical',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      hashNavigation: {
+        watchState: true,
+      },
+    });
+
+    function activateStep(slideID) {
+      const stepperSingle = document.querySelectorAll('.stepper-single');
+
+      stepperSingle.forEach((curStep, index) => {
+        if (slideID == index) {
+          curStep.classList.remove('opacity-50');
+        } else {
+          curStep.classList.add('opacity-50');
+        }
+      });
+    }
+
+    swiperStepper.on('slideChange', function () {
+      activateStep(this.activeIndex);
+    });
+  }
+
   const listItems = document.querySelectorAll('.acf-checkbox-list li');
   const changeIndex = document.querySelectorAll('.af-page-button .title');
   const btnSingle = document.querySelector('.btnStoreSingle');
@@ -89,49 +139,46 @@ domReady(async () => {
 loadMore();
 
 /**
-Stepper
+Stepper 
 */
-const stepper = document.querySelectorAll('.stepper');
+// const stepper = document.querySelectorAll('.stepper-container');
+// const stepperImage = document.querySelectorAll('.stepper-img-box');
 
-stepper.forEach(function (step) {
-  const stepperSingle = step.querySelectorAll('.stepper-single');
-  const stepperImage = step.querySelector('.stepper-img');
-  const stepperIndicator = step.querySelectorAll('.stepper-indicator');
-  const stepperContent = step.querySelectorAll('.stepper-content');
+// console.log(stepper);
+// stepper.forEach((step) => {
+//   const stepperSingle = step.querySelectorAll('.stepper-single');
+//   const stepperImage = step.querySelectorAll('.stepper-img-box');
 
-  /**
-  default state
-  */
-  stepperContent.forEach((el) => {
-    el.classList.add('opacity-50');
-  });
+//   stepperSingle.forEach((step) => {
+//     step.classList.add('opacity-50');
+//   });
 
-  stepperSingle[0].firstElementChild.classList.add('activeStep');
-  stepperContent[0].classList.remove('opacity-50');
+//   stepperImage.forEach((image) => {
+//     const dataHash = image.getAttribute('data-hash');
 
-  stepperSingle.forEach(function (el, index) {
-    if (index == 0) {
-      stepperImage.src = el.dataset.image;
-    }
+//     console.log(image.classList);
 
-    el.addEventListener('click', function () {
-      // Indicator
-      stepperIndicator.forEach(function (indicator) {
-        indicator.classList.remove('activeStep');
-      });
-      el.firstElementChild.classList.add('activeStep');
+//     if (image.classList.contains('swiper-slide-active')) {
+//       stepperSingle.forEach((step) => {
+//         const dataImage = step.getAttribute('data-image');
 
-      // Image
-      stepperImage.src = el.dataset.image;
+//         console.log(dataHash, dataImage);
 
-      // Step
-      stepperContent.forEach(function (step) {
-        step.classList.add('opacity-50');
-      });
-      stepperContent[index].classList.remove('opacity-50');
-    });
-  });
-});
+//         if (dataImage === dataHash) {
+//           step.classList.remove('opacity-50');
+//         }
+//       });
+//     }
+//   });
+// });
+
+/**
+1. create js function to handle active state of the slide
+*/
+
+/**
+Swiper for Stepper
+*/
 
 /**
 Tabs
