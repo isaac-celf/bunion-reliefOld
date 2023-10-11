@@ -143,7 +143,7 @@ class Tab extends Block
         $tab
             ->addText('tab_title', [
                 'label' => 'Tab Title',
-                'required' => 1,
+                'required' => 0,
             ])
 
             ->addTextarea('tab_content', [

@@ -127,6 +127,7 @@ class Tabs extends Block
         return [
             'allowedBlocks' => json_encode(['acf/tab']),
             'template' => json_encode([['acf/tab'], ['acf/tab'], ['acf/tab'], ['acf/tab']]),
+            'tabs' => $this->getTabPost(),
         ];
     }
 
@@ -140,7 +141,14 @@ class Tabs extends Block
         $tabs = new FieldsBuilder('tabs');
 
         $tabs
-        ;
+
+        ->addRelationship('tabs', 
+        [
+            'post_type' => ['tab'],
+            'filters' => [
+                0 => 'search',
+            ],
+        ]);
 
         return $tabs->build();
     }
@@ -154,4 +162,9 @@ class Tabs extends Block
     {
         //
     }
+
+    public function getTabPost() {
+        return get_field('tabs');
+    }
+
 }

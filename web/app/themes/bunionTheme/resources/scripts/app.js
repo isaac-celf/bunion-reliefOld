@@ -16,46 +16,73 @@ import {
  * Application entrypoint
  */
 domReady(async () => {
-  const blockStepper = document.querySelector('.wp-block-stepper');
+  /**
+   * 
+  Stepper
+   */
+  const blockStepper = document.querySelectorAll('.wp-block-stepper');
 
-  if (blockStepper) {
-    const swiperStepper = new Swiper('.stepperSlider', {
-      on: {
-        init: function () {
-          activateStep(this.activeIndex);
+  blockStepper.forEach(function (blockStep) {
+    if (blockStep) {
+      const swiperStepper = new Swiper('.stepperSlider', {
+        on: {
+          init: function () {
+            activateStep(this.activeIndex);
+          },
         },
-      },
-      modules: [Pagination, HashNavigation, Navigation],
-      direction: 'vertical',
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      hashNavigation: {
-        watchState: true,
-      },
-    });
+        modules: [Pagination, HashNavigation, Navigation],
+        direction: 'vertical',
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        hashNavigation: {
+          watchState: true,
+        },
+      });
 
-    function activateStep(slideID) {
-      const stepperSingle = document.querySelectorAll('.stepper-single');
+      function activateStep(slideID) {
+        const stepperSingle = document.querySelectorAll('.stepper-single');
 
-      stepperSingle.forEach((curStep, index) => {
-        if (slideID == index) {
-          curStep.classList.remove('opacity-50');
-        } else {
-          curStep.classList.add('opacity-50');
-        }
+        stepperSingle.forEach((curStep, index) => {
+          if (slideID == index) {
+            curStep.classList.remove('opacity-50');
+          } else {
+            curStep.classList.add('opacity-50');
+          }
+        });
+      }
+
+      swiperStepper.on('slideChange', function () {
+        activateStep(this.activeIndex);
       });
     }
+  });
 
-    swiperStepper.on('slideChange', function () {
-      activateStep(this.activeIndex);
+  /**
+  Tabs
+  */
+  // const bsTab = new bootstrap.Tab('#myTab');
+  // bsTab.getInstance();
+  // console.log(bsTab);
+  const tab = document.querySelectorAll('.wp-block-tabs');
+  console.log(tab);
+
+  tab.forEach(function (el) {
+    const tabLink = el.querySelectorAll('.nav-link');
+    const tabPane = el.querySelectorAll('.tab-pane');
+
+    tabLink.forEach(function (singleTab, index) {
+      tabLink[0].classList.add('active');
     });
-  }
+    tabPane.forEach(function (singleTab, index) {
+      tabPane[0].classList.add('active');
+    });
+  });
 
   const listItems = document.querySelectorAll('.acf-checkbox-list li');
   const changeIndex = document.querySelectorAll('.af-page-button .title');
@@ -179,61 +206,6 @@ Stepper
 /**
 Swiper for Stepper
 */
-
-/**
-Tabs
-*/
-const tabBlock = document.querySelectorAll('.tabs');
-
-tabBlock.forEach(function (tab) {
-  const singleTab = tab.querySelectorAll('.tab');
-  const tabTitles = tab.querySelectorAll('.btnTab');
-  const tabBody = tab.querySelectorAll('.tab-body');
-
-  /**
-  default Tab state
-  */
-  tabBody.forEach(function (body) {
-    body.classList.add('invisible');
-  });
-  tabBody[0].classList.remove('invisible');
-
-  /**
-  Tab Buttons
-  */
-  tabTitles.forEach(function (el, index) {
-    if (index == 0) {
-      el.classList.add('activeTab');
-    }
-
-    /**
-    Each Button
-    */
-    el.addEventListener('click', function () {
-      tabTitles.forEach(function (btn) {
-        btn.classList.remove('activeTab');
-      });
-      el.classList.add('activeTab');
-
-      /**
-      Full Tab
-      */
-      singleTab.forEach(function (tab) {
-        tab.classList.add('pe-auto');
-      });
-      singleTab[index].classList.replace('pe-auto', 'pe-none');
-
-      /**
-      Tab Content
-      */
-      tabBody.forEach(function (body) {
-        body.classList.add('invisible');
-      });
-
-      tabBody[index].classList.remove('invisible');
-    });
-  });
-});
 
 /**
  * @see {@link https://webpack.js.org/api/hot-module-replacement/}

@@ -7,7 +7,7 @@
                     @if ($item->children)
                         <li class="my-menu-item nav-item dropdown">
                             <a href="{{ $item->url }}"
-                                class="nav-link btn  {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}"
+                                class="nav-link btn  {{ $item->classes ?? '' }} {{ $item->active ? 'activeNav' : '' }}"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                                 {{ $item->label }}
                             </a>
@@ -26,7 +26,7 @@
                     @else
                         <li class="my-menu-item nav-item ">
                             <a href="{{ $item->url }}"
-                                class="nav-link btn {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}">
+                                class="nav-link btn {{ $item->classes ?? '' }} {{ $item->active ? 'activeNav' : '' }}">
                                 {{ $item->label }}
                             </a>
                         </li>
@@ -112,7 +112,7 @@
                                 class="bi bi-instagram"></i></a></li>
                     <li class="p-1 ps-0"><a href="{{ $socialX }}" class="icon-link icon-link-hover"
                             target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
-                                class="bi bi-twitter"></i></a></li>
+                                class="bi bi-twitter-x"></i></a></li>
                 </ul>
             </div>
         </div>

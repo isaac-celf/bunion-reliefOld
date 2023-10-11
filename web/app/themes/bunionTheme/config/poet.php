@@ -46,6 +46,16 @@ return [
                 'plural' => 'Quotes',
             ],
         ],
+        'tab' => [
+            'enter_title_here' => 'Enter tab title',
+            'support' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'custom-fields'],
+            'show_in_rest' => true,
+            'has_archive' => false,
+            'labels' => [
+                'singular' => 'Tab',
+                'plural' => 'Tabs',
+            ],
+        ]
     ],
 
     /*

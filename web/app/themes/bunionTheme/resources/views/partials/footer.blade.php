@@ -29,7 +29,7 @@
                             <p class="text-white my-0 fw-light fs-6">{!! $address !!}</p>
                             <p class="text-white my-0 fw-light fs-6">{!! $phoneNum !!}</p>
                         </ul>
-                        <ul class="nav gap-3">
+                        <ul class="nav gap-3 mt-2">
                             <li class="nav-link p-0"><a href="{{ $socialFB }}"
                                     class="icon icon-link icon-link-hover" target="_blank"
                                     style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
@@ -39,7 +39,7 @@
                                         class="bi bi-instagram text-white"></i></a></li>
                             <li class="nav-link p-0"><a href="{{ $socialX }}" class="icon-link icon-link-hover"
                                     target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
-                                        class="bi bi-twitter text-white"></i></a></li>
+                                        class="bi bi-twitter-x text-white"></i></a></li>
                         </ul>
                     </div>
                 </div>

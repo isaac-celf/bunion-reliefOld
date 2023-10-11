@@ -17,11 +17,12 @@
 
 @if ($step)
     <div class="{{ $block->classes }}">
-        <div class="stepper-container row align-items-center px-2">
+        <div class="stepper-container row align-items-center px-2 mb-6">
             <div class="swiper stepperSlider col-4">
                 <div class="stepper swiper-wrapper">
                     @foreach ($step as $index => $single)
                         <div class="stepper-img-box col-md-4 col-6 swiper-slide w-100" data-hash="{{ $index }}">
+                            {{-- @dump($single['step_image']['sizes']['500-image']) --}}
                             <img src="{{ $single['step_image']['sizes']['500-image'] }}" alt="stepper image"
                                 class="stepper-img w-100">
                         </div>
@@ -31,7 +32,7 @@
 
             <div class="col-8 position-relative">
 
-                <div class="row align-items-center">
+                <div class="stepper-info row align-items-center">
                     <div class="swiper-pagination"></div>
                     <div class="step">
                         <div class="stepper-step ">

@@ -1,6 +1,7 @@
 <div class="tab">
     <div class="tab-title">
         <button class="btnTab" data-key="firstBtn">{{ $tabTitle }}</button>
+        {{-- <InnerBlocks /> --}}
     </div>
     <div
         class="tab-body row align-items-center m-auto h-100 flex-column flex-md-row justify-content-center gap-3 gap-md-0">

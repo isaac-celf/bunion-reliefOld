@@ -1,76 +1,33 @@
 .wp-block-tabs {
-  position: relative;
-  margin-bottom: $spacer * 4;
+  .nav-tabs {
+    @extend .border-0;
 
-  .tab {
-    height: 450px;
+    .nav-item {
+      @extend .bg-secondary, .text-primary;
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
 
-    &-body {
-      box-shadow: $box-shadow;
-      padding: $spacer * 1 $spacer * 0.875;
-      border-radius: $border-radius;
-      border-top-left-radius: 0;
-    }
-
-    .btnTab {
-      border-radius: $border-radius;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      padding: $spacer * 0.4 $spacer * 1.4;
-      border: none;
-      background-color: $tertiary;
-      color: $primary;
-      transition: $btn-transition;
-      width: 15%;
-
-      &:hover {
-        color: $white;
-        background-color: $primary;
+      &:nth-child(2) {
+        transform: translateX(6%);
+      }
+      &:nth-child(3) {
+        transform: translateX(12%);
+      }
+      &:nth-child(4) {
+        transform: translateX(16%);
+      }
+      &:nth-child(5) {
+        transform: translateX(24%);
       }
     }
-
-    &:nth-of-type(2) {
-      position: absolute;
-      top: 0;
-
-      .btnTab {
-        margin-left: 16%;
-      }
-    }
-
-    &:nth-of-type(3) {
-      position: absolute;
-      top: 0;
-
-      .btnTab {
-        margin-left: 32%;
-      }
-    }
-
-    &:nth-of-type(4) {
-      position: absolute;
-      top: 0;
-
-      .btnTab {
-        margin-left: 48%;
-      }
-    }
-
-    &-img {
-      border-radius: $border-radius;
+    .active {
+      @extend .bg-primary, .text-white, .border-primary;
     }
   }
 
-  .activeTab {
-    background-color: $primary !important;
-    color: $white !important;
+  .tab-content {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: $border-radius;
   }
 }
-
-// $marginsAlign: 16%;
-
-// @for $i from 2 through 5 {
-//   .btnTab:nth-child(n + #{$i}) {
-//     margin-left: $marginsAlign($i * 2);
-//   }
-// }
