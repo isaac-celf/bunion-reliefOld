@@ -52,7 +52,7 @@ $spacers: (
   4: $spacer * 1.5,
   5: $spacer * 2.3125,
   6: $spacer * 3,
-  7: $spacer * 4,
+  7: $spacer * 4.625,
   8: $spacer * 7,
 ) !default;
 
@@ -84,10 +84,11 @@ $grid-breakpoints: (
 $common-transition: all 0.2s ease-in-out;
 
 $--bs-gutter-y: 1rem;
-// Visuals
 $box-shadow: 0 0.1875rem 0.375rem #00000029;
 $input-btn-padding-y: 0.9rem;
 $input-btn-padding-x: 1rem;
+$navbar-nav-link-padding-x: 0.4rem;
+$navbar-nav-link-padding-y: 0.7rem;
 $btn-padding-x: 1.4rem;
 $btn-padding-y: 0.4rem;
 $border-radius: 0.6875rem;

@@ -16,7 +16,7 @@ global $wp_query;
     </div>
 
     <button data-total="" class="btn btn-primary loading load-more" id="load-more">
-        <label>Load More Posts</label>
+        <label>Load more</label>
         <span class="loader"></span>
     </button>
 </div>

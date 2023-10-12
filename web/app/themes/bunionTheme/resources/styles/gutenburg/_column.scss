@@ -19,6 +19,11 @@
   }
 }
 
+.columnThree {
+  .wp-block-column {
+    @extend .d-flex, .flex-column, .justify-content-between, .align-items-start;
+  }
+}
 .columnQoute {
   padding: $spacer * 5 $spacer * 1.2;
 

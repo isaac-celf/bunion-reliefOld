@@ -64,7 +64,7 @@
           }
 
           .heading {
-            @extend .mt-5;
+            // @extend .mt-5;
             font-size: $h4-font-size;
           }
 
@@ -76,7 +76,7 @@
             &::after {
               content: '';
               // background-image: url('~@images/map-style.png');
-              background-image: url('~@images/br-mis-white.png');
+              background-image: url('~@images/br-mis-purple.png');
               background-repeat: no-repeat;
               background-size: contain;
               position: absolute;
@@ -87,7 +87,7 @@
 
             &::before {
               content: '';
-              background-image: url('~@images/br-mis-white.png');
+              background-image: url('~@images/br-mis-purple.png');
               background-repeat: no-repeat;
               position: absolute;
               width: 55px;

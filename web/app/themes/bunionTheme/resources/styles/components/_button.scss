@@ -8,7 +8,7 @@
     @extend .bg-primary, .text-white;
     outline: 2px solid $primary;
     outline-offset: 1px;
-    padding: ($spacer * 0.6) ($spacer * 1.2);
+    padding: ($spacer * 0.4) ($spacer * 0.7);
     border-radius: $border-radius;
   }
 }

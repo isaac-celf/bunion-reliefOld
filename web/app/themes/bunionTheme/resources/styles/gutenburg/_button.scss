@@ -1,6 +1,6 @@
 .is-style-default {
   .wp-block-button__link {
-    padding: ($spacer * 0.65) ($spacer * 1.5);
+    padding: ($spacer * 0.4) ($spacer * 1.5);
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     transition: $btn-transition;
@@ -15,7 +15,7 @@
 
 .wp-block-button.is-style-outline {
   .wp-block-button__link {
-    padding: ($spacer * 0.65) ($spacer * 1.5);
+    padding: ($spacer * 0.4) ($spacer * 1.5);
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     transition: $btn-transition;

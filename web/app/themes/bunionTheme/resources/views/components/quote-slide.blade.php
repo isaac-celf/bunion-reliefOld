@@ -3,7 +3,7 @@
         <img src="{{ $image }}" alt="quoter image 1" class="quote-img w-100">
     </div>
     <div class="quote-content col-9">
-        <p class="mb-5">{{ $quote }}</p>
+        <p class="">{{ $quote }}</p>
         <h3 class="heading">{{ $name }}
             <span>{{ $location }}</span>
         </h3>

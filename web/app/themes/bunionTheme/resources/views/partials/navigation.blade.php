@@ -7,7 +7,7 @@
                     @if ($item->children)
                         <li class="my-menu-item nav-item dropdown">
                             <a href="{{ $item->url }}"
-                                class="nav-link btn  {{ $item->classes ?? '' }} {{ $item->active ? 'activeNav' : '' }}"
+                                class="nav-link btn p-2 {{ $item->classes ?? '' }} {{ $item->active ? 'activeNav' : '' }}"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                                 {{ $item->label }}
                             </a>
@@ -26,7 +26,7 @@
                     @else
                         <li class="my-menu-item nav-item ">
                             <a href="{{ $item->url }}"
-                                class="nav-link btn {{ $item->classes ?? '' }} {{ $item->active ? 'activeNav' : '' }}">
+                                class="nav-link btn p-2 {{ $item->classes ?? '' }} {{ $item->active ? '' : '' }}">
                                 {{ $item->label }}
                             </a>
                         </li>
@@ -34,7 +34,7 @@
                 @endforeach
                 <li class="my-menu-item nav-item">
                     <a href="{{ get_field('surgeon_button_link', 'option') }}"
-                        class="nav-link btn keyBtn {{ $item->classes ?? '' }} {{ $item->active ? '' : '' }}">{{ get_field('surgeon_button', 'option') }}
+                        class="nav-link btn keyBtn p-2 {{ $item->classes ?? '' }} {{ $item->active ? '' : '' }}">{{ get_field('surgeon_button', 'option') }}
                     </a>
                 </li>
             </ul>

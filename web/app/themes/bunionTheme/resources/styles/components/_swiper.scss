@@ -33,6 +33,7 @@
     height: 60%;
     background-color: $secondary;
     transform: translateY(33%);
+    z-index: -2;
   }
 }
 
@@ -46,6 +47,10 @@
   padding: 0;
   transform: translateY(-50%);
   gap: 4rem;
+}
+
+.swiper-pagination {
+  z-index: -1;
 }
 
 .swiper-pagination-bullet {

@@ -25,16 +25,24 @@
       width: 50%;
       background-color: $light-background;
 
-      .af-page-button .current {
-        @extend .text-white;
+      .enabled {
+        color: $primary;
       }
+
+      .current {
+        color: $white;
+      }
+      // .af-page-button .current {
+      //   color: $white;
+      // }
 
       .af-page-button {
         @extend .border-0,
           .d-flex,
           .justify-content-center,
           .align-items-center,
-          .bg-primary;
+          .bg-primary,
+          .h-100;
         height: inherit;
 
         &:not(.enabled) {
@@ -77,7 +85,7 @@
         // Dropdown
         #acf-field_64fb045590b32 {
           height: 41px;
-          border-color: $tertiary;
+          border-color: $secondary;
           border-radius: $border-radius;
         }
 
@@ -99,19 +107,19 @@
       input[type='text'] {
         @extend .form-control;
         height: 41px;
-        border-color: $tertiary;
+        border-color: $secondary;
       }
 
       textarea {
         @extend .form-control;
         border-radius: $border-radius;
-        border-color: $tertiary;
+        border-color: $secondary;
       }
 
       input[type='email'] {
         @extend .form-control;
         height: 41px;
-        border-color: $tertiary;
+        border-color: $secondary;
       }
 
       input[type='radio'] {

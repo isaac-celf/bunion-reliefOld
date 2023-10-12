@@ -17,7 +17,7 @@
         @extend .border-0;
 
         label {
-          font-size: $h5-font-size;
+          font-size: $h3-font-size;
         }
 
         p {
@@ -84,7 +84,7 @@
         @extend .fw-light, .position-absolute, .z-1;
         font-size: $h6-font-size;
         right: 15%;
-        transform: translate(-100%, -146%);
+        transform: translate(-100%, -144%);
 
         @include media-breakpoint-between(md, lg) {
           // right: 10%;

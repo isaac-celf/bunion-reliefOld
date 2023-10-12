@@ -14,11 +14,7 @@
 }
 
 .misSectionProcedure {
-  width: 90%;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-  padding: $spacer * 2 $spacer * 2;
-  // transform: translateY(-50%);
+  width: 75%;
 
   .wp-block-group {
     @media (max-width: 767.98px) {

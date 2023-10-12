@@ -22,7 +22,6 @@
                 <div class="stepper swiper-wrapper">
                     @foreach ($step as $index => $single)
                         <div class="stepper-img-box col-md-4 col-6 swiper-slide w-100" data-hash="{{ $index }}">
-                            {{-- @dump($single['step_image']['sizes']['500-image']) --}}
                             <img src="{{ $single['step_image']['sizes']['500-image'] }}" alt="stepper image"
                                 class="stepper-img w-100">
                         </div>

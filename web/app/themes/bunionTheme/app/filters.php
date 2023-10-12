@@ -121,7 +121,7 @@ add_filter( 'wpsl_listing_template', function () {
  */
 add_action('af/form/submission/key=form_search_location', function ($form, $fields, $args) {
 
-    $zip = af_get_field('find_a_doctor_in_your_area');
+    $zip = af_get_field('find_a_bunion_doctor_near_you');
 
     $urlQuery = http_build_query(
         [
