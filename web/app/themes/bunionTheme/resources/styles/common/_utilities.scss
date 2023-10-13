@@ -9,10 +9,43 @@
   margin-bottom: 0;
 }
 
+// Margin
 .minus-top-margin-sm {
   margin-top: -2rem;
 }
 
+// Height
 .reduce-height {
   height: auto !important;
+}
+
+// List-style
+.custom-list-style {
+  list-style: none;
+}
+
+.custom-list-style li::before {
+  content: '\2022';
+  color: $primary;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-size: 34px;
+  transform: translateY(7px);
+}
+
+@mixin make-container($padding-x: $container-padding-x) {
+  width: 100%;
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Usage
+.header-container {
+  @include make-container();
+
+  width: 1366px;
 }

@@ -1,0 +1,19 @@
+.wp-block-video-background {
+  height: 650px;
+  .video-bg {
+    .video {
+      height: 650px;
+      object-fit: cover;
+    }
+
+    .transform-position {
+      transform: translate(-150%, -50%);
+    }
+  }
+
+  .video-description {
+    .video-heading {
+      width: 35%;
+    }
+  }
+}

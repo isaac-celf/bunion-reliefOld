@@ -7,7 +7,7 @@
     'classes' => 'invisible overflow-hidden w-100',
     'showNavigation' => false,
 ])
-<main id="main" class="main">
+<main id="main" class="main container">
     @yield('content')
 </main>
 

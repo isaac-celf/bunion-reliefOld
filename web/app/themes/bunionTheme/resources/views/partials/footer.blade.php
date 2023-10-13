@@ -7,9 +7,9 @@
 
         @if ($footer)
             <div class="footer__content col p-0">
-                <div class="footer__info row mb-3 ms-lg-6 gap-5 gap-lg-0">
+                <div class="footer__info row mb-3 ms-lg-6 gap-3 gap-md-5">
                     @foreach ($footer as $item)
-                        <div class="footer__list col-md">
+                        <div class="footer__list col-auto">
                             <h3 class="text-capitalize text-white fs-5">{{ $item->label }}</h3>
 
                             @foreach ($item->children as $child)

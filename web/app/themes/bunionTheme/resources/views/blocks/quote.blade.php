@@ -1,5 +1,5 @@
 @if ($quotes)
-    <div class="carousel slide {{ $block->classes }}" id="carouselIndicator">
+    <div class="carousel slide {{ $block->classes }} mb-5" id="carouselIndicator">
         <div class="carousel-indicators">
             @if (count($quotes) > 1)
                 @foreach ($quotes as $quote => $value)

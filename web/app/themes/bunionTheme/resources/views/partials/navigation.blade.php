@@ -1,20 +1,20 @@
 @if ($navigation)
     <nav class="navbar navbar-expand-lg navigation p-0">
-        <div class="container-fluid collapse navbar-collapse justify-content-end align-items-center first-navbar p-0 d-none d-lg-block"
+        <div class="collapse navbar-collapse justify-content-end align-items-center first-navbar p-0 d-none d-lg-block"
             id="navbarNavDropdown">
             <ul class="my-menu navigation__list navbar-nav gap-2 me-1 align-items-center">
                 @foreach ($navigation as $item)
                     @if ($item->children)
                         <li class="my-menu-item nav-item dropdown">
                             <a href="{{ $item->url }}"
-                                class="nav-link btn p-2 {{ $item->classes ?? '' }} {{ $item->active ? 'activeNav' : '' }}"
+                                class="nav-link btn p-2 {{ $item->classes ?? '' }} {{ $item->active ? '' : '' }}"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                                 {{ $item->label }}
                             </a>
-                            <ul class="my-child-menu nav-item dropdown-menu rounded-0 bg-primary p-3"
+                            <ul class="my-child-menu nav-item dropdown-menu rounded-0 bg-primary px-4 py-3"
                                 aria-labelledby="dropdownMenuButton">
                                 @foreach ($item->children as $child)
-                                    <li class="my-child-item">
+                                    <li class="my-child-item {{ $child->active ? '' : '' }}">
                                         <a href="{{ $child->url }}"
                                             class="dropdown-item nav-link my-child-menu-link fw-normal lh-1 text-white">
                                             {{ $child->label }}
@@ -32,11 +32,6 @@
                         </li>
                     @endif
                 @endforeach
-                <li class="my-menu-item nav-item">
-                    <a href="{{ get_field('surgeon_button_link', 'option') }}"
-                        class="nav-link btn keyBtn p-2 {{ $item->classes ?? '' }} {{ $item->active ? '' : '' }}">{{ get_field('surgeon_button', 'option') }}
-                    </a>
-                </li>
             </ul>
         </div>
         <span class="navbar__menu-icon position-absolute top-50 end-0 translate-middle-y d-lg-none">
@@ -46,7 +41,6 @@
         </span>
     </nav>
 
-    {{-- offcanvas --}}
     <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="offcanvas" style="height: 100vh">
         <div class="offcanvas-header">
             <a class="brand" href="{{ home_url('/') }}">

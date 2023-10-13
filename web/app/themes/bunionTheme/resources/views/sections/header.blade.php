@@ -1,8 +1,8 @@
 <header class="{{ $classes }} box-shadow">
     <div class="alignfull m-0">
-        <div class="banner bg-white w-100 p-0 py-lg-3">
-            <div class="container px-3">
-                <div class="row gap-3  px-0 p-3 p-lg-0 container m-0 align-items-center">
+        <div class="banner bg-white w-100 p-0 py-3">
+            <div class="px-0">
+                <div class="row nav-max-width align-items-center justify-content-between m-auto px-3">
                     <a class="brand col-md-2 col-4 p-0" href="{{ home_url('/') }}">
                         <img src="@asset('images/br-logo-purple.png')" alt="bunion relief logo" class="w-100">
                     </a>

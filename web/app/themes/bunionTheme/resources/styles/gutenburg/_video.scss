@@ -3,3 +3,9 @@
     @extend .rounded;
   }
 }
+
+.wp-block-embed__wrapper {
+  iframe {
+    border-radius: $border-radius;
+  }
+}

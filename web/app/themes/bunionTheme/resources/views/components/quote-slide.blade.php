@@ -4,8 +4,7 @@
     </div>
     <div class="quote-content col-9">
         <p class="">{{ $quote }}</p>
-        <h3 class="heading">{{ $name }}
-            <span>{{ $location }}</span>
-        </h3>
+        <h3 class="heading">{{ $name }}</h3>
+        <span class="p-0 fw-lighter">{{ $location }}</span>
     </div>
 </div>
