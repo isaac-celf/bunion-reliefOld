@@ -72,11 +72,12 @@
             padding: $spacer * 3;
             font-size: $h3-font-size;
             font-weight: $font-weight-light;
+            line-height: 1.7;
 
             &::after {
               content: '';
               // background-image: url('~@images/map-style.png');
-              background-image: url('~@images/br-mis-purple.png');
+              background-image: url('~@images/quotationEnd.png');
               background-repeat: no-repeat;
               background-size: contain;
               position: absolute;
@@ -87,7 +88,7 @@
 
             &::before {
               content: '';
-              background-image: url('~@images/br-mis-purple.png');
+              background-image: url('~@images/quotationStart.png');
               background-repeat: no-repeat;
               position: absolute;
               width: 55px;

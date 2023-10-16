@@ -9,7 +9,6 @@
   font-size: 2.4rem;
 }
 
-// offcanvas
 .offcanvas {
   .btn-close {
     font-size: $h5-font-size;
@@ -81,14 +80,15 @@
 
   .my-menu-item {
     font-size: $font-size-md;
-  }
 
-  // .my-menu-item:nth-child(6) {
-  //   order: 7;
-  // }
-  // .my-menu-item:nth-child(7) {
-  //   order: 6;
-  // }
+    &:nth-child(6) {
+      order: 7;
+    }
+
+    &:nth-child(7) {
+      order: 6;
+    }
+  }
 }
 
 .dropdown:hover > .dropdown-menu {

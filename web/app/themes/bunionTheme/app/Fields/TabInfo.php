@@ -22,6 +22,14 @@ class TabInfo extends Field
         $tabInfo
             ->addTextarea('tab_description', [
                 'label' => 'Tab Description',
+            ])
+            ->addPostObject('available_pages', [
+                'label' => 'Direct Page to',
+                'instructions' => 'Choose which page to direct',
+                'required' => 0,
+                'conditional_logic' => [],
+                'post_type' => ['page'],
+                'return_format' => 'object',
             ]);
 
         return $tabInfo->build();

@@ -27,6 +27,8 @@ class Navigation extends Composer
         return [
             'navigation' => $this->getNavigation(),
             'footer' => $this->getFooter(),
+            'productPage' => $this->isProductPage(),
+            'healthPage' => $this->isHealthProviderPage(),
         ];
     }
 
@@ -45,5 +47,20 @@ class Navigation extends Composer
             return;
         } 
         return $footer->toArray();
+    }
+
+    public function isProductPage() {
+        $parent_product_page_id = 22;
+        $current_page_id = get_the_ID();
+        $parent_page_id = wp_get_post_parent_id($current_page_id);
+
+        return $parent_page_id == $parent_product_page_id;
+    }
+
+    public function isHealthProviderPage() {
+        $health_page_id = 1714;
+        $current_page_id = get_the_ID();
+
+        return $health_page_id == $current_page_id;
     }
 }

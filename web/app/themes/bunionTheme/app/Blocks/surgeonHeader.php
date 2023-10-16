@@ -190,7 +190,7 @@ class surgeonHeader extends Block
     }
 
     public function getFormSVG() {
-        $formIcon = \App(SageSvg::class)->render('images.human-form', 'w-100');
+        $formIcon = \App(SageSvg::class)->render('images.human-form', 'w-75');
 
         return $formIcon;
     }

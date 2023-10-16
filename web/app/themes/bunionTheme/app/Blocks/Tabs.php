@@ -166,5 +166,4 @@ class Tabs extends Block
     public function getTabPost() {
         return get_field('tabs');
     }
-
 }

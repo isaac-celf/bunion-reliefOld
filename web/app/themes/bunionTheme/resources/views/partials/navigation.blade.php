@@ -32,6 +32,13 @@
                         </li>
                     @endif
                 @endforeach
+                @if ($productPage || $healthPage)
+                    <li class="my-menu-item nav-item">
+                        <a href="{{ get_field('provider_button_link', 'option') }}"
+                            class="nav-link btn keyBtn p-2">{{ get_field('provider_button', 'option') }}
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
         <span class="navbar__menu-icon position-absolute top-50 end-0 translate-middle-y d-lg-none">

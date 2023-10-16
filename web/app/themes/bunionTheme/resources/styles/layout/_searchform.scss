@@ -84,17 +84,17 @@
         @extend .fw-light, .position-absolute, .z-1;
         font-size: $h6-font-size;
         right: 15%;
-        transform: translate(-100%, -144%);
+        transform: translate(-135%, -144%);
 
-        @include media-breakpoint-between(md, lg) {
-          // right: 10%;
+        @include media-breakpoint-between(md, xl) {
+          transform: translate(-109%, -144%);
         }
 
         @media (max-width: 767.98px) {
-          right: -17%;
+          right: -24%;
         }
         @media (max-width: 575.98px) {
-          transform: translate(0%, -147%);
+          transform: translate(-17%, -144%);
           right: 0%;
         }
       }
@@ -104,5 +104,37 @@
 .homeForm {
   #form_search_location {
     transform: translateY(-50%);
+  }
+}
+
+// if has class style-background
+#searchform_secondary {
+  #form_search_location {
+    background-color: $primary !important;
+    transform: none;
+
+    .acf-fields {
+      .acf-field {
+        label,
+        p {
+          color: $white !important;
+        }
+
+        .acf-input {
+          .acf-input-prepend {
+            img {
+              background-image: url('~@images/human-form-white.svg');
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+
+      .af-submit {
+        .acf-button {
+          // transform: translate(-156%, -144%);
+        }
+      }
+    }
   }
 }

@@ -59,7 +59,7 @@ add_filter( 'wpsl_listing_template', function () {
 
     global $wpsl, $wpsl_settings;
     // render svg tag
-    $formIcon = \App(SageSvg::class)->render('images.human-form', 'w-100');
+    $formIcon = \App(SageSvg::class)->render('images.human-form', 'w-75');
     $formDescription = get_field('form_description', 'option');
 
     return 
@@ -96,11 +96,13 @@ add_filter( 'wpsl_listing_template', function () {
             <div class='modal-dialog modal-dialog-centered modal-lg'>
                 <div class='modal-content'>
                     <div class='modal-header border-0 px-4 pb-0'>
-                        <h1 class='modal-title text-primary fw-semibold fs-2 px-1' id='iTouchModalLabel'>Contact Us</h1>
                         <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                     </div>
-                    <div class='modal-img-box row px-3 align-items-center pe-6'>
-                        <p class='modal-description ps-3 pt-0 col-8'> $formDescription</p>
+                    <div class='modal-img-box row px-3 align-items-center w-100 m-auto'>
+                        <div class='col-8'>
+                            <h1 class='modal-title text-primary fw-semibold fs-2 px-1' id='iTouchModalLabel'>Contact Us</h1>
+                            <p class='modal-description ps-2 pt-0'> $formDescription</p>
+                        </div>
                         <div class='col-4'>
                             $formIcon
                         </div>
@@ -152,7 +154,7 @@ function load_more_posts() {
     $query = new WP_Query([
         'post_type' => 'blog',
         'posts_per_page' => 6,
-        'paged' => $next_page
+        'paged' => $next_page,
     ]);
 
     if ($query->have_posts()) ;

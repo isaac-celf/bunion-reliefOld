@@ -9,7 +9,7 @@ class SingleTab extends Component
     public $tabDescription;
     public $tabImage;
     public $tabTitle;
-    public $tabContent;
+    public $tabButton;
     /**
      * Create a new component instance.
      *
@@ -18,8 +18,9 @@ class SingleTab extends Component
     public function __construct($id)
     {
         $this->tabDescription = get_field('tab_description', $id);
-        $this->tabImage = get_the_post_thumbnail_url($id);
+        $this->tabImage = get_the_post_thumbnail_url($id, 'blog-image');
         $this->tabTitle = get_the_title($id);
+        $this->tabButton = get_field('available_pages', $id);
     }
 
     /**

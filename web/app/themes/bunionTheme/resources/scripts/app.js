@@ -164,6 +164,37 @@ domReady(async () => {
 });
 
 loadMore();
+// jQuery(document).ready(function ($) {
+//   var currentPage = 1;
+//   var maxPages = parseInt($('.blogs').attr('data-max'));
+
+//   $('#load-more').on('click', function () {
+//     // Check if there are more pages to load
+//     if (currentPage < maxPages) {
+//       // Increment the page number
+//       currentPage++;
+
+//       // Make an AJAX request to load more posts
+//       $.ajax({
+//         type: 'POST',
+//         url: ajaxurl, // Ensure you have the correct URL for your WordPress AJAX endpoint
+//         data: {
+//           action: 'load_more_posts',
+//           current_page: currentPage,
+//         },
+//         success: function (response) {
+//           // Append the new posts to the existing container
+//           $('.blogs').append(response.data);
+
+//           // Check if we've reached the last page
+//           if (currentPage >= maxPages) {
+//             $('#load-more').remove(); // Remove the button when there are no more posts to load
+//           }
+//         },
+//       });
+//     }
+//   });
+// });
 
 /**
 Stepper 

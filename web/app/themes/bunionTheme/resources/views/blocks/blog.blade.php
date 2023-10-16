@@ -1,9 +1,17 @@
 <?php
 global $wp_query;
+
+// $args = [
+//     'post_type' => 'blog',
+//     'posts_per_page' => 3, // Change this to 3 to display 3 posts on page load
+// ];
+
+// $blogs = new WP_Query($args);
+
 ?>
 
 <div class="blog-box">
-    <div class="blogs row" data-page="<?= get_query_var('paged') ? get_query_var('paged') : 1 ?>"
+    <div class="blogs row gap-5" data-page="<?= get_query_var('paged') ? get_query_var('paged') : 1 ?>"
         data-max="<?= $wp_query->max_num_pages ?>">
         @if ($blogs->have_posts())
             @while ($blogs->have_posts())

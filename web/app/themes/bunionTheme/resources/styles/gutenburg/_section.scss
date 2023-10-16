@@ -136,6 +136,7 @@
 
     .blogs {
       row-gap: $spacer * 2;
+      padding-inline: $spacer * 0.75;
 
       .blog {
         img {

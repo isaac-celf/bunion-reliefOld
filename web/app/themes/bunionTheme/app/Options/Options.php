@@ -58,9 +58,9 @@ class Options extends Field
         ->addUrl('footer_button_link', ['label' => 'Link']);
 
         $options
-        ->addTab('site_surgeon', ['label'=>'Surgeon Button'])
-        ->addText('surgeon_button', ['label' => 'Button Name'])
-        ->addUrl('surgeon_button_link', ['label' => 'Link']);
+        ->addTab('site_health_provider', ['label'=>'Health Provider Button'])
+        ->addText('provider_button', ['label' => 'Button Name'])
+        ->addUrl('provider_button_link', ['label' => 'Link']);
 
         $options
         ->addTab('site_form', ['label'=>'Contact Form Description'])
