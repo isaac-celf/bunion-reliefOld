@@ -31,6 +31,9 @@ class Footer extends Composer
             'phoneNum'=>$this->phoneNum(),
             'email'=>$this->email(),
             'getRepeaterButtons'=>$this->getRepeaterButtons(),
+            'productPage' => $this->isProductPage(),
+            'healthPage' => $this->isHealthProviderPage(),
+            'currentPage' => $this->isCurrentPage(),
         ];
     }
 
@@ -74,5 +77,23 @@ class Footer extends Composer
         $socialX = get_field('twitter_link', 'option');
 
         return $socialX;
+    }
+
+    public function isProductPage() {
+        $parent_product_page_id = 22;
+        $current_page_id = get_the_ID();
+        $parent_page_id = wp_get_post_parent_id($current_page_id);
+
+        return $parent_page_id == $parent_product_page_id;
+    }
+
+    public function isHealthProviderPage() {
+        $health_page_id = 1714;
+
+        return $health_page_id;
+    }
+
+    public function isCurrentPage() {
+        return get_the_ID();
     }
 }

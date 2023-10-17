@@ -22,7 +22,6 @@
                         </div>
                     @endforeach
 
-                    {{-- contact us --}}
                     <div class="footer__list col-auto siteOptions">
                         <h3 class="text-capitalize text-white fs-5">contact us</h3>
                         <ul class="nav flex-column">
@@ -44,13 +43,16 @@
                     </div>
                 </div>
 
-                {{-- buttons --}}
                 <div class="footer__buttons ms-lg-5 d-flex flex-column flex-md-row align-items-lg-center">
                     @if ($getRepeaterButtons)
                         @foreach ($getRepeaterButtons as $button)
                             <a href="{{ $button['footer_button_link'] }}"
                                 class="btn footer__button bg-white text-capitalize me-0 me-md-2 mb-3 mb-lg-0 ms-md-0 fs-8">{!! $button['footer_button'] !!}</a>
                         @endforeach
+                    @endif
+                    @if ($productPage || $healthPage)
+                        <a href="{{ get_field('provider_button_link', 'option') }}"
+                            class="btn footer__button bg-white text-capitalize me-0 me-md-2 mb-3 mb-lg-0 ms-md-0 fs-8">{{ get_field('provider_button', 'option') }}</a>
                     @endif
                 </div>
             </div>
