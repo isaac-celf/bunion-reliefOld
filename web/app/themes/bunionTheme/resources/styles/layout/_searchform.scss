@@ -178,6 +178,10 @@
             transform: translate(4%, -65%);
           }
 
+          @include media-breakpoint-down(xl) {
+            transform: translate(4%, -65%);
+          }
+
           @media (max-width: 767.98px) {
             transform: translate(10%, -65%);
           }
@@ -187,22 +191,15 @@
       .af-submit {
         .acf-button {
           right: 17%;
-          transform: translate(-135%, -144%);
+          transform: translate(-132%, -134%);
 
-          @include media-breakpoint-between(lg, xl) {
-            transform: translate(-100%, -144%);
-          }
-          @include media-breakpoint-between(md, lg) {
-            transform: translate(-99%, -144%);
+          @include media-breakpoint-between(md, xl) {
+            transform: translate(-97%, -134%);
           }
 
           @media (max-width: 767.98px) {
-            right: -20%;
-          }
-
-          @media (max-width: 575.98px) {
             right: 0%;
-            transform: translate(-17%, -143%);
+            transform: translate(-12%, -134%);
           }
         }
       }
