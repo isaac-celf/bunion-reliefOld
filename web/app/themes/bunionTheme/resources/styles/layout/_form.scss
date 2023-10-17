@@ -68,6 +68,7 @@
 
     .af-field {
       @extend .border-0;
+      padding: $spacer * 0.75;
 
       @media (max-width: 575.98px) {
         width: 100% !important;

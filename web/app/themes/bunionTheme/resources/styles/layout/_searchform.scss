@@ -1,14 +1,8 @@
 #form_search_location {
   @extend .mx-auto, .my-0, .w-75, .bg-white, .position-relative, .z-1;
-  // transform: translateY(-50%);
-  // transform: translateY(-30%);
 
   @media (max-width: 991.98px) {
     width: 100% !important;
-  }
-
-  @media (max-width: 575.98px) {
-    transform: translateY(-20%);
   }
 
   .af-fields {
@@ -54,7 +48,7 @@
             .justify-content-end,
             .top-0,
             .end-0;
-          transform: translate(3%, -65%);
+          transform: translate(0%, -65%);
           background: none;
 
           @include media-breakpoint-between(md, lg) {
@@ -84,17 +78,17 @@
         @extend .fw-light, .position-absolute, .z-1;
         font-size: $h6-font-size;
         right: 15%;
-        transform: translate(-135%, -144%);
+        transform: translate(-133%, -134%);
 
         @include media-breakpoint-between(md, xl) {
-          transform: translate(-109%, -144%);
+          transform: translate(-108%, -133%);
         }
 
         @media (max-width: 767.98px) {
           right: -24%;
         }
         @media (max-width: 575.98px) {
-          transform: translate(-17%, -144%);
+          transform: translate(-13%, -133%);
           right: 0%;
         }
       }
@@ -104,6 +98,10 @@
 .homeForm {
   #form_search_location {
     transform: translateY(-50%);
+
+    @media (max-width: 575.98px) {
+      transform: translateY(-24%);
+    }
   }
 }
 
@@ -123,16 +121,89 @@
         .acf-input {
           .acf-input-prepend {
             img {
-              background-image: url('~@images/human-form-white.svg');
               background-repeat: no-repeat;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+.searchform_bg_full {
+  #form_search_location {
+    @media (max-width: 575.98px) {
+      transform: none;
+    }
+
+    .af-fields {
+      .af-field {
+        .acf-input-prepend {
+          @include media-breakpoint-between(md, lg) {
+            transform: translate(-1%, -65%);
+          }
+
+          @media (max-width: 767.98px) {
+            transform: translate(10%, -65%);
           }
         }
       }
 
       .af-submit {
         .acf-button {
-          // transform: translate(-156%, -144%);
+          @include media-breakpoint-between(md, xl) {
+            transform: translate(-112%, -134%);
+          }
+
+          // @include media-breakpoint-between(md, lg) {
+          //   transform: translate(-114%, -144%);
+          // }
+
+          @media (max-width: 767.98px) {
+            right: 0%;
+            transform: translate(-13%, -133%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.find-doctor-search-form {
+  #form_search_location {
+    .af-fields {
+      .af-field {
+        .acf-input-prepend {
+          @include media-breakpoint-between(md, lg) {
+            transform: translate(4%, -65%);
+          }
+
+          @media (max-width: 767.98px) {
+            transform: translate(10%, -65%);
+          }
+        }
+      }
+
+      .af-submit {
+        .acf-button {
+          right: 17%;
+          transform: translate(-135%, -144%);
+
+          @include media-breakpoint-between(lg, xl) {
+            transform: translate(-100%, -144%);
+          }
+          @include media-breakpoint-between(md, lg) {
+            transform: translate(-99%, -144%);
+          }
+
+          @media (max-width: 767.98px) {
+            right: -20%;
+          }
+
+          @media (max-width: 575.98px) {
+            right: 0%;
+            transform: translate(-17%, -143%);
+          }
         }
       }
     }

@@ -29,6 +29,7 @@ class Navigation extends Composer
             'footer' => $this->getFooter(),
             'productPage' => $this->isProductPage(),
             'healthPage' => $this->isHealthProviderPage(),
+            'currentPage' => $this->isCurrentPage(),
         ];
     }
 
@@ -61,6 +62,10 @@ class Navigation extends Composer
         $health_page_id = 1714;
         $current_page_id = get_the_ID();
 
-        return $health_page_id == $current_page_id;
+        return $health_page_id;
+    }
+    
+    public function isCurrentPage() {
+        return get_the_ID();
     }
 }

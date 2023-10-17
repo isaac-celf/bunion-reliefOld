@@ -86,7 +86,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1100px,
+  xl: 1000px,
   xxl: 1182px,
 );
 
@@ -100,7 +100,7 @@ $navbar-nav-link-padding-x: 0.4rem;
 $navbar-nav-link-padding-y: 0.7rem;
 $btn-padding-x: 1.4rem;
 $btn-padding-y: 0.4rem;
-$border-radius: 0.6875rem;
+$border-radius: 0.875rem;
 $progress-height: 2rem;
 $btn-transition: all 0.2s;
 $btn-animate: translateY(2px);

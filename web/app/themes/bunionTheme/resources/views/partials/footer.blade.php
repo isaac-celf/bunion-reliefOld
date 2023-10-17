@@ -7,7 +7,7 @@
 
         @if ($footer)
             <div class="footer__content col p-0">
-                <div class="footer__info row mb-3 ms-lg-6 gap-3 gap-md-5">
+                <div class="footer__info row mb-3 ms-lg-6 gap-3 gap-md-2 flex-column flex-md-row">
                     @foreach ($footer as $item)
                         <div class="footer__list col-auto">
                             <h3 class="text-capitalize text-white fs-5">{{ $item->label }}</h3>
@@ -23,7 +23,7 @@
                     @endforeach
 
                     {{-- contact us --}}
-                    <div class="footer__list col siteOptions">
+                    <div class="footer__list col-auto siteOptions">
                         <h3 class="text-capitalize text-white fs-5">contact us</h3>
                         <ul class="nav flex-column">
                             <p class="text-white my-0 fw-light fs-6">{!! $address !!}</p>

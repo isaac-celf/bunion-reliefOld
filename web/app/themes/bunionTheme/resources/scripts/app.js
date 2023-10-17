@@ -11,6 +11,8 @@ import {
   Thumbs,
   HashNavigation,
 } from 'swiper/modules';
+import * as imgSrc from '../../resources/images/human-form-white.svg';
+// import * as imgSrc from '../../resources/images/';
 
 /**
  * Application entrypoint
@@ -66,9 +68,6 @@ domReady(async () => {
   /**
   Tabs
   */
-  // const bsTab = new bootstrap.Tab('#myTab');
-  // bsTab.getInstance();
-  // console.log(bsTab);
   const tab = document.querySelectorAll('.wp-block-tabs');
   console.log(tab);
 
@@ -164,37 +163,26 @@ domReady(async () => {
 });
 
 loadMore();
-// jQuery(document).ready(function ($) {
-//   var currentPage = 1;
-//   var maxPages = parseInt($('.blogs').attr('data-max'));
 
-//   $('#load-more').on('click', function () {
-//     // Check if there are more pages to load
-//     if (currentPage < maxPages) {
-//       // Increment the page number
-//       currentPage++;
+document.addEventListener('DOMContentLoaded', function () {
+  const searchFormContainer = document.querySelector('#searchform_secondary');
 
-//       // Make an AJAX request to load more posts
-//       $.ajax({
-//         type: 'POST',
-//         url: ajaxurl, // Ensure you have the correct URL for your WordPress AJAX endpoint
-//         data: {
-//           action: 'load_more_posts',
-//           current_page: currentPage,
-//         },
-//         success: function (response) {
-//           // Append the new posts to the existing container
-//           $('.blogs').append(response.data);
+  if (searchFormContainer) {
+    console.log(searchFormContainer);
+    const searchFormImage =
+      searchFormContainer.querySelector('img:first-child');
 
-//           // Check if we've reached the last page
-//           if (currentPage >= maxPages) {
-//             $('#load-more').remove(); // Remove the button when there are no more posts to load
-//           }
-//         },
-//       });
-//     }
-//   });
-// });
+    if (searchFormImage) {
+      console.log(searchFormImage);
+      searchFormImage.src = imgSrc.default;
+      searchFormImage.classList.add('w-100');
+    } else {
+      console.log('no <img> tag is found');
+    }
+  } else {
+    console.log('specified container not found');
+  }
+});
 
 /**
 Stepper 
@@ -229,14 +217,6 @@ Stepper
 //     }
 //   });
 // });
-
-/**
-1. create js function to handle active state of the slide
-*/
-
-/**
-Swiper for Stepper
-*/
 
 /**
  * @see {@link https://webpack.js.org/api/hot-module-replacement/}

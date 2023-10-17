@@ -3,16 +3,25 @@
   margin-top: $spacer - 10;
 }
 
-.sectionTripod2 {
-  transform: translateY(10%);
+.sectionTripodTest {
+  position: relative;
 
-  .wp-block-column {
-    p {
-      margin-top: $spacer * -2;
-    }
+  &::after {
+    content: '';
+    position: absolute;
+    height: 90%;
+    width: 100vw;
+    top: 50%;
+    left: 50%;
+    background-color: $tertiary;
+    z-index: -1;
+    transform: translate(-50%, -56%);
   }
-}
 
-.tripodHeight {
-  height: 406px;
+  .wp-block-column:nth-child(1) {
+    transform: translateY(25%);
+  }
+  .wp-block-column:nth-child(2) {
+    transform: translateY(14%);
+  }
 }
