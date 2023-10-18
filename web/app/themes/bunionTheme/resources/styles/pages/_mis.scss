@@ -16,18 +16,20 @@
 .misSectionProcedure {
   width: 75%;
 
-  .wp-block-group {
-    @media (max-width: 767.98px) {
-      width: 100%;
-      padding: 0;
-    }
+  @media (max-width: 767.98px) {
+    width: 100%;
+    padding: 0;
   }
 
-  .wp-block-image {
-    @media (max-width: 767.98px) {
-      display: none;
-    }
+  .wp-block-column:nth-child(2) {
+    display: none;
   }
+
+  // .wp-block-image {
+  //   @media (max-width: 767.98px) {
+  //     display: none;
+  //   }
+  // }
 }
 
 .phantomMIS {
@@ -42,30 +44,11 @@
 
     .wp-block-column {
       .wp-block-heading:first-child {
-        @extend .d-inline-block, .position-relative;
-        margin-bottom: $spacer * 4;
-
         @media (max-width: 991.98px) {
           font-size: 32px !important;
         }
         @media (max-width: 575.98px) {
           font-size: $h3-font-size !important;
-          margin-bottom: $spacer * 2;
-        }
-
-        &::after {
-          @extend .position-absolute, .w-100, .bg-white;
-          content: '';
-          height: 3px;
-          top: -50%;
-          left: 0;
-        }
-        &::before {
-          @extend .position-absolute, .w-100, .bg-white;
-          content: '';
-          height: 3px;
-          bottom: -50%;
-          left: 0;
         }
       }
     }
@@ -76,10 +59,6 @@
 
         img {
           width: 75%;
-
-          @media (max-width: 767.98px) {
-            width: 50%;
-          }
         }
       }
     }

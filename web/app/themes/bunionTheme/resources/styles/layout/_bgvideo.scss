@@ -12,8 +12,8 @@
   }
 
   .video-description {
-    .video-heading {
-      width: 35%;
+    @include media-breakpoint-down(xxl) {
+      left: 40% !important;
     }
   }
 }

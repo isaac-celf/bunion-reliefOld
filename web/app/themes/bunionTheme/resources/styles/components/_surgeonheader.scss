@@ -1,8 +1,4 @@
 .store-single-content {
-  gap: 4rem;
-  margin-top: $spacer * 4;
-  margin-bottom: $spacer * 4;
-
   &-img-box {
     padding: $spacer * 0.7;
     border-radius: $border-radius;
@@ -11,6 +7,10 @@
 
     img {
       border-radius: $border-radius;
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
     }
   }
 }

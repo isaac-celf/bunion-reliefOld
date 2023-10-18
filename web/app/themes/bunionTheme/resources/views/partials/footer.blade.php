@@ -1,8 +1,10 @@
 <div class="footer container">
-    <div class="row align-items-center gap-5">
-        <div class="footer__brands col-lg-2 mb-2 mb-lg-0 px-0 px-md-3 pt-4 pt-md-0">
-            <img src="@asset('images/br-logo-white.png')" alt="bunion relief white logo" class="brand-img w-100 mb-5">
-            <img src="@asset('images/br-phantom-logo-white.png')" alt="bunion relief mis logo" class="brand-img w-100">
+    <div class="row align-items-center gap-1 gap-md-5">
+        <div class="footer__brands col-lg-2 mb-2 mb-lg-0 px-0 pt-4 pt-md-0">
+            <div class="d-flex flex-column gap-0 gap-md-3">
+                <img src="@asset('images/br-logo-white.png')" alt="bunion relief white logo" class="brand-img w-100 ">
+                <img src="@asset('images/br-phantom-logo-white.png')" alt="bunion relief mis logo" class="brand-img w-100">
+            </div>
         </div>
 
         @if ($footer)
@@ -50,7 +52,11 @@
                                 class="btn footer__button bg-white text-capitalize me-0 me-md-2 mb-3 mb-lg-0 ms-md-0 fs-8">{!! $button['footer_button'] !!}</a>
                         @endforeach
                     @endif
-                    @if ($productPage || $healthPage)
+                    @if ($currentPage == $healthPage)
+                        <a href="{{ get_field('provider_button_link', 'option') }}"
+                            class="btn footer__button bg-white text-capitalize me-0 me-md-2 mb-3 mb-lg-0 ms-md-0 fs-8">{{ get_field('provider_button', 'option') }}</a>
+                    @endif
+                    @if ($productPage)
                         <a href="{{ get_field('provider_button_link', 'option') }}"
                             class="btn footer__button bg-white text-capitalize me-0 me-md-2 mb-3 mb-lg-0 ms-md-0 fs-8">{{ get_field('provider_button', 'option') }}</a>
                     @endif

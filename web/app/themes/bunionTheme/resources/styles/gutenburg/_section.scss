@@ -39,6 +39,9 @@
         border-radius: $border-radius;
 
         .wp-block-group {
+          height: 100%;
+          position: relative;
+
           padding-bottom: 1.5rem;
           .wp-block-heading {
             font-size: $h4-font-size;
@@ -49,15 +52,34 @@
             font-weight: $font-weight-light;
           }
         }
+        &:nth-child(1) ::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: $primary;
+          bottom: 0;
+          left: 0;
+        }
 
-        &:nth-child(1) .wp-block-group {
-          border-bottom: 1px solid $primary;
+        &:nth-child(2) ::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: $green;
+          bottom: 0;
+          left: 0;
         }
-        &:nth-child(2) .wp-block-group {
-          border-bottom: 1px solid $green;
-        }
-        &:nth-child(3) .wp-block-group {
-          border-bottom: 1px solid $orange;
+
+        &:nth-child(3) ::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: $orange;
+          bottom: 0;
+          left: 0;
         }
       }
     }
@@ -181,7 +203,7 @@
     left: 50%;
     transform: translate(0%, -50%);
     background-image: linear-gradient(90deg, white 0 0%, transparent 40% 100%),
-      url('~@images/smart-list-image.png');
+      url('~@images/smartlapidus-list-image.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -190,8 +212,8 @@
     @include media-breakpoint-down(lg) {
       width: 100%;
       left: 0;
-      background-image: url('~@images/smart-list-image.png');
-      opacity: 0.4;
+      background-image: url('~@images/smartlapidus-list-image.png');
+      opacity: 0;
     }
   }
 

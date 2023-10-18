@@ -5,8 +5,10 @@ footer {
     &__brands {
       .brand-img {
         @include media-breakpoint-between(sm, lg) {
-          // object-fit: contain;
-          // height: 5rem;
+          &:nth-child(2) {
+            object-fit: contain;
+            height: 3rem;
+          }
         }
         @media (max-width: 991.98px) {
           object-fit: contain;

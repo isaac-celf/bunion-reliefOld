@@ -61,6 +61,7 @@
 
           img {
             @extend .position-relative, .end-0;
+            max-width: 100%;
             width: 60%;
 
             @media (max-width: 767.98px) {

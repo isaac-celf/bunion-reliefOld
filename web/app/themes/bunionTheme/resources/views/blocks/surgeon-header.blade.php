@@ -1,16 +1,17 @@
-<div class="store-single-content d-md-flex align-items-center {{ $block->classes }}">
+<div
+    class="store-single-content d-flex align-items-center gap-md-6 gap-4 my-4 my-md-6 flex-column flex-lg-row {{ $block->classes }}">
     <div class="store-single-content-img-box d-flex flex-column gap-2">
-        {!! get_the_post_thumbnail(null, 'medium') !!}
+        {!! get_the_post_thumbnail(null, 'surgeon-image', ['class' => 'object-fit-cover']) !!}
     </div>
     <?php ?>
 
-    <div>
+    <div class="w-100">
         <h2 class="store-single-title text-primary mb-4 fw-semibold">{!! single_post_title() !!}</h2>
         <div class="store-single-description mb-4">
             <InnerBlocks />
         </div>
 
-        <div class="store-single-buttons d-flex gap-2">
+        <div class="store-single-buttons d-flex gap-2 flex-column flex-md-row">
             <button type="button" class="btn btn-primary store-single-button btnStoreSingle"
                 data-title="{{ get_the_title() }}" data-bs-toggle="modal" data-bs-target="#iTouchModal">Get In
                 Touch</button>
