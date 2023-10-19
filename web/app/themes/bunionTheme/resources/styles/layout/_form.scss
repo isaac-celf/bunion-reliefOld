@@ -32,9 +32,6 @@
       .current {
         color: $white;
       }
-      // .af-page-button .current {
-      //   color: $white;
-      // }
 
       .af-page-button {
         @extend .border-0,
@@ -81,9 +78,7 @@
         @extend .text-primary, .fw-semibold, .mb-2;
       }
 
-      // removed form label > editor not working.
       .af-input {
-        // Dropdown
         #acf-field_64fb045590b32 {
           height: 41px;
           border-color: $secondary;
@@ -125,30 +120,10 @@
 
       input[type='radio'] {
         accent-color: $primary;
-        // appearance: none;
-        // border-radius: 50%;
-        // width: 12px;
-        // height: 12px;
-        // border: 1px solid $secondary;
-        // transition: 0.2s all ease-in;
-
-        // &:checked {
-        //   border: 6px solid $primary;
-        // }
       }
 
       input[type='checkbox'] {
         accent-color: $primary;
-
-        // appearance: none;
-        // width: 12px;
-        // height: 12px;
-        // border: 1px solid $secondary;
-        // transition: 0.2s all ease-in;
-
-        // &:checked {
-        //   border: 6px solid $primary;
-        // }
       }
 
       .form-control::placeholder {
@@ -190,13 +165,11 @@
           @include make-row();
 
           background-color: $white;
-          // grid-template-columns: 1fr 1fr 1fr;
 
           input[type='checkbox']:not(:last-child) {
             @extend .d-none;
           }
 
-          // :last-child pseudo not working.
           &:last-child {
             label {
               input[type='checkbox'] {

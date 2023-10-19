@@ -1,12 +1,12 @@
 <?php
 global $wp_query;
 
-// $args = [
-//     'post_type' => 'blog',
-//     'posts_per_page' => 3, // Change this to 3 to display 3 posts on page load
-// ];
-
-// $blogs = new WP_Query($args);
+function my_render_post_content(int $id): void
+{
+    $GLOBALS['post'] = get_post($id);
+    the_content();
+    wp_reset_postdata();
+}
 
 ?>
 
@@ -16,7 +16,7 @@ global $wp_query;
         @if ($blogs->have_posts())
             @while ($blogs->have_posts())
                 @php $blogs->the_post() @endphp
-                <x-card title="{!! get_the_title() !!}" description="{!! get_the_excerpt() !!}"
+                <x-card title="{!! get_the_title() !!}" description="{!! get_the_content() !!}"
                     image="{!! get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'img-fluid']) !!}" link="{!! get_permalink() !!}" />
             @endwhile
             @php wp_reset_query() @endphp
@@ -28,3 +28,4 @@ global $wp_query;
         <span class="loader"></span>
     </button>
 </div>
+<InnerBlocks />

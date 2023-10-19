@@ -5,6 +5,7 @@
  */
 
 namespace App;
+
 use WP_Query;
 use Log1x\SageSvg\SageSvg;
 use function Roots\app;
@@ -20,7 +21,7 @@ function ajax_url()
         </script>';
 }
 
-add_action('wp_head', __NAMESPACE__ .'\\ajax_url');
+add_action('wp_head', __NAMESPACE__ . '\\ajax_url');
 /**
  * Add "… Continued" to the excerpt.
  *
@@ -30,7 +31,7 @@ add_filter('excerpt_more', function () {
     return false;
 });
 
-add_filter( 'wpsl_templates',  function ( $templates ) {
+add_filter('wpsl_templates',  function ($templates) {
 
     /**
      * The 'id' is for internal use and must be unique ( since 2.0 ).
@@ -38,7 +39,7 @@ add_filter( 'wpsl_templates',  function ( $templates ) {
      * The 'path' points to the location of the custom template,
      * in this case the folder of your active theme.
      */
-    $templates[] = array (
+    $templates[] = array(
         'id'   => 'custom',
         'name' => 'Custom template',
         'path' => get_stylesheet_directory() . '/' . 'resources/views/template-locater.php',
@@ -50,20 +51,20 @@ add_filter( 'wpsl_templates',  function ( $templates ) {
 /**
  * prevent default template to load
  */
-add_filter( 'wpsl_skip_cpt_template', '__return_true');
+add_filter('wpsl_skip_cpt_template', '__return_true');
 
 /**
  * load store-locator
  */
-add_filter( 'wpsl_listing_template', function () {
+add_filter('wpsl_listing_template', function () {
 
     global $wpsl, $wpsl_settings;
     // render svg tag
     $formIcon = \App(SageSvg::class)->render('images.human-form', 'w-75');
     $formDescription = get_field('form_description', 'option');
 
-    return 
-    "
+    return
+        "
     <li data-key='<%= id %>'>
         <div class='store d-flex gap-3 p-3 flex-column flex-lg-row'>
             <%= thumb %>
@@ -109,13 +110,12 @@ add_filter( 'wpsl_listing_template', function () {
                     </div>
         
                     <div class='modal-body pt-0'>
-                        " .do_shortcode("[advanced_form form='form_get_in_touch']"). "
+                        " . do_shortcode("[advanced_form form='form_get_in_touch']") . "
                     </div>
                 </div>
             </div>
         </div>
         ";
-    
 });
 
 /**
@@ -149,7 +149,8 @@ add_filter('upload_mimes', function ($mimes) {
 /**
  * Blog load more posts
  */
-function load_more_posts() {
+function load_more_posts()
+{
     $next_page = $_POST['current_page'] + 1;
     $query = new WP_Query([
         'post_type' => 'blog',
@@ -157,30 +158,30 @@ function load_more_posts() {
         'paged' => $next_page,
     ]);
 
-    if ($query->have_posts()) ;
+    if ($query->have_posts());
 
     // to not pre-load blog
-        ob_start();
-        
-    
-      while ($query->have_posts()) : $query->the_post();
+    ob_start();
 
-      $title = get_the_title();
-      $description = get_the_excerpt();
-      $image = get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'img-fluid']);
-      $link = get_permalink();
-    
+
+    while ($query->have_posts()) : $query->the_post();
+
+        $title = get_the_title();
+        $description = get_the_excerpt();
+        $image = get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'img-fluid']);
+        $link = get_permalink();
+
         echo \Roots\view("components.card")->with([
             'title' => $title,
             'description' => $description,
             'image' => $image,
             'link' => $link,
         ])->render();
-    
-      endwhile;
-    
-      wp_send_json_success(ob_get_clean());
-    }
 
-add_action('wp_ajax_nopriv_load_more_posts', __NAMESPACE__ .'\\load_more_posts');
-add_action('wp_ajax_load_more_posts', __NAMESPACE__ .'\\load_more_posts');
+    endwhile;
+
+    wp_send_json_success(ob_get_clean());
+}
+
+add_action('wp_ajax_nopriv_load_more_posts', __NAMESPACE__ . '\\load_more_posts');
+add_action('wp_ajax_load_more_posts', __NAMESPACE__ . '\\load_more_posts');

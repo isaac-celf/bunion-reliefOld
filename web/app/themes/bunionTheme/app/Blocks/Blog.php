@@ -140,7 +140,13 @@ class Blog extends Block
         $blog = new FieldsBuilder('blog');
 
         $blog
-        ;
+            ->addRelationship('blogs', [
+                'label' => 'All Blogs',
+                'post_type' => 'blog',
+                'filters' => [
+                    0 => 'blog',
+                ]
+            ]);
 
         return $blog->build();
     }
@@ -160,17 +166,17 @@ class Blog extends Block
      * 
      * 
      */
-    public function getBlogs() {
+    public function getBlogs()
+    {
 
         $blogPost = new WP_Query([
             'post_type' => 'blog',
             'posts_per_page' => 6,
             'orderby' => 'date',
             'order' => 'DESC',
-            'paged' => 1,         
+            'paged' => 1,
         ]);
 
         return $blogPost;
     }
-
 }

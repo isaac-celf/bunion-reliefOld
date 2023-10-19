@@ -11,7 +11,7 @@
 |
 */
 
-if (! file_exists($composer = __DIR__.'/vendor/autoload.php')) {
+if (!file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
     wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'sage'));
 }
 
@@ -29,7 +29,7 @@ require $composer;
 |
 */
 
-if (! function_exists('\Roots\bootloader')) {
+if (!function_exists('\Roots\bootloader')) {
     wp_die(
         __('You need to install Acorn to use this theme.', 'sage'),
         '',
@@ -56,7 +56,7 @@ if (! function_exists('\Roots\bootloader')) {
 
 collect(['setup', 'filters', 'image'])
     ->each(function ($file) {
-        if (! locate_template($file = "app/{$file}.php", true, true)) {
+        if (!locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
                 /* translators: %s is replaced with the relative file path */
                 sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file)
@@ -65,52 +65,31 @@ collect(['setup', 'filters', 'image'])
     });
 
 
-    $size_names = apply_filters(
-        'image_size_names_choose',
-        array(
-            'thumbnail' => __( 'Thumbnail' ),
-            'medium'    => __( 'Medium' ),
-            'large'     => __( 'Large' ),
-            'full'      => __( 'Full Size' ),
-        )
-    );
+$size_names = apply_filters(
+    'image_size_names_choose',
+    array(
+        'thumbnail' => __('Thumbnail'),
+        'medium'    => __('Medium'),
+        'large'     => __('Large'),
+        'full'      => __('Full Size'),
+    )
+);
 
-    // add_theme_support(
-    //     'editor-font-sizes', 
-    //     array(
-    //         array(
-    //             'name'      => __( 'Extra Small' ),
-    //             'shortName' => __( 'XS' ),
-    //             'size'      => 15,
-    //             'slug'      => 'xsmall'
-    //         ),
-    //         array(
-    //             'name'      => __( 'Small' ),
-    //             'shortName' => __( 'S' ),
-    //             'size'      => 18,
-    //             'slug'      => 'small'
-    //         ),
-    //         array(
-    //             'name'      => __( 'Medium' ),
-    //             'shortName' => __( 'M' ),
-    //             'size'      => 23,
-    //             'slug'      => 'medium',
-    //             'fluid' => ([
-    //                 'min' => '1.5rem',
-    //                 'max' => '2.5rem'
-    //               ]),
-    //         ),
-    //         array(
-    //             'name'      => __( 'Large' ),
-    //             'shortName' => __( 'L' ),
-    //             'size'      => 26,
-    //             'slug'      => 'large'
-    //         ),
-    //         array(
-    //             'name'      => __( 'Extra Large' ),
-    //             'shortName' => __( 'XL' ),
-    //             'size'      => 41,
-    //             'slug'      => 'xlarge'
-    //         )
-    //     )
-    // ); 
+function change_success_message($success_message, $form, $args)
+{
+    $id = af_get_field('form_resource_download');
+    $downloadFileUrl = get_permalink($id);
+    $fileTitle = get_the_title($id);
+
+    if ($downloadFileUrl) {
+        return '
+        <div>
+          <h4>Thank you for completing the form</h4>
+          <p>Download <strong>"' . $fileTitle . '"</strong> using the link below.</p>
+          <a class="btn btn-primary file-download-button" href="' . $downloadFileUrl . '">Download</a>
+        </div>';
+    } else {
+        return 'Sorry, no file has been found';
+    }
+}
+add_filter('af/form/success_message/key=form_resource_download', 'change_success_message', 10, 3);

@@ -6,7 +6,7 @@
         <div class="card-body col-md-8 col-12 ps-auto ps-md-5 py-0">
             <h4 class="card-title text-primary">{!! $title !!}</h4>
             <p class="card-text">{!! $description !!}</p>
-            <a href="{!! $link !!}" class="stretched-link">Read more</a>
+            <a href="#" class="">Read more</a>
         </div>
     </div>
 </div>

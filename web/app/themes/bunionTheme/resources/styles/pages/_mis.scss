@@ -21,15 +21,11 @@
     padding: 0;
   }
 
-  .wp-block-column:nth-child(2) {
-    display: none;
+  @media (max-width: 767.98px) {
+    .wp-block-column:nth-child(2) {
+      display: none;
+    }
   }
-
-  // .wp-block-image {
-  //   @media (max-width: 767.98px) {
-  //     display: none;
-  //   }
-  // }
 }
 
 .phantomMIS {

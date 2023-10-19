@@ -1,7 +1,7 @@
 <div class="footer container">
-    <div class="row align-items-center gap-1 gap-md-5">
+    <div class="row align-items-center gap-3 gap-md-5">
         <div class="footer__brands col-lg-2 mb-2 mb-lg-0 px-0 pt-4 pt-md-0">
-            <div class="d-flex flex-column gap-0 gap-md-3">
+            <div class="d-flex flex-column gap-3">
                 <img src="@asset('images/br-logo-white.png')" alt="bunion relief white logo" class="brand-img w-100 ">
                 <img src="@asset('images/br-phantom-logo-white.png')" alt="bunion relief mis logo" class="brand-img w-100">
             </div>
@@ -9,7 +9,8 @@
 
         @if ($footer)
             <div class="footer__content col p-0">
-                <div class="footer__info row mb-3 ms-lg-6 gap-3 gap-md-2 flex-column flex-md-row">
+                <div
+                    class="footer__info row mb-3 ms-lg-6 gap-3 gap-md-2 flex-column flex-md-row justify-content-between">
                     @foreach ($footer as $item)
                         <div class="footer__list col-auto">
                             <h3 class="text-capitalize text-white fs-5">{{ $item->label }}</h3>

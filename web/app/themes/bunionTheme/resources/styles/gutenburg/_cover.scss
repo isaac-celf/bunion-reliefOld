@@ -1,19 +1,4 @@
 .homeCover {
-  @extend .h-100;
-
-  @media (max-width: 767.98px) {
-    background-color: $primary;
-
-    img {
-      display: none;
-    }
-  }
-
-  .homeTitle {
-    p {
-      font-size: $h4-font-size;
-    }
-  }
 }
 .sectionEachBunion {
   .wp-block-column {

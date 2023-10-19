@@ -185,40 +185,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /**
-Stepper 
-*/
-// const stepper = document.querySelectorAll('.stepper-container');
-// const stepperImage = document.querySelectorAll('.stepper-img-box');
-
-// console.log(stepper);
-// stepper.forEach((step) => {
-//   const stepperSingle = step.querySelectorAll('.stepper-single');
-//   const stepperImage = step.querySelectorAll('.stepper-img-box');
-
-//   stepperSingle.forEach((step) => {
-//     step.classList.add('opacity-50');
-//   });
-
-//   stepperImage.forEach((image) => {
-//     const dataHash = image.getAttribute('data-hash');
-
-//     console.log(image.classList);
-
-//     if (image.classList.contains('swiper-slide-active')) {
-//       stepperSingle.forEach((step) => {
-//         const dataImage = step.getAttribute('data-image');
-
-//         console.log(dataHash, dataImage);
-
-//         if (dataImage === dataHash) {
-//           step.classList.remove('opacity-50');
-//         }
-//       });
-//     }
-//   });
-// });
-
-/**
  * @see {@link https://webpack.js.org/api/hot-module-replacement/}
  */
 if (import.meta.webpackHot) import.meta.webpackHot.accept(console.error);

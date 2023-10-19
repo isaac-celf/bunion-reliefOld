@@ -4,15 +4,23 @@ footer {
   .footer {
     &__brands {
       .brand-img {
-        @include media-breakpoint-between(sm, lg) {
-          &:nth-child(2) {
+        @include media-breakpoint-between(sm, xlg) {
+          &:nth-child(1) {
             object-fit: contain;
-            height: 3rem;
+            height: 5rem;
           }
-        }
-        @media (max-width: 991.98px) {
           object-fit: contain;
-          height: 6rem;
+          height: 3rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+          &:nth-child(1) {
+            object-fit: contain;
+            height: 4rem;
+          }
+
+          object-fit: contain;
+          height: 2rem;
         }
       }
     }
