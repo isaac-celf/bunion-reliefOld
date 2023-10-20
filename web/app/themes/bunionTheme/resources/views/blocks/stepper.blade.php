@@ -17,8 +17,8 @@
 
 @if ($step)
     <div class="{{ $block->classes }}">
-        <div class="stepper-container row align-items-center px-2 mb-6">
-            <div class="swiper stepperSlider col-4">
+        <div class="stepper-container row align-items-center p-0 mb-6">
+            <div class="swiper stepper-slider col-4">
                 <div class="stepper swiper-wrapper">
                     @foreach ($step as $index => $single)
                         <div class="stepper-img-box col-md-4 col-6 swiper-slide w-100" data-hash="{{ $index }}">
@@ -29,10 +29,9 @@
                 </div>
             </div>
 
-            <div class="col-8 position-relative">
-
+            <div class="stepper-body col-8 position-relative">
                 <div class="stepper-info row align-items-center">
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination" id="swiper-rotate"></div>
                     <div class="step">
                         <div class="stepper-step ">
                             @foreach ($step as $index => $single)

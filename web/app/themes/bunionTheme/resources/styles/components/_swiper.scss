@@ -18,25 +18,6 @@
   object-fit: cover;
 }
 
-.step {
-  padding-left: $spacer * 8;
-}
-
-.stepper-info {
-  position: relative;
-  &::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 5.6%;
-    width: 1px;
-    height: 60%;
-    background-color: $secondary;
-    transform: translateY(33%);
-    z-index: -2;
-  }
-}
-
 .swiper-pagination-vertical.swiper-pagination-bullets,
 .swiper-vertical > .swiper-pagination-bullets {
   @extend .d-flex, .justify-content-center, .flex-column;
@@ -65,5 +46,83 @@
     border-color: $primary;
     outline: 1px solid $primary;
     outline-offset: 1px;
+  }
+}
+
+.step {
+  padding-left: $spacer * 8;
+}
+
+.stepper-info {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 5.6%;
+    width: 1px;
+    height: 60%;
+    background-color: $secondary;
+    transform: translateY(33%);
+    z-index: -2;
+
+    @include media-breakpoint-down(xxl) {
+      top: 8%;
+      height: 50%;
+      left: 5.9%;
+    }
+
+    @include media-breakpoint-down(lg) {
+      top: 0%;
+      height: 60%;
+      left: 2.8%;
+    }
+
+    @include media-breakpoint-down(md) {
+      top: 9%;
+      height: 50%;
+      left: 3%;
+    }
+    @include media-breakpoint-down(sm) {
+      top: 16%;
+      height: 41%;
+      left: 5.2%;
+    }
+
+    @media (max-width: 321px) {
+    }
+  }
+}
+
+.wp-block-stepper {
+  .stepper-container {
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+      gap: $spacer * 3;
+
+      .stepper-slider {
+        width: 70%;
+      }
+
+      .stepper-body {
+        width: 100%;
+      }
+    }
+  }
+
+  .step {
+    @include media-breakpoint-down(lg) {
+      padding-left: $spacer * 4;
+    }
+  }
+}
+
+#swiper-rotate {
+  @include media-breakpoint-down(lg) {
+    left: 2%;
+
+    @include media-breakpoint-down(sm) {
+      left: 4%;
+    }
   }
 }

@@ -83,7 +83,7 @@ function change_success_message($success_message, $form, $args)
 
     if ($downloadFileUrl) {
         return '
-        <div>
+        <div class="px-3">
           <h4>Thank you for completing the form</h4>
           <p>Download <strong>"' . $fileTitle . '"</strong> using the link below.</p>
           <a class="btn btn-primary file-download-button" href="' . $downloadFileUrl . '">Download</a>

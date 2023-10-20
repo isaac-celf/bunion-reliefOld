@@ -1,6 +1,6 @@
 import {clippingParents} from '@popperjs/core';
-import domReady from '@roots/sage/client/dom-ready';
 import 'bootstrap';
+import domReady from '@roots/sage/client/dom-ready';
 import loadMore from './loadMore';
 import Swiper from 'swiper';
 import {
@@ -12,7 +12,6 @@ import {
   HashNavigation,
 } from 'swiper/modules';
 import * as imgSrc from '../../resources/images/human-form-white.svg';
-// import * as imgSrc from '../../resources/images/';
 
 /**
  * Application entrypoint
@@ -26,7 +25,7 @@ domReady(async () => {
 
   blockStepper.forEach(function (blockStep) {
     if (blockStep) {
-      const swiperStepper = new Swiper('.stepperSlider', {
+      const swiperStepper = new Swiper('.stepper-slider', {
         on: {
           init: function () {
             activateStep(this.activeIndex);
@@ -182,6 +181,24 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     console.log('specified container not found');
   }
+
+  /**
+  Blog Trigger Modal
+  */
+
+  const modalDownloadElement = document.querySelector('#downloadModal');
+  const modalDownload = new bootstrap.Modal(modalDownloadElement);
+
+  function checkScrollPosition() {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    if (scrollPosition >= windowHeight / 2) {
+      modalDownload.show();
+      window.removeEventListener('scroll', checkScrollPosition);
+    }
+  }
+  window.addEventListener('scroll', checkScrollPosition);
 });
 
 /**

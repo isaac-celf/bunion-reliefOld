@@ -1,18 +1,19 @@
 {{--
-  Template Name: News Template
+  Template Name: Resource Template
 --}}
-
-@extend ('layouts.app')
-
 @section('content')
     @while (have_posts())
         @php(the_post())
 
         <div class="offset-content">
             <div class="news-column-grid">
-                <div></div>
                 <div>
-                    @include('partials.blogs-page')
+                    <h2>{{ the_title() }}</h2> {{-- Display the post title --}}
+                    <div class="post-content">
+                        {{ the_content() }} {{-- Display the post content --}}
+                    </div>
+                </div>
+                <div>
                 </div>
                 <div></div>
             </div>

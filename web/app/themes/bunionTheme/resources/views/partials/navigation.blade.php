@@ -7,7 +7,7 @@
                     @if ($item->children)
                         <li class="my-menu-item nav-item dropdown">
                             <a href="{{ $item->url }}"
-                                class="nav-link btn p-2 {{ $item->classes ?? '' }} {{ $item->active ? '' : '' }}"
+                                class="nav-link btn {{ $item->classes ?? '' }} {{ $item->active ? '' : '' }}"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                                 {{ $item->label }}
                             </a>
@@ -26,7 +26,7 @@
                     @else
                         <li class="my-menu-item nav-item ">
                             <a href="{{ $item->url }}"
-                                class="nav-link btn p-2 {{ $item->classes ?? '' }} {{ $item->active ? '' : '' }}">
+                                class="nav-link btn {{ $item->classes ?? '' }} {{ $item->active ? '' : '' }}">
                                 {{ $item->label }}
                             </a>
                         </li>
@@ -35,14 +35,14 @@
                 @if ($productPage)
                     <li class="my-menu-item nav-item">
                         <a href="{{ get_field('provider_button_link', 'option') }}"
-                            class="nav-link btn keyBtn p-2">{{ get_field('provider_button', 'option') }}
+                            class="nav-link btn keyBtn">{{ get_field('provider_button', 'option') }}
                         </a>
                     </li>
                 @endif
                 @if ($currentPage == $healthPage)
                     <li class="my-menu-item nav-item">
                         <a href="{{ get_field('provider_button_link', 'option') }}"
-                            class="nav-link btn keyBtn keyBtn key-button-active p-2">{{ get_field('provider_button', 'option') }}
+                            class="nav-link btn keyBtn keyBtn key-button-active">{{ get_field('provider_button', 'option') }}
                         </a>
                     </li>
                 @endif
@@ -81,7 +81,7 @@
                                     <div id="{{ $item->id }}" class="accordion-collapse collapse"
                                         aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                         <div class="accordion-body">
-                                            <a href="{{ $item->url }}" class="nav-link">{{ $child->label }}</a>
+                                            <a href="{{ $child->url }}" class="nav-link">{{ $child->label }}</a>
                                         </div>
                                     </div>
                                 @endforeach

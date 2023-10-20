@@ -1,9 +1,11 @@
-<div class="{{ $block->classes }} d-flex gap-2">
+<div class="{{ $block->classes }} my-4">
 
     @if ($files)
         @foreach ($files as $file)
-            <a href="#" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                data-bs-target="#downloadModal">Download</a>
+            <div class="collapse-content">
+                <a href="#" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#downloadModal">Download</a>
+            </div>
             <div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
