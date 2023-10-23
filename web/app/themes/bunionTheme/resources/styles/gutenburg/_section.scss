@@ -1,35 +1,5 @@
 .sectionSymptoms {
-  .title {
-    margin-top: $spacer * 2;
-    margin-bottom: $spacer * 2;
-
-    p:nth-child(2) {
-      font-size: $h4-font-size;
-      display: inline-block;
-      width: 60%;
-
-      @media (max-width: 767.98px) {
-      }
-    }
-    p:nth-child(3) {
-      display: inline-block;
-      width: 70%;
-
-      @media (max-width: 767.98px) {
-      }
-    }
-
-    &-content {
-      margin-bottom: $spacer * 2;
-      p {
-        font-size: $h4-font-size;
-      }
-    }
-  }
-
   .bunionCondition {
-    @extend .px-4;
-
     .wp-block-columns {
       margin-bottom: $spacer * 2;
 
@@ -83,9 +53,6 @@
         }
       }
     }
-  }
-
-  .bunionDiagnosed {
   }
 
   .bunionNothing {

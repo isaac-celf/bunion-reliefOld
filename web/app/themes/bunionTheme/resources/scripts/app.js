@@ -82,6 +82,9 @@ domReady(async () => {
     });
   });
 
+  /**
+  Store locator
+   */
   const listItems = document.querySelectorAll('.acf-checkbox-list li');
   const changeIndex = document.querySelectorAll('.af-page-button .title');
   const btnSingle = document.querySelector('.btnStoreSingle');

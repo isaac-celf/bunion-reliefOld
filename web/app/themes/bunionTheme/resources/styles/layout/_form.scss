@@ -93,6 +93,33 @@
             @extend .w-100;
           }
         }
+
+        .select2 {
+          .select2-selection {
+            border-radius: $border-radius;
+            border-color: $secondary;
+            height: 100%;
+
+            &__rendered {
+              height: 41px;
+              padding-inline: $spacer;
+              padding-top: $spacer * 0.4;
+            }
+
+            &__placeholder {
+              color: $secondary;
+            }
+
+            &__arrow {
+              margin-top: $spacer * 0.5;
+              margin-right: $spacer * 0.5;
+
+              b {
+                border-color: $primary transparent transparent transparent;
+              }
+            }
+          }
+        }
       }
 
       label {

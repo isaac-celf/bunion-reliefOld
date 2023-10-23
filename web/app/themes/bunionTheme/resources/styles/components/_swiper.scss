@@ -89,7 +89,15 @@
       left: 5.2%;
     }
 
-    @media (max-width: 321px) {
+    @media (max-width: 399.98px) {
+      top: 21%;
+      height: 35%;
+      left: 5.3%;
+    }
+    @media (max-width: 353.98px) {
+      top: 24%;
+      height: 31%;
+      left: 5.5%;
     }
   }
 }
@@ -102,6 +110,10 @@
 
       .stepper-slider {
         width: 70%;
+
+        @include media-breakpoint-down(lg) {
+          width: 100%;
+        }
       }
 
       .stepper-body {

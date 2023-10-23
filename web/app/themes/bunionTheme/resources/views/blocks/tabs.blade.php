@@ -20,3 +20,23 @@
         </div>
     @endif
 </div>
+
+<div class="accordion accordionTabs" id="tabAccordion">
+    @if ($tabs)
+        @foreach ($tabs as $tab => $value)
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#{{ $tab }}" aria-expanded="false" aria-controls="collapseOne">
+                        {{ $value->post_title }}
+                    </button>
+                </h2>
+                <div id="{{ $tab }}" class="accordion-collapse collapse" data-bs-parent="#tabAccordion">
+                    <div class="accordion-body p-0">
+                        <x-single-tab :id="$value->ID" />
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    @endif
+</div>

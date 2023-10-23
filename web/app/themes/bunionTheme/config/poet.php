@@ -69,9 +69,13 @@ return [
     */
 
     'taxonomy' => [
-        'genre' => [
-            'links' => ['book'],
-            'meta_box' => 'radio',
+        'page-cat' => [
+            'links' => ['page'],
+            'show_in_rest' => true,
+            'labels' => [
+                'singular' => 'Category',
+                'plural' => 'Categories',
+            ],
         ],
     ],
 

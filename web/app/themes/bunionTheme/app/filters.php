@@ -131,7 +131,7 @@ add_action('af/form/submission/key=form_search_location', function ($form, $fiel
         ]
     );
 
-    $location = home_url() . '/result/' . '?' . $urlQuery;
+    $location = home_url() . '/find-a-doctor/' . '?' . $urlQuery;
 
     header("Location: " . $location);
     exit;

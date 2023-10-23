@@ -1,4 +1,4 @@
-<div class="">
+<div class="{{ $block->classes }}">
     @if ($questions)
         <div class="question container p-0">
             @foreach ($questions as $item)
@@ -20,8 +20,4 @@
             @endforeach
         </div>
     @endif
-
-    <div>
-        {{-- <InnerBlocks /> --}}
-    </div>
 </div>

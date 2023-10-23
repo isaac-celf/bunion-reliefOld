@@ -15,7 +15,7 @@
 
     .form-header {
       #wpsl-search-input {
-        border: 2px solid $secondary;
+        border: 1px solid $secondary;
         border-radius: $border-radius;
         width: 100% !important;
       }
@@ -84,5 +84,14 @@
   }
 
   .locator-right {
+  }
+}
+
+.wpsl-dropdown {
+  border-radius: $border-radius;
+  border-color: $secondary;
+
+  .wpsl-selected-item::after {
+    border-color: $primary transparent transparent transparent;
   }
 }

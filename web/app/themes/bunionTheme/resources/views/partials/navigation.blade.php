@@ -98,27 +98,36 @@
                         </div>
                     @endif
                 @endforeach
+
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <a href="{{ get_field('provider_button_link', 'option') }}"
+                                class="accordion__single text-decoration-none py-3 px-4 d-block border-bottom">{{ get_field('provider_button', 'option') }}</a>
+                        </h2>
+                    </div>
+                </div>
             </div>
 
             <div class="offcanvas__footer text-primary px-4">
                 <ul class="d-flex flex-column mb-1 ps-0">
-                    <div class="offcanvas__contact-details d-flex gap-2 align-items-center">
+                    <div class="offcanvas__contact-details d-flex gap-2 align-items-center fs-3">
                         <i class="bi bi-telephone"></i>
                         <p class="my-0 fw-bold">{!! $phoneNum !!}</p>
                     </div>
-                    <div class="offcanvas__contact-details d-flex gap-2 align-items-center">
+                    <div class="offcanvas__contact-details d-flex gap-2 align-items-center fs-3">
                         <i class="bi bi-envelope"></i>
                         <p class="my-0 fw-bold">{!! $email !!}</p>
                     </div>
                 </ul>
                 <ul class="offcanvas__social-icons list-unstyled d-flex gap-3 mb-0">
-                    <li class="p-1 ps-0"><a href="{{ $socialFB }}" class="icon icon-link icon-link-hover"
+                    <li class="p-1 ps-0 fs-3"><a href="{{ $socialFB }}" class="icon icon-link icon-link-hover"
                             target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                 class="bi bi-facebook"></i></a></li>
-                    <li class="p-1 ps-0"><a href="{{ $socialIG }}" class="icon-link icon-link-hover"
+                    <li class="p-1 ps-0 fs-3"><a href="{{ $socialIG }}" class="icon-link icon-link-hover"
                             target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                 class="bi bi-instagram"></i></a></li>
-                    <li class="p-1 ps-0"><a href="{{ $socialX }}" class="icon-link icon-link-hover"
+                    <li class="p-1 ps-0 fs-3"><a href="{{ $socialX }}" class="icon-link icon-link-hover"
                             target="_blank" style="--bs-icon-link-transform:translate3d(0, -.125rem, 0)"><i
                                 class="bi bi-twitter-x"></i></a></li>
                 </ul>
