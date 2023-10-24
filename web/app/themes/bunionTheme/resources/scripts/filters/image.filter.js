@@ -22,6 +22,7 @@ export function callback(settings, name) {
     ...settings,
     styles: [
       {label: 'Outline', name: 'outline'},
+      {label: 'Rounded', name: 'rounded'},
       {label: 'Blog Image', name: 'blog'},
     ],
   };

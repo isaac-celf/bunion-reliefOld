@@ -1,6 +1,7 @@
 .wp-block-image {
   img {
     border-radius: $border-radius;
+    width: 100%;
   }
 }
 
@@ -13,5 +14,11 @@
     border-radius: inherit;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
+  }
+}
+
+.image-md-75 {
+  .img {
+    width: 75%;
   }
 }

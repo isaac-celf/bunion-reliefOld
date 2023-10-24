@@ -13,7 +13,14 @@
 
   .video-description {
     @include media-breakpoint-down(xxl) {
-      left: 40% !important;
+      left: 43% !important;
+      width: 75%;
+    }
+
+    .wp-block-image {
+      img {
+        border-radius: 0;
+      }
     }
   }
 }

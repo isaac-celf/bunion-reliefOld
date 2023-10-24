@@ -34,7 +34,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-img-box row align-items-center w-100 m-auto px-3">
-                <div class="col-8">
+                <div class="col-md-8 col-12">
                     <h1 class="modal-title text-primary fw-semibold fs-2 px-1 fw-semibold" id="iTouchModalLabel">Contact
                         Us
                     </h1>

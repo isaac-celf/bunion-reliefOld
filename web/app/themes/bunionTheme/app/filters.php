@@ -87,7 +87,7 @@ add_filter('wpsl_listing_template', function () {
 
                 <div class ='locator-buttons d-flex gap-3 mt-2'>
                     <button type='button' class='btn btn-primary text-capitalize btnTouch' data-bs-toggle='modal' data-bs-target='#iTouchModal-<%= id %>'>Get In Touch</button>
-                    <p><a href='<%= permalink %>' class='btn btn-light border-dark-subtle text-capitalize'>more info</a></p>
+                    <p><a href='<%= permalink %>' class='btn btn-light border-dark-subtle text-capitalize'>view profile</a></p>
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@ add_filter('wpsl_listing_template', function () {
                         <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                     </div>
                     <div class='modal-img-box row px-3 align-items-center w-100 m-auto'>
-                        <div class='col-8'>
+                        <div class='col-12 col-md-8'>
                             <h1 class='modal-title text-primary fw-semibold fs-2 px-1' id='iTouchModalLabel'>Contact Us</h1>
                             <p class='modal-description ps-2 pt-0'> $formDescription</p>
                         </div>

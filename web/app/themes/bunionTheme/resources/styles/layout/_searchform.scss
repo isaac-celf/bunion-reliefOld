@@ -1,9 +1,12 @@
 #form_search_location {
   @extend .mx-auto, .my-0, .w-75, .bg-white, .position-relative, .z-1;
 
-  @media (max-width: 991.98px) {
+  @include media-breakpoint-down(lg) {
     width: 100% !important;
   }
+  // @media (max-width: 991.98px) {
+  //   width: 100% !important;
+  // }
 
   .af-fields {
     .af-field {
@@ -81,14 +84,20 @@
         right: 15%;
         transform: translate(-133%, -134%);
 
+        @include media-breakpoint-down(xxl) {
+          transform: translate(-112%, -133%);
+        }
+
         @include media-breakpoint-between(md, xl) {
           transform: translate(-108%, -133%);
         }
 
-        @media (max-width: 767.98px) {
+        @include media-breakpoint-down(md) {
           right: -24%;
+          transform: translate(-129%, -133%);
         }
-        @media (max-width: 575.98px) {
+
+        @include media-breakpoint-down(sm) {
           transform: translate(-13%, -133%);
           right: 0%;
         }

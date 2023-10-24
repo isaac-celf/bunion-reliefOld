@@ -51,13 +51,17 @@
 }
 
 .columnApproach {
-  // gap: $spacer * 10;
-
   .wp-block-column {
     .wp-block-image {
       img {
         width: 100%;
       }
     }
+  }
+}
+
+.column-images {
+  @include media-breakpoint-down(md) {
+    width: 75%;
   }
 }

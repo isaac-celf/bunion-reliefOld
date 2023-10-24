@@ -22,34 +22,24 @@
             font-weight: $font-weight-light;
           }
         }
-        &:nth-child(1) ::before {
+        ::before {
           content: '';
           position: absolute;
           width: 100%;
           height: 1px;
-          background-color: $primary;
           bottom: 0;
           left: 0;
+        }
+        &:nth-child(1) ::before {
+          background-color: $primary;
         }
 
         &:nth-child(2) ::before {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 1px;
           background-color: $green;
-          bottom: 0;
-          left: 0;
         }
 
         &:nth-child(3) ::before {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 1px;
           background-color: $orange;
-          bottom: 0;
-          left: 0;
         }
       }
     }
@@ -185,7 +175,7 @@
   }
 
   .wp-block-group {
-    @extend .w-100, .p-4;
+    @extend .w-100, .px-3, .py-2, .py-md-5;
 
     @include media-breakpoint-down(lg) {
       width: auto !important;

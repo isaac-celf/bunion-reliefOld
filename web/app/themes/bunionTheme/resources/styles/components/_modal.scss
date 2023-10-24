@@ -3,7 +3,7 @@
 
   .modal-img-box {
     svg {
-      @media (max-width: 575.98px) {
+      @include media-breakpoint-down(md) {
         display: none;
       }
     }
