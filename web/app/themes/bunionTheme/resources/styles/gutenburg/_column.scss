@@ -7,8 +7,6 @@
     }
 
     .wp-block-group {
-      padding-left: $spacer * 1.25;
-
       .wp-block-heading {
         font-size: $h5-font-size;
       }
@@ -25,11 +23,11 @@
   }
 }
 .columnQoute {
-  padding: $spacer * 5 $spacer * 1.2;
+  // padding: $spacer * 5 $spacer * 1.2;
 
   .wp-block-column:first-child {
     .wp-block-heading {
-      margin-bottom: $spacer * 3;
+      // margin-bottom: $spacer * 3;
     }
   }
 

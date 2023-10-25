@@ -10,9 +10,6 @@
   }
 }
 
-.misSectionStory {
-}
-
 .misSectionProcedure {
   width: 75%;
 
@@ -29,8 +26,6 @@
 }
 
 .phantomMIS {
-  padding: $spacer * 3;
-
   @media (max-width: 575.98px) {
     padding: $spacer * 2 $spacer;
   }
@@ -52,10 +47,6 @@
     .wp-block-column:last-child {
       .wp-block-image {
         margin-bottom: 0;
-
-        img {
-          width: 75%;
-        }
       }
     }
   }

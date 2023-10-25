@@ -105,9 +105,6 @@
 .wp-block-stepper {
   .stepper-container {
     @include media-breakpoint-down(lg) {
-      flex-direction: column;
-      gap: $spacer * 3;
-
       .stepper-slider {
         width: 70%;
 
