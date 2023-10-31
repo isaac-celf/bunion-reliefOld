@@ -57,5 +57,9 @@ body {
 .wp-block-cover {
   .wp-block-cover__inner-container {
     @extend .container;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
   }
 }
