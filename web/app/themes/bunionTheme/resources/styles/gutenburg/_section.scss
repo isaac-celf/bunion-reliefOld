@@ -1,63 +1,44 @@
-.sectionSymptoms {
-  .bunionCondition {
-    .wp-block-columns {
-      margin-bottom: $spacer * 2;
+.bunionCondition {
+  .wp-block-columns {
+    margin-bottom: $spacer * 2;
 
-      .wp-block-column {
-        padding: $spacer $spacer * 0.9;
-        box-shadow: $box-shadow;
-        border-radius: $border-radius;
+    .wp-block-column {
+      padding: $spacer $spacer * 0.9;
+      box-shadow: $box-shadow;
+      border-radius: $border-radius;
 
-        .wp-block-group {
-          height: 100%;
-          position: relative;
+      .wp-block-group {
+        height: 100%;
+        position: relative;
 
-          padding-bottom: 1.5rem;
-          .wp-block-heading {
-            font-size: $h4-font-size;
-            font-weight: $font-weight-bold;
-            letter-spacing: 0.7px;
-          }
-          p {
-            font-weight: $font-weight-light;
-          }
+        padding-bottom: 1.5rem;
+        .wp-block-heading {
+          font-size: $h4-font-size;
+          font-weight: $font-weight-bold;
+          letter-spacing: 0.7px;
         }
-        ::before {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 1px;
-          bottom: 0;
-          left: 0;
-        }
-        &:nth-child(1) ::before {
-          background-color: $primary;
-        }
-
-        &:nth-child(2) ::before {
-          background-color: $green;
-        }
-
-        &:nth-child(3) ::before {
-          background-color: $orange;
+        p {
+          font-weight: $font-weight-light;
         }
       }
-    }
-  }
+      ::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+      }
+      &:nth-child(1) ::before {
+        background-color: $primary;
+      }
 
-  .bunionNothing {
-    .wp-block-columns {
-      .wp-block-column {
-        .wp-block-image {
-          img {
-            width: 75%;
-          }
-        }
-        .wp-block-group {
-          p strong {
-            font-weight: $font-weight-semibold;
-          }
-        }
+      &:nth-child(2) ::before {
+        background-color: $green;
+      }
+
+      &:nth-child(3) ::before {
+        background-color: $orange;
       }
     }
   }
@@ -91,7 +72,7 @@
     .wp-block-column {
       .wp-block-group {
         .wp-block-heading {
-          margin-bottom: $spacer * 2;
+          // margin-bottom: $spacer * 2;
         }
         .wp-block-group {
           .wp-block-heading {

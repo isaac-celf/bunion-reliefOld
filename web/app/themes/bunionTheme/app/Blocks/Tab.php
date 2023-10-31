@@ -170,27 +170,30 @@ class Tab extends Block
         //
     }
 
-    public function getTabTitle() {
+    public function getTabTitle()
+    {
 
         $tabTitle = get_field('tab_title');
 
         return isset($tabTitle) ? $tabTitle : null;
     }
 
-    public function getTabContent() {
+    public function getTabContent()
+    {
 
         $tabContent = get_field('tab_content');
 
         return isset($tabContent) ? $tabContent : null;
     }
 
-    public function getTabImage() {
+    public function getTabImage()
+    {
         $image = get_field('tab_image');
 
         if ($image && isset($image['sizes']['blog-image'])) {
             return $image['sizes']['blog-image'];
         } else {
-           return null;
+            return null;
         }
     }
 }

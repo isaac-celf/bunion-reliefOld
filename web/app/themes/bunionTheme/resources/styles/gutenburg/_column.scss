@@ -1,23 +1,4 @@
-.columnCard {
-  .wp-block-column {
-    .wp-block-image.is-style-rounded {
-      img {
-        border-radius: $border-radius;
-      }
-    }
-
-    .wp-block-group {
-      .wp-block-heading {
-        font-size: $h5-font-size;
-      }
-      p {
-        font-size: $font-size-base;
-      }
-    }
-  }
-}
-
-.columnThree {
+.last-content-align-bottom {
   .wp-block-column {
     @extend .d-flex, .flex-column, .justify-content-between, .align-items-start;
   }

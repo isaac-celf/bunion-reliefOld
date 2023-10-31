@@ -69,11 +69,6 @@
           }
 
           p {
-            // padding: $spacer * 3;
-            // font-size: $h3-font-size;
-            // font-weight: $font-weight-light;
-            // line-height: 1.7;
-
             &::after {
               content: '';
               background-image: url('~@images/quotationEnd.png');

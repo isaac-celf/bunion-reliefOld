@@ -3,7 +3,7 @@
     position: relative;
     top: 0;
     left: 0;
-    transform: translateY(-20%);
+    transform: translateY(-15%);
     background-color: $white;
     z-index: 1;
   }
@@ -14,7 +14,7 @@
   box-shadow: $box-shadow;
 
   .af-fields {
-    @media (max-width: 575.98px) {
+    @include media-breakpoint-down(sm) {
       display: flex;
       flex-direction: column;
     }
@@ -172,11 +172,8 @@
           .fw-medium,
           .border,
           .border-primary;
-
-        &:hover {
-          // @extend .bg-primary, .text-white;
-        }
       }
+
       .af-next-button {
         @extend .btn, .btn-primary, .fw-medium;
 
@@ -235,7 +232,7 @@
               cursor: pointer;
               box-shadow: $box-shadow;
               border-radius: $border-radius;
-              height: 379px;
+              height: 100%;
 
               &.selected {
                 @extend .bg-primary, .text-white;
@@ -250,17 +247,17 @@
               }
             }
 
-            &:last-child {
-              @extend .align-items-end;
-            }
+            // &:last-child {
+            //   @extend .align-items-end;
+            // }
 
-            &:last-child label {
-              @extend .shadow-none, .d-flex, .align-items-center, .h-25;
+            // &:last-child label {
+            //   @extend .shadow-none, .d-flex, .align-items-center, .h-25;
 
-              &.selected {
-                @extend .bg-transparent, .text-primary;
-              }
-            }
+            //   &.selected {
+            //     @extend .bg-transparent, .text-primary;
+            //   }
+            // }
           }
         }
       }
@@ -302,9 +299,32 @@
   }
 }
 
-// link, visited
-// hover, active
-// Get In Touch Form
 #form_get_in_touch {
   @extend .p-0, .shadow-none;
+}
+
+#form_symptom_checker {
+  .af-fields {
+    .af-page-wrap {
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        margin: 0;
+        transform: translate(0%, -200%);
+      }
+    }
+  }
+}
+
+.hide-radio {
+  .acf-input {
+    .acf-radio-list {
+      li {
+        label {
+          input {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }

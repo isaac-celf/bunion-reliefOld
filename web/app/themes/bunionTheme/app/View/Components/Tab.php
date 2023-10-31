@@ -17,7 +17,6 @@ class Tab extends Component
      */
     public function __construct($id)
     {
-        $this->tabDescription = $this->getDescription();
         $this->tabImage = get_the_post_thumbnail_url($id);
         $this->tabTitle = get_the_title($id);
     }
@@ -31,10 +30,4 @@ class Tab extends Component
     {
         return view('components.tab');
     }
-
-    public function getDescription() {
-        // return 'asd';
-        // return get_field('tab_description');
-    }
-    
 }
