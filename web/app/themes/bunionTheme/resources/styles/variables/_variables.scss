@@ -105,12 +105,12 @@ $progress-height: 2rem;
 $btn-transition: all 0.2s;
 $btn-animate: translateY(2px);
 $--swiper-theme-color: #4a317a;
+$accordion-bg: #fff;
+$accordion-button-bg: #fff;
+$accordion-border-color: #c3b9d0;
+$input-focus-border-color: #fff;
 
 // Text Clamps
 // h1 {
 //   font-size: clamp(3.6rem, 2.8vw, 4.9rem) !important;
 // }
-
-.nav-max-width {
-  max-width: 1366px;
-}

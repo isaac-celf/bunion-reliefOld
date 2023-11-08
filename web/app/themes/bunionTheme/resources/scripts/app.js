@@ -1,5 +1,6 @@
 import {clippingParents} from '@popperjs/core';
 import 'bootstrap';
+import * as bootstrap from 'bootstrap';
 import domReady from '@roots/sage/client/dom-ready';
 import loadMore from './loadMore';
 import Swiper from 'swiper';
@@ -68,7 +69,6 @@ domReady(async () => {
   Tabs
   */
   const tab = document.querySelectorAll('.wp-block-tabs');
-  console.log(tab);
 
   tab.forEach(function (el) {
     const tabLink = el.querySelectorAll('.nav-link');
@@ -162,6 +162,26 @@ domReady(async () => {
       authorizeClick();
     };
   }
+
+  /**
+  Blog Trigger Modal
+  */
+  const modalDownloadElement = document.querySelector('#downloadModal');
+
+  if (modalDownloadElement) {
+    const modalDownload = new bootstrap.Modal(modalDownloadElement);
+
+    function checkScrollPosition() {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      if (scrollPosition >= windowHeight / 2) {
+        modalDownload.show();
+        window.removeEventListener('scroll', checkScrollPosition);
+      }
+    }
+    window.addEventListener('scroll', checkScrollPosition);
+  }
 });
 
 loadMore();
@@ -170,38 +190,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchFormContainer = document.querySelector('#searchform_secondary');
 
   if (searchFormContainer) {
-    console.log(searchFormContainer);
     const searchFormImage =
       searchFormContainer.querySelector('img:first-child');
 
     if (searchFormImage) {
-      console.log(searchFormImage);
       searchFormImage.src = imgSrc.default;
       searchFormImage.classList.add('w-100');
     } else {
       console.log('no <img> tag is found');
     }
-  } else {
-    console.log('specified container not found');
   }
-
-  /**
-  Blog Trigger Modal
-  */
-
-  const modalDownloadElement = document.querySelector('#downloadModal');
-  const modalDownload = new bootstrap.Modal(modalDownloadElement);
-
-  function checkScrollPosition() {
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-
-    if (scrollPosition >= windowHeight / 2) {
-      modalDownload.show();
-      window.removeEventListener('scroll', checkScrollPosition);
-    }
-  }
-  window.addEventListener('scroll', checkScrollPosition);
 });
 
 /**

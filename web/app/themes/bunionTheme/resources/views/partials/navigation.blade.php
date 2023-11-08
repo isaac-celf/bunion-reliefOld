@@ -49,13 +49,13 @@
             </ul>
         </div>
         <span class="navbar__menu-icon position-absolute top-50 end-0 translate-middle-y d-lg-none">
-            <a href="#offcanvas" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+            <a href="#menuOffcanvas" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
                 <i class="bi bi-list"></i>
             </a>
         </span>
     </nav>
 
-    <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="offcanvas" style="height: 100vh">
+    <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="menuOffcanvas" style="height: 100vh">
         <div class="offcanvas-header">
             <a class="brand" href="{{ home_url('/') }}">
                 <img src="{{ bloginfo('url') . '/app/uploads/2023/09/Purple@300x.png' }}" alt="logo1"
@@ -65,48 +65,44 @@
         </div>
         <div class="offcanvas-body d-flex flex-column justify-content-between p-0">
             <div class="offcanvas__navigation">
-                @foreach ($navigation as $item)
-                    @if ($item->children)
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion accordion-flush" id="offcanvasAccordion">
+                    @foreach ($navigation as $item)
+                        @if ($item->children)
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingOne">
+                                <h2 class="accordion-header">
                                     <a href="{{ $item->url }}"
-                                        class="accordion-button collapsed text-decoration-none border-bottom"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#{{ $item->id }}"
+                                        class="accordion-button collapsed text-decoration-none" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#mobile-{{ $item->id }}"
                                         aria-expanded="false" aria-controls="flush-collapseOne">
                                         {{ $item->label }}
                                     </a>
                                 </h2>
-                                @foreach ($item->children as $child)
-                                    <div id="{{ $item->id }}" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <a href="{{ $child->url }}" class="nav-link">{{ $child->label }}</a>
-                                        </div>
+                                <div id="mobile-{{ $item->id }}" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#offcanvasAccordion">
+                                    <div class="accordion-body">
+                                        @foreach ($item->children as $child)
+                                            <a href="{{ $child->url }}" class="nav-link p-2">{{ $child->label }}</a>
+                                        @endforeach
                                     </div>
-                                @endforeach
+                                </div>
                             </div>
-                        </div>
-                    @else
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                        @else
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingOne">
+                                <h2 class="accordion-header">
                                     <a href="{{ $item->url }}"
-                                        class="accordion__single text-decoration-none py-3 px-4 d-block border-bottom">{{ $item->label }}</a>
+                                        class="accordion__single text-decoration-none py-3 px-4 d-block ">{{ $item->label }}</a>
                                 </h2>
                             </div>
-                        </div>
-                    @endif
-                @endforeach
-
-                <div class="accordion accordion-flush" id="accordionFlushExample">
+                        @endif
+                    @endforeach
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
+                        <h2 class="accordion-header">
                             <a href="{{ get_field('provider_button_link', 'option') }}"
-                                class="accordion__single text-decoration-none py-3 px-4 d-block border-bottom">{{ get_field('provider_button', 'option') }}</a>
+                                class="accordion__single text-decoration-none py-3 px-4 d-block border-bottom border-secondary">{{ get_field('provider_button', 'option') }}</a>
                         </h2>
                     </div>
                 </div>
+
             </div>
 
             <div class="offcanvas__footer text-primary px-4">

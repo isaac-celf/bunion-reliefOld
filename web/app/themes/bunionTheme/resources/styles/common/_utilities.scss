@@ -54,12 +54,40 @@ body {
   overscroll-behavior: none;
 }
 
-.wp-block-cover {
-  .wp-block-cover__inner-container {
-    @extend .container;
+.image-stick-top {
+  transform: translateY(-8%);
 
-    @include media-breakpoint-down(sm) {
-      padding: 0;
+  @include media-breakpoint-between(md, lg) {
+    transform: translateY(-11%);
+  }
+}
+
+.important-risk {
+  .question {
+    .accordion {
+      .accordion-item {
+        background-color: $tertiary;
+
+        .accordion-button {
+          background-color: $tertiary !important;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.nav-max-width {
+  max-width: 1366px;
+}
+.surveyQuiz {
+  @include media-breakpoint-down(md) {
+    width: 100% !important;
+  }
+
+  @include media-breakpoint-down(lg) {
+    .wp-block-column:nth-child(2) {
+      display: none;
     }
   }
 }

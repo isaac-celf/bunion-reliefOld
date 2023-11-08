@@ -3,24 +3,6 @@
     margin-bottom: $spacer * 2;
 
     .wp-block-column {
-      padding: $spacer $spacer * 0.9;
-      box-shadow: $box-shadow;
-      border-radius: $border-radius;
-
-      .wp-block-group {
-        height: 100%;
-        position: relative;
-
-        padding-bottom: 1.5rem;
-        .wp-block-heading {
-          font-size: $h4-font-size;
-          font-weight: $font-weight-bold;
-          letter-spacing: 0.7px;
-        }
-        p {
-          font-weight: $font-weight-light;
-        }
-      }
       ::before {
         content: '';
         position: absolute;
@@ -39,85 +21,6 @@
 
       &:nth-child(3) ::before {
         background-color: $orange;
-      }
-    }
-  }
-}
-
-.sectionTreatments {
-  .wp-block-group:nth-child(1) {
-    p {
-      font-size: $h4-font-size;
-      font-weight: $font-weight-light;
-    }
-  }
-  .wp-block-columns {
-    .wp-block-column {
-      @extend .d-flex, .flex-column, .justify-content-between;
-      padding: $spacer * 2;
-      border-radius: $border-radius;
-
-      .wp-block-heading {
-        letter-spacing: 0.5px;
-      }
-      p {
-        padding-bottom: $spacer * 2;
-      }
-    }
-  }
-}
-
-.sectionChecker {
-  .wp-block-columns {
-    .wp-block-column {
-      .wp-block-group {
-        .wp-block-heading {
-          // margin-bottom: $spacer * 2;
-        }
-        .wp-block-group {
-          .wp-block-heading {
-            em {
-              font-weight: $font-weight-medium !important;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.sectionBlog {
-  .wp-block-heading {
-    margin-bottom: $spacer * 2;
-  }
-
-  .blog-box {
-    @extend .d-flex, .flex-column, .align-items-center, .gap-5;
-
-    .blogs {
-      row-gap: $spacer * 2;
-      padding-inline: $spacer * 0.75;
-
-      .blog {
-        img {
-          border-radius: $border-radius;
-        }
-
-        h4 {
-          font-weight: $font-weight-semibold;
-        }
-
-        a {
-          text-decoration: none;
-          font-weight: $font-weight-semibold;
-          font-size: $h6-font-size;
-          text-decoration: underline;
-        }
-
-        .card-text {
-          font-weight: $font-weight-light;
-          font-size: $h6-font-size;
-        }
       }
     }
   }

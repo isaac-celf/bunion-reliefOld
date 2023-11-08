@@ -37,7 +37,7 @@ footer {
     &__button {
       @extend .text-primary;
       transition: $btn-transition;
-      font-size: $font-size-sm;
+      font-size: $font-size-md;
 
       &:hover {
         transform: $btn-animate;

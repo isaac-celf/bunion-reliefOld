@@ -23,11 +23,35 @@ class TabInfo extends Field
             ->addTextarea('tab_description', [
                 'label' => 'Tab Description',
             ])
+            ->addTrueFalse('button_true_false', [
+                'label' => 'Add Button',
+                'instructions' => 'Would you like to add a button for direct pages',
+                'required' => 0,
+                'conditional_logic' => [],
+                'wrapper' => [
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ],
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ])
             ->addPostObject('available_pages', [
                 'label' => 'Direct Page to',
                 'instructions' => 'Choose which page to direct',
                 'required' => 0,
-                'conditional_logic' => [],
+                'conditional_logic' => [
+                    [
+                        [
+                            'field' => 'button_true_false',
+                            'operator' => '==',
+                            'value' => 1,
+                        ]
+                    ]
+                ],
                 'post_type' => ['page'],
                 'return_format' => 'object',
             ]);

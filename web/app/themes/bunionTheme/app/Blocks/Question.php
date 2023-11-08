@@ -117,7 +117,8 @@ class Question extends Block
     public function with()
     {
         return [
-            'questions' => $this->getQuestions(), 
+            'questions' => $this->getQuestions(),
+            'id' => wp_unique_id(),
         ];
     }
 
@@ -131,14 +132,16 @@ class Question extends Block
         $question = new FieldsBuilder('question');
 
         $question
-        ->addRelationship('questions', 
-        [
-            'post_type' => ['faq'],
-            'filters' => [
-                0 => 'search',
-            ],
-            'instructions' => 'Pick and rearrange any question', 
-        ]);
+            ->addRelationship(
+                'questions',
+                [
+                    'post_type' => ['faq'],
+                    'filters' => [
+                        0 => 'search',
+                    ],
+                    'instructions' => 'Pick and rearrange any question',
+                ]
+            );
 
         return $question->build();
     }
@@ -152,11 +155,12 @@ class Question extends Block
     {
         //
     }
-    
+
     /**
      * 
      */
-    public function getQuestions() {
+    public function getQuestions()
+    {
         $questions = get_field('questions');
 
         return isset($questions) ? $questions : null;

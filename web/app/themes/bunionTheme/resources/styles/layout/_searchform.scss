@@ -89,12 +89,12 @@
         }
 
         @include media-breakpoint-between(md, xl) {
-          transform: translate(-108%, -133%);
+          transform: translate(-106%, -133%);
         }
 
         @include media-breakpoint-down(md) {
           right: -24%;
-          transform: translate(-129%, -133%);
+          transform: translate(-126%, -133%);
         }
 
         @include media-breakpoint-down(sm) {
@@ -111,6 +111,10 @@
 
     @media (max-width: 575.98px) {
       transform: translateY(-24%);
+    }
+
+    @include media-breakpoint-between(md, xxl) {
+      transform: translateY(-38%);
     }
   }
 }

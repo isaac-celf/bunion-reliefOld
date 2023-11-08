@@ -1,7 +1,6 @@
 $primary: #4a317a;
 $secondary: #c3b9d0;
 $tertiary: #edebf1;
-$light-background: #edeaf1;
 
 // Defaults
 
@@ -42,7 +41,15 @@ $editor-colors: (
   'tertiary': $tertiary,
   'black': $black,
   'white': $white,
-  'grey-6': $gray-600,
-  'orange': #f5982d,
-  'green': #a8d06c,
+  'gray-100': $gray-100,
+  'gray-200': $gray-200,
+  'gray-300': $gray-300,
+  'gray-400': $gray-400,
+  'gray-500': $gray-500,
+  'grey-600': $gray-600,
+  'grey-700': $gray-700,
+  'gray-800': $gray-800,
+  'gray-900': $gray-800,
+  'orange': $orange,
+  'green': $green,
 );

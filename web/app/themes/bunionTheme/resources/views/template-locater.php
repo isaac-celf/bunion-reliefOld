@@ -7,7 +7,7 @@ $autoload_class = (!$wpsl_settings['autoload']) ? 'class="wpsl-not-loaded"' : ''
 ?>
 
 <div class="locator row vh-100 alignfull mt-0 mb-0">
-  <div class="locator-left col-md-5 h-100 p-0 overflow-scroll col-12 position-relative">
+  <div class="locator-left col-md-5 h-100 p-0 overflow-scroll col-12 position-relative bg-white">
     <div class="form-header px-3">
       <form autocomplete="off" class="row gap-2 mb-2 position-relative">
         <label for="wpsl-search-input" class="pt-4">

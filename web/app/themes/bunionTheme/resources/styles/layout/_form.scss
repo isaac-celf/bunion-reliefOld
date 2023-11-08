@@ -3,15 +3,14 @@
     position: relative;
     top: 0;
     left: 0;
-    transform: translateY(-15%);
+    transform: translateY(-12%);
     background-color: $white;
     z-index: 1;
   }
 }
 
 .af-form {
-  @extend .rounded-4, .p-3;
-  box-shadow: $box-shadow;
+  @extend .rounded-4, .p-3, .shadow;
 
   .af-fields {
     @include media-breakpoint-down(sm) {
@@ -23,7 +22,8 @@
       @extend .progress, .position-relative;
       transform: translate(100%, -200%);
       width: 50%;
-      background-color: $light-background;
+      background-color: $tertiary;
+      margin: 0;
 
       .enabled {
         color: $primary;
@@ -306,12 +306,24 @@
 #form_symptom_checker {
   .af-fields {
     .af-page-wrap {
-      @include media-breakpoint-down(sm) {
+      margin: 0;
+      @include media-breakpoint-down(lg) {
         width: 100%;
-        margin: 0;
         transform: translate(0%, -200%);
       }
+
+      .af-page-button {
+        .title {
+          @include media-breakpoint-down(sm) {
+            display: none;
+          }
+        }
+      }
     }
+  }
+
+  .-dismiss {
+    transform: translateY(85%);
   }
 }
 

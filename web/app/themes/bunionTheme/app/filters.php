@@ -72,11 +72,12 @@ add_filter('wpsl_listing_template', function () {
                 <div>
                     <h3 class='store-single-title text-primary fw-semibold fs-5'> <%= store %> </h3>
                         <p class='store-address mb-0'> <%= city %>, <%= state %> </p>
-                        <span class='store-address'> <%= address %> </span>
+                        <span class='store-address d-block'> <%= address %> </span>
 
                         <% if ( address2 ) { %> 
-                        <span class='store-address'><%= address2 %></span>
+                        <span class='store-address mb-2'><%= address2 %></span>
                         <% } %>
+
                 </div>
                 <div>
                     <p>
