@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4076589a966c87757ca5510fc2b0167b",
+    "content-hash": "05c6d20d8a4dc1a71b169a36f7ba6bab",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -5433,6 +5433,24 @@
             "homepage": "https://wordpress.org/plugins/advanced-forms/"
         },
         {
+            "name": "wpackagist-plugin/autoptimize",
+            "version": "3.1.9",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/autoptimize/",
+                "reference": "tags/3.1.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.3.1.9.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/autoptimize/"
+        },
+        {
             "name": "wpackagist-plugin/crop-thumbnails",
             "version": "1.7.2",
             "source": {
@@ -5467,6 +5485,42 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/download-monitor/"
+        },
+        {
+            "name": "wpackagist-plugin/seo-by-rank-math",
+            "version": "1.0.205",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/seo-by-rank-math/",
+                "reference": "tags/1.0.205"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/seo-by-rank-math.1.0.205.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/seo-by-rank-math/"
+        },
+        {
+            "name": "wpackagist-plugin/wordfence",
+            "version": "7.10.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordfence/",
+                "reference": "tags/7.10.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordfence.7.10.7.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordfence/"
         },
         {
             "name": "wpackagist-plugin/wp-store-locator",
@@ -6238,5 +6292,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

@@ -30,6 +30,7 @@ $autoload_class = (!$wpsl_settings['autoload']) ? 'class="wpsl-not-loaded"' : ''
     </div>
 
     <div class="form-content h-100">
+      <p class="fs-6 fw-bold mb-0 ps-3 text-primary">Doctors found in your area</p>
       <div class="h-100" id="wpsl-result-lists">
 
         <div id="wpsl-stores" class="h-100">

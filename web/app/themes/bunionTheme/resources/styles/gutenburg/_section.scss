@@ -3,13 +3,18 @@
     margin-bottom: $spacer * 2;
 
     .wp-block-column {
-      ::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        bottom: 0;
-        left: 0;
+      .wp-block-group {
+        position: relative;
+        height: 100%;
+
+        ::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          bottom: 0;
+          left: 0;
+        }
       }
       &:nth-child(1) ::before {
         background-color: $primary;

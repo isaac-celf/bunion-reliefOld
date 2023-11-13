@@ -9,9 +9,26 @@
   margin-bottom: 0;
 }
 
+// Index
+.reduce-index .wp-block-cover__background {
+  z-index: -1;
+}
+
 // Margin
 .minus-top-margin-sm {
   margin-top: -2rem;
+}
+
+.minus-top-margin-md {
+  margin-top: -5rem;
+}
+
+.minus-top-margin-lg {
+  margin-top: -13rem !important;
+
+  @include media-breakpoint-down(xxl) {
+    margin-top: -14.5rem !important;
+  }
 }
 
 // Height
@@ -48,6 +65,13 @@
   @include make-container();
 
   width: 1366px;
+}
+
+// Border Remove Md
+.remove-border {
+  @include media-breakpoint-down(md) {
+    border: none !important;
+  }
 }
 
 body {
@@ -90,4 +114,8 @@ body {
       display: none;
     }
   }
+}
+
+.transform-Ymiddle {
+  transform: translateY(-50%);
 }

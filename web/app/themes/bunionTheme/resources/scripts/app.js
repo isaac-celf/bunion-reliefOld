@@ -164,8 +164,24 @@ domReady(async () => {
   }
 
   /**
+  extract Distance in URL to Profile
+  */
+  const queryDistance = window.location.search;
+  const urlDistanceParam = new URLSearchParams(queryDistance);
+  const distance = urlDistanceParam.get('distance');
+  const distanceIcon = document.querySelector('.locate-icon');
+  const distanceFrom = document.querySelector('.distanceFrom');
+
+  if (distance) {
+    distanceFrom.textContent = distance;
+  } else {
+    distanceIcon.classList.add('d-none');
+  }
+
+  /**
   Blog Trigger Modal
   */
+
   const modalDownloadElement = document.querySelector('#downloadModal');
 
   if (modalDownloadElement) {
@@ -182,6 +198,8 @@ domReady(async () => {
     }
     window.addEventListener('scroll', checkScrollPosition);
   }
+
+  console.log(document.querySelector('.acf-form-submit'));
 });
 
 loadMore();

@@ -4,9 +4,6 @@
   @include media-breakpoint-down(lg) {
     width: 100% !important;
   }
-  // @media (max-width: 991.98px) {
-  //   width: 100% !important;
-  // }
 
   .af-fields {
     .af-field {
@@ -36,7 +33,11 @@
           input[type='text'] {
             border-radius: $border-radius !important;
             font-size: $h6-font-size;
-            // height: 41px;
+
+            &:focus {
+              border-color: $secondary;
+              box-shadow: none;
+            }
           }
 
           @media (max-width: 767.98px) {

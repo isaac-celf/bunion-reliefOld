@@ -10,6 +10,7 @@ class SingleTab extends Component
     public $tabImage;
     public $tabTitle;
     public $tabButton;
+    public $hasButton;
     /**
      * Create a new component instance.
      *
@@ -21,6 +22,7 @@ class SingleTab extends Component
         $this->tabImage = get_the_post_thumbnail_url($id, 'blog-image');
         $this->tabTitle = get_the_title($id);
         $this->tabButton = get_field('available_pages', $id);
+        $this->hasButton = get_field('button_true_false', $id);
     }
 
     /**

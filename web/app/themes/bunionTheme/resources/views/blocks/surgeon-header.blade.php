@@ -1,31 +1,119 @@
-<div
-    class="store-single-content d-flex align-items-center gap-md-6 gap-4 my-4 my-md-6 flex-column flex-lg-row {{ $block->classes }}">
-    <div class="store-single-content-img-box d-flex flex-column gap-2">
-        {!! get_the_post_thumbnail(null, 'surgeon-image', ['class' => 'object-fit-cover']) !!}
-    </div>
-    <?php ?>
+@if ($surgeonImage)
+    <div
+        class="{{ $block->classes }} store-single-content d-flex align-items-center gap-md-6 gap-4 my-4 my-md-6 flex-column flex-lg-row">
+        <div>
+            @if ($surgeonImage)
+                <div class="store-single-content-img-box d-flex flex-column gap-2 mb-3">
+                    {!! $surgeonImage !!}
+                </div>
+            @endif
 
-    <div class="w-100">
-        <h2 class="store-single-title text-primary mb-4 fw-semibold">{!! single_post_title() !!}</h2>
-        <div class="store-single-description mb-4">
-            <InnerBlocks />
+            <div class="store-single-buttons w-100 mx-auto">
+                <button type="button" class="btn btn-primary store-single-button btnStoreSingle shadow"
+                    data-title="{{ $surgeonName }}" data-bs-toggle="modal" data-bs-target="#iTouchModal">Get In
+                    Touch</button>
+                @if ($surgeonPhone)
+                    <a href="tel:{{ $surgeonPhone }}"
+                        class="btn btn-light border-dark-subtle store-single-button shadow">{{ $surgeonPhone }}</a>
+                @endif
+                @if ($surgeonURL)
+                    <a href="{{ $surgeonURL }}"
+                        class="btn btn-light border-dark-subtle store-single-button shadow">View
+                        Website</a>
+                @endif
+            </div>
         </div>
 
-        <div class="store-single-buttons d-flex gap-2 flex-column flex-md-row">
-            <button type="button" class="btn btn-primary store-single-button btnStoreSingle"
-                data-title="{{ get_the_title() }}" data-bs-toggle="modal" data-bs-target="#iTouchModal">Get In
-                Touch</button>
-            @if ($surgeonPhone)
-                <a href="tel:{{ $surgeonPhone }}"
-                    class="btn btn-light border-dark-subtle store-single-button">{{ $surgeonPhone }}</a>
+        <div class="w-100">
+            <h2 class="store-single-title text-primary fw-semibold">{{ $surgeonName }}</h2>
+            <h3 class="text-primary">Product Line</h3>
+            @if ($surgeonCategory)
+                @foreach ($surgeonCategory as $key => $category)
+                    <p class="fw-light mb-1 d-sm-inline-block d-block">
+                        {{ $category->name }}
+                        @if (!$loop->last)
+                            ,
+                        @endif
+                    </p>
+                @endforeach
             @endif
-            @if ($surgeonURL)
-                <a href="{{ $surgeonURL }}" class="btn btn-light border-dark-subtle store-single-button">View
-                    Website</a>
-            @endif
+            <div style="height:2px" aria-hidden="true" class="w-100 bg-secondary my-3 opacity-75"></div>
+            <div class="store-single-description mb-4">
+                <InnerBlocks />
+            </div>
+
+            <div class="">
+                <p class="text-primary fw-medium mb-1">Address</p>
+                <p class="mb-1">{{ $surgeonAddress1 }} {{ $surgeonAddress2 }}</p>
+                <p class="mb-1">{{ $surgeonCity }}, {{ $surgeonZip }}</p>
+                <p class="mb-1">{{ $surgeonState }}, {{ $surgeonCountry }}</p>
+                <p class='text-primary fw-light d-inline-block locate-icon'>
+                    <i class='bi bi-geo-alt'></i>
+                </p>
+                <p class="distanceFrom text-primary fw-light d-inline-block"></p>
+
+            </div>
+
         </div>
     </div>
-</div>
+@else
+    <div
+        class="{{ $block->classes }} store-single-content d-flex align-items-start gap-md-6 gap-4 my-4 my-md-6 flex-column flex-lg-row">
+        <div>
+            @if ($surgeonImage)
+                <div class="store-single-content-img-box d-flex flex-column gap-2 mb-3">
+                    {!! $surgeonImage !!}
+                </div>
+            @endif
+
+            <div class="store-single-buttons w-100 mx-auto">
+                <button type="button" class="btn btn-primary store-single-button btnStoreSingle shadow"
+                    data-title="{{ $surgeonName }}" data-bs-toggle="modal" data-bs-target="#iTouchModal">Get In
+                    Touch</button>
+                @if ($surgeonPhone)
+                    <a href="tel:{{ $surgeonPhone }}"
+                        class="btn btn-light border-dark-subtle store-single-button shadow">{{ $surgeonPhone }}</a>
+                @endif
+                @if ($surgeonURL)
+                    <a href="{{ $surgeonURL }}"
+                        class="btn btn-light border-dark-subtle store-single-button shadow">View
+                        Website</a>
+                @endif
+            </div>
+        </div>
+
+        <div class="w-100">
+            <h2 class="store-single-title text-primary fw-semibold">{{ $surgeonName }}</h2>
+            <h3 class="text-primary">Product Line</h3>
+            @if ($surgeonCategory)
+                @foreach ($surgeonCategory as $category)
+                    <p class="fw-light mb-1 d-sm-inline-block d-block">
+                        {{ $category->name }}
+                        @if (!$loop->last)
+                            ,
+                        @endif
+                    </p>
+                @endforeach
+            @endif
+            <div style="height:2px" aria-hidden="true" class="w-100 bg-secondary my-3 opacity-75"></div>
+            <div class="store-single-description mb-4">
+                <InnerBlocks />
+            </div>
+
+            <div class="">
+                <p class="text-primary fw-medium mb-1">Address</p>
+                <p class="mb-1">{{ $surgeonAddress1 }} {{ $surgeonAddress2 }}</p>
+                <p class="mb-1">{{ $surgeonCity }}, {{ $surgeonZip }}</p>
+                <p class="mb-1">{{ $surgeonState }}, {{ $surgeonCountry }}</p>
+                <p class='text-primary fw-light d-inline-block'>
+                    <i class='bi bi-geo-alt'></i>
+                </p>
+                <p class="distanceFrom text-primary fw-light d-inline-block"></p>
+            </div>
+
+        </div>
+    </div>
+@endif
 
 <div class="modal fade " id="iTouchModal" tabindex="-1" aria-labelledby="iTouchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">

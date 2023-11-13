@@ -52,6 +52,11 @@ class TabInfo extends Field
                         ]
                     ]
                 ],
+                'wrapper' => [
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ],
                 'post_type' => ['page'],
                 'return_format' => 'object',
             ]);

@@ -130,11 +130,20 @@ class surgeonHeader extends Block
     public function with()
     {
         return [
-            'surgeon' => $this->getSurgeon(),
+            'surgeons' => $this->getSurgeons(),
+            'surgeonName' => $this->getSurgeonName(),
             'surgeonPhone' => $this->getSurgeonPhone(),
             'surgeonURL' => $this->getSurgeonURL(),
+            'surgeonImage' => $this->getSurgeonImage(),
+            'surgeonCategory' => $this->getSurgeonCategory(),
             'formDescription' => $this->getFormDescription(),
             'formIcon' => $this->getFormSVG(),
+            'surgeonAddress1' => $this->getSurgeonAddress1(),
+            'surgeonAddress2' => $this->getSurgeonAddress2(),
+            'surgeonState' => $this->getSurgeonState(),
+            'surgeonCountry' => $this->getSurgeonCountry(),
+            'surgeonCity' => $this->getSurgeonCity(),
+            'surgeonZip' => $this->getSurgeonZip(),
         ];
     }
 
@@ -148,7 +157,23 @@ class surgeonHeader extends Block
         $surgeonHeader = new FieldsBuilder('surgeon_header');
 
         $surgeonHeader
-            ->addPostObject('Surgeon', ['post_type' => ['wpsl_stores']]);
+            ->addPostObject('surgeons', [
+                'label' => 'Surgeon Name',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => [],
+                'wrapper' => [
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ],
+                'post_type' => ['wpsl_stores'],
+                'taxonomy' => [],
+                'allow_null' => 0,
+                'multiple' => 0,
+                'return_format' => 'object',
+                'ui' => 1,
+            ]);
 
         return $surgeonHeader->build();
     }
@@ -163,14 +188,10 @@ class surgeonHeader extends Block
         //
     }
 
-    public function getSurgeon()
+    public function getSurgeons()
     {
-
-        $storePost = new WP_Query(['post_type' => 'wpsl_stores']);
-
-        return isset($storePost) ? $storePost : null;
+        return get_field('surgeons');
     }
-
     public function getSurgeonPhone()
     {
 
@@ -200,5 +221,53 @@ class surgeonHeader extends Block
         $formIcon = \App(SageSvg::class)->render('images.human-form', 'w-75');
 
         return $formIcon;
+    }
+
+    public function getSurgeonImage()
+    {
+        $surgeonImage = get_the_post_thumbnail(null, 'surgeon-image', ['class' => 'object-fit-cover']);
+
+        return $surgeonImage;
+    }
+
+    public function getSurgeonName()
+    {
+        $surgeonName = get_the_title();
+
+        return $surgeonName;
+    }
+
+    public function getSurgeonCategory()
+    {
+        $surgeonCategory = get_the_terms(get_the_ID(), 'wpsl_store_category');
+
+        return $surgeonCategory;
+    }
+
+    public function getSurgeonAddress1()
+    {
+        return (get_post_meta(get_the_ID(), 'wpsl_address', true));
+    }
+    public function getSurgeonAddress2()
+    {
+        return (get_post_meta(get_the_ID(), 'wpsl_address2', true));
+    }
+    public function getSurgeonState()
+    {
+        return (get_post_meta(get_the_ID(), 'wpsl_state', true));
+    }
+
+    public function getSurgeonCountry()
+    {
+        return (get_post_meta(get_the_ID(), 'wpsl_country', true));
+    }
+
+    public function getSurgeonCity()
+    {
+        return (get_post_meta(get_the_ID(), 'wpsl_city', true));
+    }
+    public function getSurgeonZip()
+    {
+        return (get_post_meta(get_the_ID(), 'wpsl_zip', true));
     }
 }

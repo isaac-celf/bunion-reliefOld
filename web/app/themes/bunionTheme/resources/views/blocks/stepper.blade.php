@@ -1,20 +1,3 @@
-{{-- <div class="stepper ">
-    <div class="row justify-content-center align-items-center flex-column flex-md-row gap-5 gap-md-0 mb-5">
-        <div class="stepper-img-box col-md-4 col-6">
-            <img src="" alt="stepper image" class="stepper-img w-100">
-        </div>
-        <div class="step col-md-8 col-12">
-            <div class="row">
-                <div class="stepper-step -flex flex-column px-3 px-md-5">
-                    <InnerBlocks allowedBlocks='{{ $allowedBlocks }}' template='{{ $template }}' />
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</div> --}}
-
 @if ($step)
     <div class="{{ $block->classes }}">
         <div class="stepper-container row align-items-center p-0 gap-4 gap-lg-0 flex-lg-row">
@@ -22,8 +5,12 @@
                 <div class="stepper swiper-wrapper">
                     @foreach ($step as $index => $single)
                         <div class="stepper-img-box col-md-4 col-6 swiper-slide w-100" data-hash="{{ $index }}">
-                            <img src="{{ $single['step_image']['sizes']['500-image'] }}" alt="stepper image"
-                                class="stepper-img w-100 rounded">
+                            @if (isset($single['step_image']['sizes']['500-image']))
+                                <img src="{{ $single['step_image']['sizes']['500-image'] }}" alt="stepper image"
+                                    class="stepper-img w-100 rounded">
+                            @else
+                                <div class="stepper-img w-100 rounded"></div>
+                            @endif
                         </div>
                     @endforeach
                 </div>

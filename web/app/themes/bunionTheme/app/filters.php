@@ -71,24 +71,29 @@ add_filter('wpsl_listing_template', function () {
             <div>
                 <div>
                     <h3 class='store-single-title text-primary fw-semibold fs-5'> <%= store %> </h3>
-                        <p class='store-address mb-0'> <%= city %>, <%= state %> </p>
-                        <span class='store-address d-block'> <%= address %> </span>
+                        <span class='store-address fw-light'> <%= address %> </span>
 
                         <% if ( address2 ) { %> 
-                        <span class='store-address mb-2'><%= address2 %></span>
+                        <span class='store-address fw-light mb-2'><%= address2 %></span>
                         <% } %>
 
+                        <p class='store-address fw-light mb-0'> <%= city %>, <%= zip %> </p>
+
+                        <p class='store-address fw-light mb-0'> <%= state %>, <%= country %> </p>
                 </div>
                 <div>
-                    <p>
+                    <p class='text-primary fw-light'>
                         <i class='bi bi-geo-alt'></i> 
                         <%= distance %> $wpsl_settings[distance_unit]
                     </p>
                 </div>
 
                 <div class ='locator-buttons d-flex gap-3 mt-2'>
-                    <button type='button' class='btn btn-primary text-capitalize btnTouch' data-bs-toggle='modal' data-bs-target='#iTouchModal-<%= id %>'>Get In Touch</button>
-                    <p><a href='<%= permalink %>' class='btn btn-light border-dark-subtle text-capitalize'>view profile</a></p>
+                <% if (phone) { %>
+                    <% const phoneNumber = formatPhoneNumber(phone); %>
+                    <a href='tel:<%= phone %>' class='btn btn-primary shadow'><%= phone %></a>
+                <% } %>                  
+                    <p><a href='<%= permalink %>?distance=<%= distance %>$wpsl_settings[distance_unit]' class='btn btn-light border-dark-subtle text-capitalize shadow'>view profile</a></p>
                 </div>
             </div>
         </div>

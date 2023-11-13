@@ -34,7 +34,8 @@
       }
 
       .af-page-button {
-        @extend .border-0,
+        @extend .border,
+          .border-0,
           .d-flex,
           .justify-content-center,
           .align-items-center,
@@ -123,7 +124,7 @@
       }
 
       label {
-        @extend .text-black, .fw-lighter;
+        @extend .fw-lighter;
         font-size: $font-size-base;
       }
 
@@ -131,18 +132,33 @@
         @extend .form-control;
         height: 41px;
         border-color: $secondary;
+
+        &:focus {
+          border-color: $secondary;
+          box-shadow: none;
+        }
       }
 
       textarea {
         @extend .form-control;
         border-radius: $border-radius;
         border-color: $secondary;
+
+        &:focus {
+          border-color: $secondary;
+          box-shadow: none;
+        }
       }
 
       input[type='email'] {
         @extend .form-control;
         height: 41px;
         border-color: $secondary;
+
+        &:focus {
+          border-color: $secondary;
+          box-shadow: none;
+        }
       }
 
       input[type='radio'] {
@@ -228,14 +244,16 @@
             }
 
             label {
-              @extend .text-primary, .fw-semibold, .ps-4, .pe-2, .pt-3, .pb-4;
+              @extend .fw-semibold, .ps-4, .pe-2, .pt-3, .pb-4;
               cursor: pointer;
+              color: $primary;
               box-shadow: $box-shadow;
               border-radius: $border-radius;
               height: 100%;
 
               &.selected {
-                @extend .bg-primary, .text-white;
+                background-color: $primary;
+                color: $white;
               }
 
               img {
@@ -246,18 +264,6 @@
                 object-fit: cover;
               }
             }
-
-            // &:last-child {
-            //   @extend .align-items-end;
-            // }
-
-            // &:last-child label {
-            //   @extend .shadow-none, .d-flex, .align-items-center, .h-25;
-
-            //   &.selected {
-            //     @extend .bg-transparent, .text-primary;
-            //   }
-            // }
           }
         }
       }
@@ -293,6 +299,25 @@
 
         &::before {
           @extend .d-none;
+        }
+      }
+    }
+  }
+}
+
+.btn-none {
+  .acf-input {
+    .acf-checkbox-list {
+      li:last-child {
+        place-self: flex-end;
+        label {
+          box-shadow: none !important;
+          padding: 0 !important;
+
+          &.selected {
+            color: $primary !important;
+            background-color: white !important;
+          }
         }
       }
     }

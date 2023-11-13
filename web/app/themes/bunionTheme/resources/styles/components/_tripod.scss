@@ -1,6 +1,13 @@
 .sectionTripod {
-  transform: translateY(31%);
+  transform: translateY(30%);
   margin-top: $spacer - 10;
+
+  @include media-breakpoint-down(xxl) {
+    transform: translateY(31%);
+  }
+  @media (max-width: 349.9px) {
+    transform: translateY(35%);
+  }
 }
 
 .sectionTripodTest {
@@ -49,7 +56,7 @@
 
 @include media-breakpoint-down(md) {
   .sectionTripod {
-    margin-top: $spacer - 14;
+    margin-top: $spacer - 10;
   }
 
   .sectionTripodTest {
